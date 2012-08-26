@@ -27,6 +27,20 @@ from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import P
 
 fonts = [["Ubuntu"], ["Rye"], ["Tangerine"]]
 
+html = """
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
+    <style>
+      body { font-family: '%s', serif; font-size: 36px; }
+    </style>
+  </head>
+  <body>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+  </body>
+</html>
+"""
+
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
     __gtype_name__ = "GoogleWebfontDownloaderWindow"
@@ -45,6 +59,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.view = WebKit.WebView()
         webview = builder.get_object("viewport1")
         webview.add(self.view)
+        webview.show_all()
 
         # the data in the model (three strings for each row, one for each column)
         listmodel = builder.get_object("liststore1")# = Gtk.ListStore(str)
@@ -62,4 +77,7 @@ class GoogleWebfontDownloaderWindow(Window):
         listview.get_selection().connect("changed", self.on_changed)
 
     def on_changed(self, selection):
-        print "Changed"
+        (model, iter) =  selection.get_selected()
+        font = model[iter][0]
+        print html % (font, font)
+        self.view.load_html_string(html % (font, font), "file:///")
