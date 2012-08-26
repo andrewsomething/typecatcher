@@ -83,5 +83,4 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_changed(self, selection):
         (model, iter) =  selection.get_selected()
         font = model[iter][0]
-        print html % (font, font)
         self.view.load_html_string(html % (font, font), "file:///")
