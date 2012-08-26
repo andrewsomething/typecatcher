@@ -1,8 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires about_google_webfont_downloader_dialog 1.0 -->
   <!-- interface-requires gtk+ 3.0 -->
   <object class="AboutGoogleWebfontDownloaderDialog" id="about_google_webfont_downloader_dialog">
-    <property translatable="yes" name="license"># Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="icon_name">preferences-desktop-font</property>
+    <property name="type_hint">normal</property>
+    <property name="program_name">Google Webfont Downloader</property>
+    <property name="copyright" translatable="yes">Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;</property>
+    <property name="comments" translatable="yes">Download Google webfonts for use on the desktop.</property>
+    <property name="license" translatable="yes"># Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;
 # This program is free software: you can redistribute it and/or modify it 
 # under the terms of the GNU General Public License version 3, as published 
 # by the Free Software Foundation.
@@ -14,13 +22,9 @@
 # 
 # You should have received a copy of the GNU General Public License along 
 # with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-</property><property translatable="yes" name="copyright">Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;</property><property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="icon">../media/google-webfont-downloader.svg</property>
-    <property name="type_hint">normal</property>
-    <property name="program_name">Google Webfont Downloader</property>
+</property>
     <property name="authors">Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;</property>
-    <property name="logo">../media/google-webfont-downloader.svg</property>
+    <property name="logo_icon_name">preferences-desktop-font</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>

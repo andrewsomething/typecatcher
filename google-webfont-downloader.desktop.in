@@ -1,8 +1,8 @@
 [Desktop Entry]
 _Name=Google Webfont Downloader
 _Comment=GoogleWebfontDownloader application
-Categories=GNOME;Utility;
-Exec=google-webfont-downloader
+Categories=GNOME;Utility;Graphics;
+Exec=preferences-desktop-font
 Icon=google-webfont-downloader
 Terminal=false
 Type=Application

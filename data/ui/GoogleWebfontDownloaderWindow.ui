@@ -16,7 +16,7 @@
     <property name="title" translatable="yes">Google Webfont Downloader</property>
     <property name="default_width">600</property>
     <property name="default_height">400</property>
-    <property name="icon">../media/google-webfont-downloader.svg</property>
+    <property name="icon_name">preferences-desktop-font</property>
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
