@@ -6,6 +6,7 @@
 from locale import gettext as _
 
 from gi.repository import Gtk # pylint: disable=E0611
+from gi.repository import WebKit
 import logging
 logger = logging.getLogger('google_webfont_downloader')
 
@@ -25,4 +26,11 @@ class GoogleWebfontDownloaderWindow(Window):
         self.PreferencesDialog = PreferencesGoogleWebfontDownloaderDialog
 
         # Code for other initialization actions should be added here.
+        self.toolbar = builder.get_object("toolbar1")
+        context = self.toolbar.get_style_context()
+        context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
+        self.view = WebKit.WebView()
+        webview = builder.get_object("viewport1")
+        webview.add(self.view)
+
 
