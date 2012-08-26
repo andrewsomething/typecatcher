@@ -1,0 +1,8 @@
+<glade-catalog name="google_webfont_downloader_window" domain="glade-3" 
+               depends="gtk+" version="1.0">
+  <glade-widget-classes>
+    <glade-widget-class title="Google Webfont Downloader Window" name="GoogleWebfontDownloaderWindow" 
+                        generic-name="GoogleWebfontDownloaderWindow" parent="GtkWindow"
+                        icon-name="widget-gtk-window"/>
+  </glade-widget-classes>
+</glade-catalog>

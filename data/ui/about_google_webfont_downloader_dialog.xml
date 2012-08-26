@@ -1,0 +1,9 @@
+<glade-catalog name="about_google_webfont_downloader_dialog" domain="glade-3" 
+               depends="gtk+" version="1.0">
+  <glade-widget-classes>
+    <glade-widget-class title="About Google Webfont Downloader Dialog" name="AboutGoogleWebfontDownloaderDialog" 
+                        generic-name="AboutGoogleWebfontDownloaderDialog" parent="GtkAboutDialog"
+                        icon-name="widget-gtk-about-dialog"/>
+  </glade-widget-classes>
+
+</glade-catalog>
