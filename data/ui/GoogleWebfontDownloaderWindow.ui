@@ -3,6 +3,9 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires google_webfont_downloader_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
+  <object class="GtkEntryCompletion" id="entrycompletion1">
+    <property name="model">liststore1</property>
+  </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -276,8 +279,9 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="invisible_char">•</property>
-                    <property name="text" translatable="yes">Search fonts...</property>
+                    <property name="secondary_icon_name">edit-clear-symbolic</property>
                     <property name="primary_icon_tooltip_text" translatable="yes">Search fonts...</property>
+                    <property name="input_hints">GTK_INPUT_HINT_WORD_COMPLETION | GTK_INPUT_HINT_NONE</property>
                   </object>
                 </child>
               </object>

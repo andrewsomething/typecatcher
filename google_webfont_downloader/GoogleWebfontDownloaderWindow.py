@@ -18,6 +18,7 @@ from locale import gettext as _
 
 from gi.repository import Gtk # pylint: disable=E0611
 from gi.repository import WebKit
+import itertools, re
 import logging
 logger = logging.getLogger('google_webfont_downloader')
 
@@ -49,19 +50,35 @@ class GoogleWebfontDownloaderWindow(Window):
         webview.show_all()
 
         # the data in the model (three strings for each row, one for each column)
-        listmodel = builder.get_object("liststore1")# = Gtk.ListStore(str)
+        listmodel = builder.get_object("liststore1")
         # append the values in the model
         for i in range(len(self.fonts)):
             listmodel.append(self.fonts[i])
 
         # a treeview to see the data stored in the model
-        listview = builder.get_object("treeview2")# Gtk.TreeView(model=listmodel)
+        self.listview = builder.get_object("treeview2")
         cell = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn(_("Fonts"), cell, text=0)
-        listview.append_column(col)
-        listview.columns_autosize()
+        self.listview.append_column(col)
+        self.listview.columns_autosize()
         # when a row is selected, it emits a signal
-        listview.get_selection().connect("changed", self.on_changed)
+        self.listview.get_selection().connect("changed", self.on_changed)
+
+        self.entry = self.builder.get_object('entry1')
+        self.entry.connect('activate', self.on_search_entered)
+        completion = self.builder.get_object('entrycompletion1')
+        self.entry.set_completion(completion)
+
+    def on_search_entered(self, widget):
+        fonts = list(itertools.chain(*self.fonts))
+        entered_text = self.entry.get_text()
+        matcher = re.compile(entered_text, re.IGNORECASE)
+        if any(itertools.ifilter(matcher.match, fonts)):
+            for position, item in enumerate(fonts):
+                if item.lower() == entered_text.lower():
+                    self.listview.set_cursor(position)
+        else:
+            pass
 
     def on_changed(self, selection):
         (model, iter) =  selection.get_selected()
