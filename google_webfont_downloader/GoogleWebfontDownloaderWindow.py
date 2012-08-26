@@ -66,6 +66,7 @@ class GoogleWebfontDownloaderWindow(Window):
 
         self.search_field = self.builder.get_object('search_field')
         self.search_field.connect('activate', self.on_search_entered)
+        self.search_field.connect("icon-press", self.clear_search)
 
         completion = self.builder.get_object('entrycompletion')
         completion.set_model(listmodel)
@@ -87,3 +88,6 @@ class GoogleWebfontDownloaderWindow(Window):
         (model, iter) =  selection.get_selected()
         font = model[iter][0]
         self.view.load_html_string(html % (font, font), "file:///")
+
+    def clear_search(self, widget, icon_pos, event):
+        self.search_field.set_text("")
