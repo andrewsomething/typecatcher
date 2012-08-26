@@ -14,18 +14,17 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
-import json
-import urllib2
 import os
-from google_webfont_downloader_lib.xdg import confDir, cacheDir
 
-def FindFonts():
-    req = urllib2.Request("https://www.googleapis.com/webfonts/v1/webfonts")
-    opener = urllib2.build_opener()
-    data = json.loads(str(opener.open(req).read()),"utf-8")
-    fonts = []
-    for n in data['items']:
-        f = []
-        f.append(str(n['family']))
-        fonts.append(f)
-    return fonts
+try:
+    import xdg.BaseDirectory
+except ImportError:
+    home = os.environ.get('HOME')
+    xdg_config_home = os.path.join(home, '.config/')
+    xdg_cache_home = os.path.join(home, '.cache/')
+else:
+    xdg_config_home = xdg.BaseDirectory.xdg_config_home
+    xdg_cache_home = xdg.BaseDirectory.xdg_cache_home
+    
+confDir =  os.path.join(xdg_config_home, 'google-webfont-downloader')
+cacheDir =  os.path.join(xdg_cache_home, 'google-webfont-downloader')
