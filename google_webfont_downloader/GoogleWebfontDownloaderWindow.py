@@ -66,7 +66,10 @@ class GoogleWebfontDownloaderWindow(Window):
 
         self.entry = self.builder.get_object('entry1')
         self.entry.connect('activate', self.on_search_entered)
+
         completion = self.builder.get_object('entrycompletion1')
+        completion.set_model(listmodel)
+        completion.set_text_column(0)
         self.entry.set_completion(completion)
 
     def on_search_entered(self, widget):
