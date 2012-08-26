@@ -24,28 +24,15 @@ logger = logging.getLogger('google_webfont_downloader')
 from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
 from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
-
-fonts = [["Ubuntu"], ["Rye"], ["Tangerine"]]
-
-html = """
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
-    <style>
-      body { font-family: '%s', serif; font-size: 36px; }
-    </style>
-  </head>
-  <body>
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-  </body>
-</html>
-"""
+from google_webfont_downloader.FindFonts import FindFonts
+from google_webfont_downloader.html_preview import html
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
     __gtype_name__ = "GoogleWebfontDownloaderWindow"
     
     def finish_initializing(self, builder): # pylint: disable=E1002
+        self.fonts = FindFonts()
         """Set up the main window"""
         super(GoogleWebfontDownloaderWindow, self).finish_initializing(builder)
 
@@ -64,8 +51,8 @@ class GoogleWebfontDownloaderWindow(Window):
         # the data in the model (three strings for each row, one for each column)
         listmodel = builder.get_object("liststore1")# = Gtk.ListStore(str)
         # append the values in the model
-        for i in range(len(fonts)):
-            listmodel.append(fonts[i])
+        for i in range(len(self.fonts)):
+            listmodel.append(self.fonts[i])
 
         # a treeview to see the data stored in the model
         listview = builder.get_object("treeview2")# Gtk.TreeView(model=listmodel)
