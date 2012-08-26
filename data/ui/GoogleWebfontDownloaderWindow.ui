@@ -342,5 +342,10 @@
       </object>
     </child>
   </object>
-  <object class="GtkListStore" id="liststore1"/>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
 </interface>

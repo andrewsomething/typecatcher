@@ -25,6 +25,8 @@ from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
 from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 
+fonts = [["Ubuntu"], ["Rye"], ["Tangerine"]]
+
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
     __gtype_name__ = "GoogleWebfontDownloaderWindow"
@@ -44,4 +46,20 @@ class GoogleWebfontDownloaderWindow(Window):
         webview = builder.get_object("viewport1")
         webview.add(self.view)
 
+        # the data in the model (three strings for each row, one for each column)
+        listmodel = builder.get_object("liststore1")# = Gtk.ListStore(str)
+        # append the values in the model
+        for i in range(len(fonts)):
+            listmodel.append(fonts[i])
 
+        # a treeview to see the data stored in the model
+        listview = builder.get_object("treeview2")# Gtk.TreeView(model=listmodel)
+        cell = Gtk.CellRendererText()
+        col = Gtk.TreeViewColumn(_("Fonts"), cell, text=0)
+        listview.append_column(col)
+        listview.columns_autosize()
+        # when a row is selected, it emits a signal
+        listview.get_selection().connect("changed", self.on_changed)
+
+    def on_changed(self, selection):
+        print "Changed"
