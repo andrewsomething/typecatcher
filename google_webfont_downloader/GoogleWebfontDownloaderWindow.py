@@ -41,22 +41,22 @@ class GoogleWebfontDownloaderWindow(Window):
         self.PreferencesDialog = PreferencesGoogleWebfontDownloaderDialog
 
         # Code for other initialization actions should be added here.
-        self.toolbar = builder.get_object("toolbar1")
+        self.toolbar = builder.get_object("toolbar")
         context = self.toolbar.get_style_context()
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
         self.view = WebKit.WebView()
-        webview = builder.get_object("viewport1")
+        webview = builder.get_object("webview")
         webview.add(self.view)
         webview.show_all()
 
         # the data in the model (three strings for each row, one for each column)
-        listmodel = builder.get_object("liststore1")
+        listmodel = builder.get_object("liststore")
         # append the values in the model
         for i in range(len(self.fonts)):
             listmodel.append(self.fonts[i])
 
         # a treeview to see the data stored in the model
-        self.listview = builder.get_object("treeview2")
+        self.listview = builder.get_object("font_list")
         cell = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn(_("Fonts"), cell, text=0)
         self.listview.append_column(col)
@@ -64,17 +64,17 @@ class GoogleWebfontDownloaderWindow(Window):
         # when a row is selected, it emits a signal
         self.listview.get_selection().connect("changed", self.on_changed)
 
-        self.entry = self.builder.get_object('entry1')
-        self.entry.connect('activate', self.on_search_entered)
+        self.search_field = self.builder.get_object('search_field')
+        self.search_field.connect('activate', self.on_search_entered)
 
-        completion = self.builder.get_object('entrycompletion1')
+        completion = self.builder.get_object('entrycompletion')
         completion.set_model(listmodel)
         completion.set_text_column(0)
-        self.entry.set_completion(completion)
+        self.search_field.set_completion(completion)
 
     def on_search_entered(self, widget):
         fonts = list(itertools.chain(*self.fonts))
-        entered_text = self.entry.get_text()
+        entered_text = self.search_field.get_text()
         matcher = re.compile(entered_text, re.IGNORECASE)
         if any(itertools.ifilter(matcher.match, fonts)):
             for position, item in enumerate(fonts):

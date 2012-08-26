@@ -3,13 +3,19 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires google_webfont_downloader_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
-  <object class="GtkEntryCompletion" id="entrycompletion1">
-    <property name="model">liststore1</property>
+  <object class="GtkEntryCompletion" id="entrycompletion">
+    <property name="model">liststore</property>
   </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-help</property>
+  </object>
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
   </object>
   <object class="GoogleWebfontDownloaderWindow" id="google_webfont_downloader_window">
     <property name="can_focus">False</property>
@@ -22,7 +28,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
-          <object class="GtkMenuBar" id="menubar1">
+          <object class="GtkMenuBar" id="menubar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
@@ -235,11 +241,11 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolbar" id="toolbar1">
+          <object class="GtkToolbar" id="toolbar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkToolButton" id="toolbutton3">
+              <object class="GtkToolButton" id="download_btn">
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -256,7 +262,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSeparatorToolItem" id="toolbutton2">
+              <object class="GtkSeparatorToolItem" id="spacer">
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -269,18 +275,19 @@
               </packing>
             </child>
             <child>
-              <object class="GtkToolItem" id="toolbutton1">
+              <object class="GtkToolItem" id="seach_item">
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="use_action_appearance">False</property>
                 <child>
-                  <object class="GtkEntry" id="entry1">
+                  <object class="GtkEntry" id="search_field">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="invisible_char">•</property>
                     <property name="secondary_icon_name">edit-clear-symbolic</property>
                     <property name="primary_icon_tooltip_text" translatable="yes">Search fonts...</property>
+                    <property name="secondary_icon_tooltip_text" translatable="yes">Clear search...</property>
                     <property name="input_hints">GTK_INPUT_HINT_WORD_COMPLETION | GTK_INPUT_HINT_NONE</property>
                   </object>
                 </child>
@@ -297,21 +304,21 @@
           </packing>
         </child>
         <child>
-          <object class="GtkPaned" id="paned1">
+          <object class="GtkPaned" id="main_pane">
             <property name="width_request">75</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow1">
+              <object class="GtkScrolledWindow" id="scrolledlist">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
                 <property name="min_content_width">100</property>
                 <child>
-                  <object class="GtkTreeView" id="treeview2">
+                  <object class="GtkTreeView" id="font_list">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="model">liststore1</property>
+                    <property name="model">liststore</property>
                     <child internal-child="selection">
                       <object class="GtkTreeSelection" id="treeview-selection2"/>
                     </child>
@@ -324,7 +331,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkViewport" id="viewport1">
+              <object class="GtkViewport" id="webview">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <child>
@@ -345,11 +352,5 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkListStore" id="liststore1">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
   </object>
 </interface>
