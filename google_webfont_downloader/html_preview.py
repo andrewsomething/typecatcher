@@ -28,7 +28,7 @@ def internet_on():
         pass
     return False
 
-def html(font):
+def html_font_view(font):
     if internet_on() == True:
         if glob.glob(fontDir + font + '.*'):
             icon_name = "gtk-apply"
@@ -72,4 +72,25 @@ def html(font):
   </body>
 </html>
 """ % (icon_uri, _("No network connection."))
+    return html
+
+def start_page():
+    icon_name = "font-x-generic"
+    theme = Gtk.IconTheme()
+    theme.set_custom_theme("gnome")
+    info = theme.lookup_icon(icon_name, 256, 0)
+    icon_uri = info.get_filename()
+    html = """
+<html>
+  <head>
+    <style>
+      body { font-family: Ubuntu, sans-serif; font-size: 28px; }
+    </style>
+  </head>
+  <body>
+    <center><div><img src="file://%s" ></div></center>
+    <center><p>Google Webfont Downloader</p><center>
+  </body>
+</html>
+""" % icon_uri
     return html

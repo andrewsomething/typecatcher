@@ -27,7 +27,7 @@ from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGo
 from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 from google_webfont_downloader.FindFonts import FindFonts
 from google_webfont_downloader.DownloadFont import DownloadFont
-from google_webfont_downloader.html_preview import html
+from  google_webfont_downloader.html_preview import html_font_view, start_page
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
@@ -48,6 +48,8 @@ class GoogleWebfontDownloaderWindow(Window):
         self.view = WebKit.WebView()
         webview = builder.get_object("webview")
         webview.add(self.view)
+        htmlfile = start_page()
+        self.view.load_html_string(htmlfile, "file:///")
         webview.show_all()
 
         # the data in the model
@@ -88,7 +90,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_select_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
-        self.load_html()
+        self.load_html_font_view()
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
         if icon_pos == Gtk.EntryIconPosition.PRIMARY:
@@ -99,7 +101,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_download_btn_clicked(self, button):
         try:
             DownloadFont(self.font, uri='None')
-            self.load_html()
+            self.load_html_font_view()
         except AttributeError:
             pass
 
@@ -129,6 +131,6 @@ class GoogleWebfontDownloaderWindow(Window):
         except AttributeError:
             pass
 
-    def load_html(self):
-        htmlfile = html(self.font)
+    def load_html_font_view(self):
+        htmlfile = html_font_view(self.font)
         self.view.load_html_string(htmlfile, "file:///")
