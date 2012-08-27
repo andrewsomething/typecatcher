@@ -22,9 +22,10 @@ from google_webfont_downloader_lib.xdg import fontDir
 
 def internet_on():
     try:
-        response=urllib2.urlopen('http://74.125.113.99',timeout=1)
+        response = urllib2.urlopen('http://74.125.113.99',timeout=1)
         return True
-    except urllib2.URLError as err: pass
+    except urllib2.URLError as err:
+        pass
     return False
 
 def html(font):
@@ -34,7 +35,9 @@ def html(font):
             theme = Gtk.IconTheme.get_default()
             info = theme.lookup_icon(icon_name, 64, 0)
             icon_uri = info.get_filename()
-            html_icon = '<img src="file://%s" width=64 height=64 title="Font installed..." style="float:right;">' % icon_uri
+            html_icon = """
+     <div class="installed"><img src="file://%s" width=64 height=64>
+     <p>Installed</p></div>""" % icon_uri
         else:
             html_icon = ""
         html = """
@@ -43,10 +46,12 @@ def html(font):
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
     <style>
       body { font-family: '%s', serif; font-size: 36px; }
+      div.installed { float: right; font-size: 12px;}
     </style>
   </head>
   <body>
-    <div> %s Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    %s
+    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
   </body>
 </html>
 """ % (font, font, html_icon)
