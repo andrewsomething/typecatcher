@@ -15,18 +15,9 @@
 ### END LICENSE
 
 import os
+from gi.repository import GLib
 
-home = os.environ.get('HOME')
-
-try:
-    import xdg.BaseDirectory
-except ImportError:
-    xdg_config_home = os.path.join(home, '.config/')
-    xdg_cache_home = os.path.join(home, '.cache/')
-else:
-    xdg_config_home = xdg.BaseDirectory.xdg_config_home
-    xdg_cache_home = xdg.BaseDirectory.xdg_cache_home
-    
-confDir =  os.path.join(xdg_config_home, 'google-webfont-downloader/')
-cacheDir =  os.path.join(xdg_cache_home, 'google-webfont-downloader/')
-fontDir = os.path.join(home, '.fonts/')
+homeDir = os.environ.get('HOME')
+confDir =  os.path.join(GLib.get_user_config_dir(), 'google-webfont-downloader/')
+cacheDir =  os.path.join(GLib.get_user_cache_dir(), 'google-webfont-downloader/')
+fontDir = os.path.join(homeDir, '.fonts/')
