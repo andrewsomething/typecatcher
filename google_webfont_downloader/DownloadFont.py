@@ -35,7 +35,7 @@ def DownloadFont(font_name, uri):
         pass
 
 def extract_url(font_name):
-    css_url =  WEBFONTS_API_URL + font_name.replace(' ', '%20', -1)
+    css_url =  WEBFONTS_API_URL + font_name.replace(' ', '%20', -1) + "&subset=all"
     req = urllib2.Request(css_url)
     opener = urllib2.build_opener()
     try:
