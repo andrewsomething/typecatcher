@@ -50,7 +50,7 @@ class GoogleWebfontDownloaderWindow(Window):
         webview.add(self.view)
         webview.show_all()
 
-        # the data in the model (three strings for each row, one for each column)
+        # the data in the model
         listmodel = builder.get_object("liststore")
         # append the values in the model
         for i in range(len(self.fonts)):
@@ -63,12 +63,9 @@ class GoogleWebfontDownloaderWindow(Window):
         self.listview.append_column(col)
         self.listview.columns_autosize()
         # when a row is selected, it emits a signal
-        self.listview.get_selection().connect("changed", self.on_changed)
+        self.listview.get_selection().connect("changed", self.on_select_changed)
 
         self.search_field = self.builder.get_object('search_field')
-        self.search_field.connect('activate', self.on_search_entered)
-        self.search_field.connect("icon-press", self.clear_search)
-
         completion = self.builder.get_object('entrycompletion')
         completion.set_model(listmodel)
         completion.set_text_column(0)
@@ -76,10 +73,8 @@ class GoogleWebfontDownloaderWindow(Window):
 
         self.mnu_save = self.builder.get_object('mnu_save')
         self.mnu_save.connect("activate", self.on_download_btn_clicked)
-        self.mnu_save_as = self.builder.get_object('mnu_save_as')
-        self.mnu_save_as.connect("activate", self.on_mnu_save_as_clicked)
 
-    def on_search_entered(self, widget):
+    def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))
         entered_text = self.search_field.get_text()
         matcher = re.compile(entered_text, re.IGNORECASE)
@@ -90,12 +85,12 @@ class GoogleWebfontDownloaderWindow(Window):
         else:
             pass
 
-    def on_changed(self, selection):
+    def on_select_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
         self.load_html()
 
-    def clear_search(self, widget, icon_pos, event):
+    def on_search_field_icon_press(self, widget, icon_pos, event):
         self.search_field.set_text("")
 
     def on_download_btn_clicked(self, button):
@@ -113,7 +108,7 @@ class GoogleWebfontDownloaderWindow(Window):
         except AttributeError:
             pass
 
-    def on_mnu_save_as_clicked(self, button):
+    def on_mnu_save_as_activate(self, button):
         try:
             dialog = Gtk.FileChooserDialog("Please choose a file", self,
                                            Gtk.FileChooserAction.SAVE,
