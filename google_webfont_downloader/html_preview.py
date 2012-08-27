@@ -14,9 +14,11 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
+import glob
 from locale import gettext as _
 from gi.repository import Gtk
 import urllib2
+from google_webfont_downloader_lib.xdg import fontDir
 
 def internet_on():
     try:
@@ -27,6 +29,14 @@ def internet_on():
 
 def html(font):
     if internet_on() == True:
+        if glob.glob(fontDir + font + '.*'):
+            icon_name = "gtk-apply"
+            theme = Gtk.IconTheme.get_default()
+            info = theme.lookup_icon(icon_name, 64, 0)
+            icon_uri = info.get_filename()
+            html_icon = '<img src="file://%s" width=64 height=64 title="Font installed..." style="float:right;">' % icon_uri
+        else:
+            html_icon = ""
         html = """
 <html>
   <head>
@@ -36,10 +46,10 @@ def html(font):
     </style>
   </head>
   <body>
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div> %s Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
   </body>
 </html>
-""" % (font, font)
+""" % (font, font, html_icon)
     else:
         icon_name = "network-error"
         theme = Gtk.IconTheme.get_default()

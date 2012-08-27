@@ -24,19 +24,23 @@ WEBFONTS_API_URL="http://fonts.googleapis.com/css?family="
 
 def DownloadFont(font_name, uri):
     font_url = extract_url(font_name)
-    print font_url
-    req = urllib2.Request(font_url)
-    r = urllib2.urlopen(req)
-    ext = os.path.splitext(font_url)[1]
-    f = fontDir + font_name + ext
-    print f
-    with open(f, 'wb') as f:
-        f.write(r.read())
+    if font_url != 'None':
+        req = urllib2.Request(font_url)
+        r = urllib2.urlopen(req)
+        ext = os.path.splitext(font_url)[1]
+        f = fontDir + font_name + ext
+        with open(f, 'wb') as f:
+            f.write(r.read())
+    else:
+        pass
 
 def extract_url(font_name):
     css_url =  WEBFONTS_API_URL + font_name.replace(' ', '%20', -1)
     req = urllib2.Request(css_url)
     opener = urllib2.build_opener()
-    css = str(opener.open(req).read())
-    font_url = re.compile(r'url\((.*?)\)').search(css).group(1)
+    try:
+        css = str(opener.open(req).read())
+        font_url = re.compile(r'url\((.*?)\)').search(css).group(1)
+    except urllib2.URLError:
+        font_url = 'None'
     return font_url

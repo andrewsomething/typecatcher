@@ -93,8 +93,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
-        htmlfile = html(self.font)
-        self.view.load_html_string(htmlfile, "file:///")
+        self.load_html()
 
     def clear_search(self, widget, icon_pos, event):
         self.search_field.set_text("")
@@ -102,6 +101,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_download_btn_clicked(self, button):
         try:
             DownloadFont(self.font, uri='None')
+            self.load_html()
         except AttributeError:
             pass
 
@@ -122,3 +122,7 @@ class GoogleWebfontDownloaderWindow(Window):
             dialog.destroy()
         except AttributeError:
             pass
+
+    def load_html(self):
+        htmlfile = html(self.font)
+        self.view.load_html_string(htmlfile, "file:///")
