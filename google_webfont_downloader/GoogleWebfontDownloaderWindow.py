@@ -52,6 +52,9 @@ class GoogleWebfontDownloaderWindow(Window):
         self.view.load_html_string(htmlfile, "file:///")
         webview.show_all()
 
+        webview_settings = self.view.get_settings()
+        webview_settings.set_property('enable-default-context-menu', False)
+
         # the data in the model
         listmodel = builder.get_object("liststore")
         # append the values in the model
@@ -134,3 +137,4 @@ class GoogleWebfontDownloaderWindow(Window):
     def load_html_font_view(self):
         htmlfile = html_font_view(self.font)
         self.view.load_html_string(htmlfile, "file:///")
+
