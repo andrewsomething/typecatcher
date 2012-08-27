@@ -91,7 +91,10 @@ class GoogleWebfontDownloaderWindow(Window):
         self.load_html()
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
-        self.search_field.set_text("")
+        if icon_pos == Gtk.EntryIconPosition.PRIMARY:
+            pass
+        if icon_pos == Gtk.EntryIconPosition.SECONDARY:
+            self.search_field.set_text("")
 
     def on_download_btn_clicked(self, button):
         try:
