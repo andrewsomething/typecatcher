@@ -3,12 +3,6 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires google_webfont_downloader_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
-  <object class="GtkListStore" id="liststore">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
-  </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
   </object>
@@ -42,34 +36,6 @@
                   <object class="GtkMenu" id="menu1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <child>
-                      <object class="GtkImageMenuItem" id="mnu_new">
-                        <property name="label">gtk-new</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <accelerator key="n" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="mnu_open">
-                        <property name="label">gtk-open</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <accelerator key="o" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkSeparatorMenuItem" id="separatormenuitem3">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_save">
                         <property name="label">gtk-save</property>
@@ -353,5 +319,11 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
   </object>
 </interface>

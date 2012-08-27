@@ -74,6 +74,9 @@ class GoogleWebfontDownloaderWindow(Window):
         completion.set_text_column(0)
         self.search_field.set_completion(completion)
 
+        self.mnu_save = self.builder.get_object('mnu_save')
+        self.mnu_save.connect("activate", self.on_download_btn_clicked)
+
     def on_search_entered(self, widget):
         fonts = list(itertools.chain(*self.fonts))
         entered_text = self.search_field.get_text()
@@ -95,6 +98,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.search_field.set_text("")
 
     def on_download_btn_clicked(self, button):
+        print "trying"
         try:
             DownloadFont(self.font)
         except AttributeError:

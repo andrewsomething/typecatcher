@@ -18,7 +18,7 @@ import os
 import urllib2
 import re
 
-from google_webfont_downloader_lib.xdg import confDir, cacheDir
+from google_webfont_downloader_lib.xdg import fontDir, cacheDir
 
 WEBFONTS_API_URL="http://fonts.googleapis.com/css?family="
 
@@ -27,10 +27,8 @@ def DownloadFont(font_name):
     print font_url
     req = urllib2.Request(font_url)
     r = urllib2.urlopen(req)
-    home = os.environ.get('HOME')
-    font_dir = os.path.join(home, '.fonts/')
     ext = os.path.splitext(font_url)[1]
-    f = font_dir + font_name + ext
+    f = fontDir + font_name + ext
     print f
     with open(f, 'wb') as f:
         f.write(r.read())

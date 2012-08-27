@@ -16,10 +16,11 @@
 
 import os
 
+home = os.environ.get('HOME')
+
 try:
     import xdg.BaseDirectory
 except ImportError:
-    home = os.environ.get('HOME')
     xdg_config_home = os.path.join(home, '.config/')
     xdg_cache_home = os.path.join(home, '.cache/')
 else:
@@ -28,3 +29,4 @@ else:
     
 confDir =  os.path.join(xdg_config_home, 'google-webfont-downloader/')
 cacheDir =  os.path.join(xdg_cache_home, 'google-webfont-downloader/')
+fontDir = os.path.join(home, '.fonts/')
