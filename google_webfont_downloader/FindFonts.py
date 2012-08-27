@@ -17,15 +17,37 @@
 import json
 import urllib2
 import os
-from google_webfont_downloader_lib.xdg import confDir, cacheDir
+from google_webfont_downloader_lib.xdg import cacheDir
 
 def FindFonts():
-    req = urllib2.Request("https://www.googleapis.com/webfonts/v1/webfonts")
-    opener = urllib2.build_opener()
-    data = json.loads(str(opener.open(req).read()),"utf-8")
+    try:
+        req = urllib2.Request("https://www.googleapis.com/webfonts/v1/webfonts")
+        opener = urllib2.build_opener()
+        data = opener.open(req).read()
+        fonts = process_json(data)
+        cache_json(data)
+        return fonts
+    except urllib2.URLError:
+        local_json = os.path.join(cacheDir + "webfonts.json")
+        data = open(local_json).read()
+        fonts = process_json(data)
+        return fonts
+
+def process_json(data):
+    json_data = json.loads(str(data),"utf-8")
     fonts = []
-    for n in data['items']:
+    for n in json_data['items']:
         f = []
         f.append(str(n['family']))
         fonts.append(f)
     return fonts
+
+def cache_json(data):
+    local_json = os.path.join(cacheDir + "webfonts.json")
+    if os.path.exists(cacheDir):
+        with open(local_json, 'wb') as local_json:
+            local_json.write(data)
+    else:
+        os.makedirs(cacheDir)
+        with open(local_json, 'wb') as local_json:
+            local_json.write(data)
