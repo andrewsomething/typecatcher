@@ -64,7 +64,7 @@ def html(font):
 <html>
   <head>
     <style>
-      body { font-size: 36px; }
+      body { font-family: Ubuntu, sans-serif; font-size: 36px; }
     </style>
   </head>
   <body>
