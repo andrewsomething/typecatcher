@@ -3,6 +3,12 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires google_webfont_downloader_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
   </object>
@@ -152,15 +158,6 @@
                     </child>
                   </object>
                 </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkMenuItem" id="mnu_view">
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">_View</property>
-                <property name="use_underline">True</property>
               </object>
             </child>
             <child>
@@ -319,11 +316,5 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkListStore" id="liststore">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
   </object>
 </interface>
