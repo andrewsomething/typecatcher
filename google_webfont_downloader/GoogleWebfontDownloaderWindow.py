@@ -76,6 +76,8 @@ class GoogleWebfontDownloaderWindow(Window):
 
         self.mnu_save = self.builder.get_object('mnu_save')
         self.mnu_save.connect("activate", self.on_download_btn_clicked)
+        self.mnu_save_as = self.builder.get_object('mnu_save_as')
+        self.mnu_save_as.connect("activate", self.on_mnu_save_as_clicked)
 
     def on_search_entered(self, widget):
         fonts = list(itertools.chain(*self.fonts))
@@ -98,9 +100,25 @@ class GoogleWebfontDownloaderWindow(Window):
         self.search_field.set_text("")
 
     def on_download_btn_clicked(self, button):
-        print "trying"
         try:
-            DownloadFont(self.font)
+            DownloadFont(self.font, uri='None')
         except AttributeError:
             pass
 
+    def on_mnu_save_as_clicked(self, button):
+        try:
+            dialog = Gtk.FileChooserDialog("Please choose a file", self,
+                                           Gtk.FileChooserAction.SAVE,
+                                          (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                                           Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+            filename = self.font + ".ttf"
+            dialog.set_current_name(filename)
+            response = dialog.run()
+            if response == Gtk.ResponseType.OK:
+                uri = dialog.get_filename()
+                DownloadFont(self.font, uri)
+            elif response == Gtk.ResponseType.CANCEL:
+                pass
+            dialog.destroy()
+        except AttributeError:
+            pass

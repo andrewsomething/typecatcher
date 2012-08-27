@@ -22,7 +22,7 @@ from google_webfont_downloader_lib.xdg import fontDir, cacheDir
 
 WEBFONTS_API_URL="http://fonts.googleapis.com/css?family="
 
-def DownloadFont(font_name):
+def DownloadFont(font_name, uri):
     font_url = extract_url(font_name)
     print font_url
     req = urllib2.Request(font_url)
