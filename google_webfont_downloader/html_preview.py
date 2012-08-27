@@ -37,7 +37,7 @@ def html(font):
             icon_uri = info.get_filename()
             html_icon = """
      <div class="installed"><img src="file://%s" width=64 height=64>
-     <p>Installed</p></div>""" % icon_uri
+     <p>%s</p></div>""" % (icon_uri, _("Installed"))
         else:
             html_icon = ""
         html = """
@@ -71,5 +71,5 @@ def html(font):
     <center><div><img src="file://%s" width=64 height=64 > %s</div></center>
   </body>
 </html>
-""" % (icon_uri, "No network connection.")
+""" % (icon_uri, _("No network connection."))
     return html

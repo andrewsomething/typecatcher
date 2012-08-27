@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-27 14:04-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../google_webfont_downloader/__init__.py:32
+msgid "Show debug messages (-vv debugs google_webfont_downloader_lib also)"
+msgstr ""
+
+#: ../data/ui/AboutGoogleWebfontDownloaderDialog.ui.h:1
+msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
+msgstr ""
+
+#: ../data/ui/AboutGoogleWebfontDownloaderDialog.ui.h:2
+msgid "Download Google webfonts for use on the desktop."
+msgstr ""
+
+#: ../data/ui/AboutGoogleWebfontDownloaderDialog.ui.h:3
+msgid ""
+"# Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>\n"
+"# This program is free software: you can redistribute it and/or modify it \n"
+"# under the terms of the GNU General Public License version 3, as "
+"published \n"
+"# by the Free Software Foundation.\n"
+"# \n"
+"# This program is distributed in the hope that it will be useful, but \n"
+"# WITHOUT ANY WARRANTY; without even the implied warranties of \n"
+"# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR \n"
+"# PURPOSE.  See the GNU General Public License for more details.\n"
+"# \n"
+"# You should have received a copy of the GNU General Public License along \n"
+"# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:1
+#: ../google-webfont-downloader.desktop.in.h:1
+msgid "Google Webfont Downloader"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:2
+msgid "_File"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:3
+msgid "_Edit"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:4
+msgid "_Help"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:5
+msgid "Contents"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:6
+msgid "Download font..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:7
+msgid "Download font"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:8
+msgid "Search fonts..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:9
+msgid "Clear search..."
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:40
+msgid "Installed"
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:74
+msgid "No network connection."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:62
+msgid "Fonts"
+msgstr ""
+
+#. Code for other initialization actions should be added here.
+#: ../data/ui/PreferencesGoogleWebfontDownloaderDialog.ui.h:1
+msgid "Google Webfont Downloader Preferences"
+msgstr ""
+
+#: ../data/ui/PreferencesGoogleWebfontDownloaderDialog.ui.h:2
+msgid "_Example entry:"
+msgstr ""
+
+#: ../google-webfont-downloader.desktop.in.h:2
+msgid "GoogleWebfontDownloader application"
+msgstr ""
