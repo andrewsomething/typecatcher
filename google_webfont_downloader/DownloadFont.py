@@ -14,6 +14,7 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
+import os
 import urllib2
 import re
 
@@ -24,6 +25,15 @@ WEBFONTS_API_URL="http://fonts.googleapis.com/css?family="
 def DownloadFont(font_name):
     font_url = extract_url(font_name)
     print font_url
+    req = urllib2.Request(font_url)
+    r = urllib2.urlopen(req)
+    home = os.environ.get('HOME')
+    font_dir = os.path.join(home, '.fonts/')
+    ext = os.path.splitext(font_url)[1]
+    f = font_dir + font_name + ext
+    print f
+    with open(f, 'wb') as f:
+        f.write(r.read())
 
 def extract_url(font_name):
     css_url =  WEBFONTS_API_URL + font_name.replace(' ', '%20', -1)
