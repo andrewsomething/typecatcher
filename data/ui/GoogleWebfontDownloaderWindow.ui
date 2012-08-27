@@ -3,6 +3,11 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires google_webfont_downloader_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-help</property>
+  </object>
   <object class="GtkListStore" id="liststore">
     <columns>
       <!-- column-name gchararray1 -->
@@ -11,11 +16,6 @@
   </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
-  </object>
-  <object class="GtkImage" id="image2">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-help</property>
   </object>
   <object class="GoogleWebfontDownloaderWindow" id="google_webfont_downloader_window">
     <property name="can_focus">False</property>
@@ -218,6 +218,22 @@
                 <property name="label" translatable="yes">Download font</property>
                 <property name="use_underline">True</property>
                 <property name="icon_name">document-save-symbolic</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="info_btn">
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Font info...</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">Font info</property>
+                <property name="use_underline">True</property>
+                <property name="icon_name">dialog-information-symbolic</property>
               </object>
               <packing>
                 <property name="expand">False</property>

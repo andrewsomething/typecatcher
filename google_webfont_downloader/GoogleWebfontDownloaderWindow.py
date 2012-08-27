@@ -105,6 +105,14 @@ class GoogleWebfontDownloaderWindow(Window):
         except AttributeError:
             pass
 
+    def on_info_btn_clicked(self, button):
+        try:
+            info_url = "http://www.google.com/webfonts/specimen/" + \
+                       self.font.replace(' ', '+', -1)
+            Gtk.show_uri(None, info_url, 0)
+        except AttributeError:
+            pass
+
     def on_mnu_save_as_clicked(self, button):
         try:
             dialog = Gtk.FileChooserDialog("Please choose a file", self,
