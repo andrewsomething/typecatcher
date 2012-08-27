@@ -26,8 +26,8 @@ from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
 from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 from google_webfont_downloader.FindFonts import FindFonts
-from google_webfont_downloader.html_preview import html
 from google_webfont_downloader.DownloadFont import DownloadFont
+from google_webfont_downloader.html_preview import html
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
@@ -88,7 +88,8 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
-        self.view.load_html_string(html % (self.font, self.font), "file:///")
+        htmlfile = html(self.font)
+        self.view.load_html_string(htmlfile, "file:///")
 
     def clear_search(self, widget, icon_pos, event):
         self.search_field.set_text("")
