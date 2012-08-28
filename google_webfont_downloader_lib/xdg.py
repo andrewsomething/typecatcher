@@ -20,4 +20,4 @@ from gi.repository import GLib
 homeDir = os.environ.get('HOME')
 confDir =  os.path.join(GLib.get_user_config_dir(), 'google-webfont-downloader/')
 cacheDir =  os.path.join(GLib.get_user_cache_dir(), 'google-webfont-downloader/')
-fontDir = os.path.join(homeDir, '.fonts/')
+fontDir = os.path.join(homeDir, '.fonts/google-webfont-downloader/')
