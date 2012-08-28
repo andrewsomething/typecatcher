@@ -79,6 +79,44 @@ class GoogleWebfontDownloaderWindow(Window):
         self.mnu_save = self.builder.get_object('mnu_save')
         self.mnu_save.connect("activate", self.on_download_btn_clicked)
 
+        self.text_selector = self.builder.get_object('text_selector')
+        self.text_menu = self.builder.get_object('text_menu')
+        self.text_selector.set_menu(self.text_menu)
+
+        self.r1 = self.builder.get_object('r1')
+        self.r2 = self.builder.get_object('r2')
+        self.r3 = self.builder.get_object('r3')
+        self.r4 = self.builder.get_object('r4')
+        self.r5 = self.builder.get_object('r5')
+        self.r6 = self.builder.get_object('r6')
+        self.r1.connect("toggled", self.on_menu_choices_changed, "1")
+        self.r2.connect("toggled", self.on_menu_choices_changed, "2")
+        self.r3.connect("toggled", self.on_menu_choices_changed, "3")
+        self.r4.connect("toggled", self.on_menu_choices_changed, "4")
+        self.r5.connect("toggled", self.on_menu_choices_changed, "5")
+        self.r6.connect("toggled", self.on_menu_choices_changed, "6")
+        self.text = "random"
+
+    def on_menu_choices_changed(self, button, name):
+        if name == "1":
+            self.text = "random"
+        elif name == "2":
+            self.text = "ipsum"
+        elif name == "3":
+            self.text = "kafka"
+        elif name == "4":
+            self.text = "hgg"
+        elif name == "5":
+            self.text = "ggm"
+        elif name == "6":
+            self.text = "ralph"
+        try:
+            if self.changed == True:
+                self.load_html_font_view(self.text)
+        except AttributeError:
+            htmlfile = start_page()
+            self.view.load_html_string(htmlfile, "file:///")
+
     def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))
         entered_text = self.search_field.get_text()
@@ -93,7 +131,8 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_select_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
-        self.load_html_font_view()
+        self.load_html_font_view(self.text)
+        self.changed = True
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
         if icon_pos == Gtk.EntryIconPosition.PRIMARY:
@@ -159,7 +198,7 @@ class GoogleWebfontDownloaderWindow(Window):
         except AttributeError:
             pass
 
-    def load_html_font_view(self):
-        htmlfile = html_font_view(self.font)
+    def load_html_font_view(self, text=None):
+        htmlfile = html_font_view(self.font, self.text)
         self.view.load_html_string(htmlfile, "file:///")
 

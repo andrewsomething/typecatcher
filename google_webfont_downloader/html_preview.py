@@ -29,9 +29,9 @@ def internet_on():
         pass
     return False
 
-def html_font_view(font):
+def html_font_view(font, text=None):
     if internet_on() == True:
-        text_preview = select_text_preview()
+        text_preview = select_text_preview(text)
         if glob.glob(fontDir + font + '.*'):
             icon_name = "gtk-apply"
             theme = Gtk.IconTheme.get_default()
@@ -97,12 +97,23 @@ def start_page():
 """ % icon_uri
     return html
 
-def select_text_preview():
+def select_text_preview(text):
     ipsum = """Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."""
     kafka = _("One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.")
     hgg = "Far out in the uncharted backwaters of the unfashionable end of the Western Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-eight million miles is an utterly insignificant little blue-green planet..."
     ggm = _("Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.")
     ralph = _("I am an invisible man. No, I am not a spook like those who haunted Edgar Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of substance, of flesh and bone, fiber and liquids — and I might even be said to possess a mind. I am invisible, understand, simply because people refuse to see me.")
     text_pool = [ipsum, kafka, ggm, hgg, ralph]
-    selected_text = choice(text_pool)
-    return selected_text
+    if text == None or text == "random":
+        selected_text = choice(text_pool)
+        return selected_text
+    elif text == "ipsum":
+        return ipsum
+    elif text == "kafka":
+        return kafka
+    elif text == "hgg":
+        return hgg
+    elif text == "ggm":
+        return ggm
+    elif text == "ralph":
+        return ralph
