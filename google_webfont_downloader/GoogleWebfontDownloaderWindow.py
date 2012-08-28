@@ -24,7 +24,7 @@ logger = logging.getLogger('google_webfont_downloader')
 
 from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
-from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
+#from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 from google_webfont_downloader.FindFonts import FindFonts
 from google_webfont_downloader.DownloadFont import DownloadFont
 from  google_webfont_downloader.html_preview import html_font_view, start_page
@@ -39,7 +39,7 @@ class GoogleWebfontDownloaderWindow(Window):
         super(GoogleWebfontDownloaderWindow, self).finish_initializing(builder)
 
         self.AboutDialog = AboutGoogleWebfontDownloaderDialog
-        self.PreferencesDialog = PreferencesGoogleWebfontDownloaderDialog
+#        self.PreferencesDialog = PreferencesGoogleWebfontDownloaderDialog
 
         # Code for other initialization actions should be added here.
         self.toolbar = builder.get_object("toolbar")
