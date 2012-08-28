@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-27 14:04-0400\n"
+"POT-Creation-Date: 2012-08-28 17:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../google_webfont_downloader/__init__.py:32
@@ -56,43 +56,157 @@ msgid "_File"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:3
-msgid "_Edit"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:4
 msgid "_Help"
 msgstr ""
 
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:5
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:4
 msgid "Contents"
 msgstr ""
 
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:6
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:5
 msgid "Download font..."
 msgstr ""
 
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:7
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:6
 msgid "Download font"
 msgstr ""
 
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:7
+msgid "Uninstall font..."
+msgstr ""
+
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:8
-msgid "Search fonts..."
+msgid "Uninstall font"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:9
+msgid "Font info..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:10
+msgid "Font info"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:11
+msgid "Search fonts..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:12
 msgid "Clear search..."
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:40
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:13
+msgid "Select text..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:14
+msgid "Select text"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:15
+msgid "Select text to display"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:16
+msgid "Random"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:17
+msgid "ipsum"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:18
+msgid "Kafka"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:19
+msgid "Adams"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:20
+msgid "Marquez"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:21
+msgid "Ellison"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:22
+msgid "Joyce"
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:42
 msgid "Installed"
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:74
+#: ../google_webfont_downloader/html_preview.py:76
 msgid "No network connection."
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:62
+#: ../google_webfont_downloader/html_preview.py:102
+msgid ""
+"One morning, when Gregor Samsa woke from troubled dreams, he found himself "
+"transformed in his bed into a horrible vermin. He lay on his armour-like "
+"back, and if he lifted his head a little he could see his brown belly, "
+"slightly domed and divided by arches into stiff sections."
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:104
+msgid ""
+"Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
+"was to remember that distant afternoon when his father took him to discover "
+"ice."
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:105
+msgid ""
+"I am an invisible man. No, I am not a spook like those who haunted Edgar "
+"Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of "
+"substance, of flesh and bone, fiber and liquids — and I might even be said "
+"to possess a mind. I am invisible, understand, simply because people refuse "
+"to see me."
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:106
+msgid ""
+"Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
+"lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
+"ungirdled, was sustained gently behind him on the mild morning air."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:67
 msgid "Fonts"
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:153
+msgid "This the install button."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:155
+msgid ""
+"Select a font on the left and press this button. \n"
+"The font will be installed for off-line use."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:166
+msgid "This the uninstall button."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:168
+msgid ""
+"Select a font on the left and press this button. \n"
+"It will be removed from your system."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:180
+msgid "This the info button."
+msgstr ""
+
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:182
+msgid ""
+"Select a font on the left and press this button. \n"
+"A browser will open with further information \n"
+"about the chosen font."
 msgstr ""
 
 #. Code for other initialization actions should be added here.
