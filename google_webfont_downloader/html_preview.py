@@ -103,7 +103,8 @@ def select_text_preview(text):
     hgg = "Far out in the uncharted backwaters of the unfashionable end of the Western Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-eight million miles is an utterly insignificant little blue-green planet..."
     ggm = _("Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.")
     ralph = _("I am an invisible man. No, I am not a spook like those who haunted Edgar Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of substance, of flesh and bone, fiber and liquids — and I might even be said to possess a mind. I am invisible, understand, simply because people refuse to see me.")
-    text_pool = [ipsum, kafka, ggm, hgg, ralph]
+    jj = _("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed. A yellow dressinggown, ungirdled, was sustained gently behind him on the mild morning air.")
+    text_pool = [ipsum, kafka, ggm, hgg, ralph, jj]
     if text == None or text == "random":
         selected_text = choice(text_pool)
         return selected_text
@@ -117,3 +118,5 @@ def select_text_preview(text):
         return ggm
     elif text == "ralph":
         return ralph
+    elif text == "jj":
+        return jj

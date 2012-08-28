@@ -3,12 +3,6 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires google_webfont_downloader_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
-  <object class="GtkListStore" id="liststore">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
-  </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
   </object>
@@ -293,6 +287,12 @@
       </object>
     </child>
   </object>
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkMenu" id="text_menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -373,6 +373,17 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">Ellison</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r7">
+        <property name="use_action_appearance">False</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Joyce</property>
         <property name="use_underline">True</property>
         <property name="draw_as_radio">True</property>
         <property name="group">r1</property>

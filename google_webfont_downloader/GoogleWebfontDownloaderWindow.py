@@ -89,12 +89,14 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r4 = self.builder.get_object('r4')
         self.r5 = self.builder.get_object('r5')
         self.r6 = self.builder.get_object('r6')
+        self.r7 = self.builder.get_object('r7')
         self.r1.connect("toggled", self.on_menu_choices_changed, "1")
         self.r2.connect("toggled", self.on_menu_choices_changed, "2")
         self.r3.connect("toggled", self.on_menu_choices_changed, "3")
         self.r4.connect("toggled", self.on_menu_choices_changed, "4")
         self.r5.connect("toggled", self.on_menu_choices_changed, "5")
         self.r6.connect("toggled", self.on_menu_choices_changed, "6")
+        self.r7.connect("toggled", self.on_menu_choices_changed, "7")
         self.text = "random"
 
     def on_menu_choices_changed(self, button, name):
@@ -110,6 +112,8 @@ class GoogleWebfontDownloaderWindow(Window):
             self.text = "ggm"
         elif name == "6":
             self.text = "ralph"
+        elif name == "7":
+            self.text = "jj"
         try:
             if self.changed == True:
                 self.load_html_font_view(self.text)
