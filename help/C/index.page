@@ -7,9 +7,9 @@
   <title type="text">Google Webfont Downloader</title>
   <desc>The <app>Google Webfont Downloader</app> help.</desc>
   <credit type="author">
-    <name>Your Name</name>
-    <email>Your E-mail</email>
-    <years>2010</years>
+    <name>Andrew Starr-Bochicchio</name>
+    <email>a.starr.b@gmail.com</email>
+    <years>2012</years>
   </credit>
   <license href="http://creativecommons.org/licenses/by-sa/3.0/">
   <p>Creative Commons Attribution-Share Alike 3.0 Unported License</p>
@@ -19,26 +19,16 @@
 <title>
 <!-- This shows on the page in title font -->
 <!-- the icon only shows when installed -->
-<media type="image" mime="image/png" src="figures/icon.png">[icon]</media>
-<app>Google Webfont Downloader</app> Help
+<media type="image" mime="image/png" src="/usr/share/icons/gnome/48x48/mimetypes/font-x-generic.png">[icon]</media>
+<app>Google Webfont Downloader</app>
 </title>
-
-<p>This is an example guide page. It's main function is to link together the help topics.</p>
+<center><media type="image" mime="image/png" src="figures/home.png"></media></center>
+<p>As the name implies, Google Webfont Downloader allows you to install Google webfonts for off-line use. This is an early release. In the future, hopefully there will be more help here.</p>
 
 <!-- This is the visible index -->
-<section id="contents" style="2column">
+<!--<section id="contents" style="2column">-->
 <!-- other pages needs to have a link to index#contents for this to work -->
-<title>Contents</title>
-</section>
-
-<note>
-  <!-- delete this note -->
-  <p>
-    Your script or application looks better if it has help files similar to other applications in ubuntu.
-  </p>
-  <p>
-    Some people think that help files are only for apps that are difficult to use.
-  </p>
-</note>
+<!--<title>Contents</title>-->
+<!--</section>-->
 
 </page>
