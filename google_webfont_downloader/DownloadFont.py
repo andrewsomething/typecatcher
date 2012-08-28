@@ -17,6 +17,7 @@
 import os
 import urllib2
 import re
+import glob
 
 from google_webfont_downloader_lib.xdg import fontDir, cacheDir
 
@@ -44,3 +45,8 @@ def extract_url(font_name):
     except urllib2.URLError:
         font_url = 'None'
     return font_url
+
+def UninstallFont(font_name):
+    font_file = glob.glob(fontDir + font_name + ".*")
+    for f in font_file:
+        os.remove(f)

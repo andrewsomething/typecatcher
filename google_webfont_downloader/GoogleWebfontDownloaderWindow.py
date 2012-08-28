@@ -26,7 +26,7 @@ from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
 #from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 from google_webfont_downloader.FindFonts import FindFonts
-from google_webfont_downloader.DownloadFont import DownloadFont
+from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
 from  google_webfont_downloader.html_preview import html_font_view, start_page
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
@@ -110,6 +110,19 @@ class GoogleWebfontDownloaderWindow(Window):
                 Gtk.ButtonsType.OK, _("This the install button."))
             dialog.format_secondary_text(
                 _("Select a font on the left and press this button. \nThe font will be installed for off-line use."))
+            dialog.set_modal(True)
+            dialog.run()
+            dialog.destroy()
+
+    def on_uninstall_btn_clicked(self, button):
+        try:
+            UninstallFont(self.font)
+            self.load_html_font_view()
+        except AttributeError:
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
+                Gtk.ButtonsType.OK, _("This the uninstall button."))
+            dialog.format_secondary_text(
+                _("Select a font on the left and press this button. \nIt will be removed from your system."))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()

@@ -144,6 +144,22 @@
               </packing>
             </child>
             <child>
+              <object class="GtkToolButton" id="uninstall_btn">
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Uninstall font...</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">Uninstall font</property>
+                <property name="use_underline">True</property>
+                <property name="icon_name">user-trash-symbolic</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkToolButton" id="info_btn">
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
