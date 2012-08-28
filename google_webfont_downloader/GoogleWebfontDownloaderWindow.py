@@ -106,7 +106,13 @@ class GoogleWebfontDownloaderWindow(Window):
             DownloadFont(self.font, uri='None')
             self.load_html_font_view()
         except AttributeError:
-            pass
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
+                Gtk.ButtonsType.OK, _("This the install button."))
+            dialog.format_secondary_text(
+                _("Select a font on the left and press this button. \nThe font will be installed for off-line use."))
+            dialog.set_modal(True)
+            dialog.run()
+            dialog.destroy()
 
     def on_info_btn_clicked(self, button):
         try:
@@ -114,7 +120,13 @@ class GoogleWebfontDownloaderWindow(Window):
                        self.font.replace(' ', '+', -1)
             Gtk.show_uri(None, info_url, 0)
         except AttributeError:
-            pass
+            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
+                Gtk.ButtonsType.OK, _("This the info button."))
+            dialog.format_secondary_text(
+                _("Select a font on the left and press this button. \nA browser will open with further information \nabout the chosen font."))
+            dialog.set_modal(True)
+            dialog.run()
+            dialog.destroy()
 
     def on_mnu_save_as_activate(self, button):
         try:
