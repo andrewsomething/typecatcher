@@ -45,10 +45,11 @@ def html_font_view(font, text=None):
         html = """
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
     <style>
       body { font-family: '%s', serif; font-size: 36px; }
       div.installed { float: right; font-size: 12px;}
+      textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 100%%; height: 100%%;}
     </style>
   </head>
   <body>
@@ -56,7 +57,7 @@ def html_font_view(font, text=None):
     <div><p>%s</p></div>
   </body>
 </html>
-""" % (font, font, html_icon, text_preview)
+""" % (font, font, font, html_icon, text_preview)
     else:
         icon_name = "network-error"
         theme = Gtk.IconTheme.get_default()
@@ -104,6 +105,7 @@ def select_text_preview(text):
     ggm = _("Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.")
     ralph = _("I am an invisible man. No, I am not a spook like those who haunted Edgar Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of substance, of flesh and bone, fiber and liquids — and I might even be said to possess a mind. I am invisible, understand, simply because people refuse to see me.")
     jj = _("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed. A yellow dressinggown, ungirdled, was sustained gently behind him on the mild morning air.")
+    custom = "<textarea id='custom'> %s </textarea>" % (_("Enter text..."))
     text_pool = [ipsum, kafka, ggm, hgg, ralph, jj]
     if text == None or text == "random":
         selected_text = choice(text_pool)
@@ -120,3 +122,5 @@ def select_text_preview(text):
         return ralph
     elif text == "jj":
         return jj
+    elif text == "custom":
+        return custom

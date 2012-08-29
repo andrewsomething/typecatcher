@@ -90,6 +90,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r5 = self.builder.get_object('r5')
         self.r6 = self.builder.get_object('r6')
         self.r7 = self.builder.get_object('r7')
+        self.r8 = self.builder.get_object('r8')
         self.r1.connect("toggled", self.on_menu_choices_changed, "1")
         self.r2.connect("toggled", self.on_menu_choices_changed, "2")
         self.r3.connect("toggled", self.on_menu_choices_changed, "3")
@@ -97,6 +98,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r5.connect("toggled", self.on_menu_choices_changed, "5")
         self.r6.connect("toggled", self.on_menu_choices_changed, "6")
         self.r7.connect("toggled", self.on_menu_choices_changed, "7")
+        self.r8.connect("toggled", self.on_menu_choices_changed, "8")
         self.text = "random"
 
     def on_menu_choices_changed(self, button, name):
@@ -114,12 +116,28 @@ class GoogleWebfontDownloaderWindow(Window):
             self.text = "ralph"
         elif name == "7":
             self.text = "jj"
+        elif name == "8":
+            self.text = "custom"
         try:
-            if self.changed == True:
+            if self.changed == True and self.text != "custom":
                 self.load_html_font_view(self.text)
+                self.changed = False
+            elif self.changed == True and self.text == "custom":
+                self.js_exec()
+            else:
+                self.load_html_font_view(self.text)
+                self.js_exec()
+                self.changed = False
         except AttributeError:
             htmlfile = start_page()
             self.view.load_html_string(htmlfile, "file:///")
+
+    def js_exec(self):
+        css_link = "http://fonts.googleapis.com/css?family=%s" % (self.font)
+        js_code = """document.getElementById('stylesheet').href = '%s';
+                     document.getElementById('custom').style.fontFamily = '%s';
+                     """ % (css_link, self.font)
+        self.view.execute_script(js_code)
 
     def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))
@@ -135,7 +153,10 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_select_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
-        self.load_html_font_view(self.text)
+        if self.text != "custom":
+            self.load_html_font_view(self.text)
+        else:
+            self.js_exec()
         self.changed = True
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
