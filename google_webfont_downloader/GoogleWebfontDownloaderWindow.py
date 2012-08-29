@@ -18,7 +18,7 @@ from locale import gettext as _
 
 from gi.repository import Gtk # pylint: disable=E0611
 from gi.repository import WebKit
-import itertools, re
+import itertools, re, glob
 import logging
 logger = logging.getLogger('google_webfont_downloader')
 
@@ -26,6 +26,7 @@ from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
 #from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 from google_webfont_downloader.FindFonts import FindFonts
+from google_webfont_downloader_lib.xdg import fontDir
 from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
 from  google_webfont_downloader.html_preview import html_font_view, start_page
 
@@ -137,7 +138,14 @@ class GoogleWebfontDownloaderWindow(Window):
         js_code = """document.getElementById('stylesheet').href = '%s';
                      document.getElementById('custom').style.fontFamily = '%s';
                      """ % (css_link, self.font)
-        self.view.execute_script(js_code)
+        js_hide_inst = "document.getElementById('installed').style.display = 'none';"
+        js_show_inst = "document.getElementById('installed').style.display = 'block';"
+        if glob.glob(fontDir + self.font + '.*'):
+            self.view.execute_script(js_code)
+            self.view.execute_script(js_show_inst)
+        else:
+            self.view.execute_script(js_code)
+            self.view.execute_script(js_hide_inst)
 
     def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))

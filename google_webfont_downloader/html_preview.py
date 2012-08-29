@@ -32,23 +32,25 @@ def internet_on():
 def html_font_view(font, text=None):
     if internet_on() == True:
         text_preview = select_text_preview(text)
+        icon_name = "gtk-apply"
+        theme = Gtk.IconTheme.get_default()
+        info = theme.lookup_icon(icon_name, 64, 0)
+        icon_uri = info.get_filename()
         if glob.glob(fontDir + font + '.*'):
-            icon_name = "gtk-apply"
-            theme = Gtk.IconTheme.get_default()
-            info = theme.lookup_icon(icon_name, 64, 0)
-            icon_uri = info.get_filename()
             html_icon = """
-     <div class="installed"><img src="file://%s" width=64 height=64>
+     <div id="installed"><img src="file://%s" width=64 height=64>
      <p>%s</p></div>""" % (icon_uri, _("Installed"))
         else:
-            html_icon = ""
+            html_icon = """
+     <div id="installed"> <style display = 'none'><img src="file://%s" width=64 height=64>
+     <p>%s</p></style></div>""" % (icon_uri, _("Installed"))
         html = """
 <html>
   <head>
     <link id="stylesheet" rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
     <style>
       body { font-family: '%s', serif; font-size: 36px; }
-      div.installed { float: right; font-size: 12px;}
+      #installed { float: right; font-size: 12px;}
       textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 100%%; height: 100%%;}
     </style>
   </head>
