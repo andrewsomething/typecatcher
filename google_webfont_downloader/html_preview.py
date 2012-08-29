@@ -29,23 +29,37 @@ def internet_on():
         pass
     return False
 
-def html_font_view(font, text=None):
-    if internet_on() == True:
-        text_preview = select_text_preview(text)
-        icon_name = "gtk-apply"
-        theme = Gtk.IconTheme.get_default()
-        info = theme.lookup_icon(icon_name, 64, 0)
-        icon_uri = info.get_filename()
+def check_installed(font):
+        installed_icon_name = "gtk-apply"
+        installed_theme = Gtk.IconTheme.get_default()
+        installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
+        installed_icon_uri = installed_info.get_filename()
         if glob.glob(fontDir + font + '.*'):
             installed = ""
         else:
             installed = "none"
-        html = """
+        return installed, installed_icon_uri
+
+def html_font_view(font, text=None):
+    if internet_on() == True:
+        text_preview = select_text_preview(text)
+        connection = "none"
+        con_icon_uri = ""
+        installed, installed_icon_uri = check_installed(font)
+    else:
+        con_icon_name = "network-error"
+        con_theme = Gtk.IconTheme.get_default()
+        con_info = con_theme.lookup_icon(con_icon_name, 64, 0)
+        con_icon_uri = con_info.get_filename()
+        connection = ""
+        installed, installed_icon_uri = check_installed(font)
+        text_preview = ""
+    html = """
 <html>
   <head>
     <link id="stylesheet" rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
     <style>
-      body { font-family: '%s', serif; font-size: 36px; }
+      body { font-family: '%s', Ubuntu, sans-serif;, serif; font-size: 36px; }
       #installed { float: right; font-size: 12px; width:50px; }
       textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
     </style>
@@ -53,27 +67,12 @@ def html_font_view(font, text=None):
   <body>
      <div id="installed" style="display:%s;"><img src="file://%s" width=64 height=64>
      <p>%s</p></div>
+<div id='no_connect' style='text-align:center;display:%s;'><img src="file://%s" width=64 height=64 > %s</div>
     <div><p>%s</p></div>
   </body>
 </html>
-""" % (font, font, font, installed, icon_uri, _("Installed"), text_preview)
-    else:
-        icon_name = "network-error"
-        theme = Gtk.IconTheme.get_default()
-        info = theme.lookup_icon(icon_name, 64, 0)
-        icon_uri = info.get_filename()
-        html = """
-<html>
-  <head>
-    <style>
-      body { font-family: Ubuntu, sans-serif; font-size: 36px; }
-    </style>
-  </head>
-  <body>
-    <center><div><img src="file://%s" width=64 height=64 > %s</div></center>
-  </body>
-</html>
-""" % (icon_uri, _("No network connection."))
+""" % (font, font, font, installed, installed_icon_uri, _("Installed"),
+       connection, con_icon_uri, _("No network connection."), text_preview)
     return html
 
 def start_page():

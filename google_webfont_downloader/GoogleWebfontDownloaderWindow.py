@@ -28,7 +28,7 @@ from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGo
 from google_webfont_downloader.FindFonts import FindFonts
 from google_webfont_downloader_lib.xdg import fontDir
 from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
-from  google_webfont_downloader.html_preview import html_font_view, start_page
+from  google_webfont_downloader.html_preview import html_font_view, start_page, internet_on
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
@@ -102,6 +102,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r8.connect("toggled", self.on_menu_choices_changed, "8")
         self.text = "random"
         self.changed_text_on_startpage = False
+        self.was_off = False
 
     def on_menu_choices_changed(self, button, name):
         if name == "1":
@@ -138,8 +139,11 @@ class GoogleWebfontDownloaderWindow(Window):
         js_code = """document.getElementById('stylesheet').href = '%s';
                      document.getElementById('custom').style.fontFamily = '%s';
                      """ % (css_link, self.font)
-        self.view.execute_script(js_code)
-        self.js_installed_check()
+        if internet_on() == True:
+            self.view.execute_script(js_code)
+            self.js_installed_check()
+        else:
+            self.load_html_font_view(self.text)
 
     def js_installed_check(self):
         js_show = "document.getElementById('installed').style.display = '';"
@@ -170,8 +174,19 @@ class GoogleWebfontDownloaderWindow(Window):
                 self.load_html_font_view(self.text)
                 self.js_exec()
                 self.changed_text_on_startpage = False
-            else:
+            elif self.was_off == True:
+                self.load_html_font_view(self.text)
                 self.js_exec()
+                self.was_off = False
+                print "Reloaded page"
+            elif internet_on() == True:
+                self.js_exec()
+                self.was_off = False
+                print "just pushed js"
+            else:
+                self.was_off = True
+                print "was off"
+                self.load_html_font_view(self.text)
         self.changed = True
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
