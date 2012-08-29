@@ -37,29 +37,26 @@ def html_font_view(font, text=None):
         info = theme.lookup_icon(icon_name, 64, 0)
         icon_uri = info.get_filename()
         if glob.glob(fontDir + font + '.*'):
-            html_icon = """
-     <div id="installed"><img src="file://%s" width=64 height=64>
-     <p>%s</p></div>""" % (icon_uri, _("Installed"))
+            installed = ""
         else:
-            html_icon = """
-     <div id="installed"> <style display = 'none'><img src="file://%s" width=64 height=64>
-     <p>%s</p></style></div>""" % (icon_uri, _("Installed"))
+            installed = "none"
         html = """
 <html>
   <head>
     <link id="stylesheet" rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
     <style>
       body { font-family: '%s', serif; font-size: 36px; }
-      #installed { float: right; font-size: 12px; width:50px;}
+      #installed { float: right; font-size: 12px; width:50px; }
       textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
     </style>
   </head>
   <body>
-    %s
+     <div id="installed" style="display:%s;"><img src="file://%s" width=64 height=64>
+     <p>%s</p></div>
     <div><p>%s</p></div>
   </body>
 </html>
-""" % (font, font, font, html_icon, text_preview)
+""" % (font, font, font, installed, icon_uri, _("Installed"), text_preview)
     else:
         icon_name = "network-error"
         theme = Gtk.IconTheme.get_default()

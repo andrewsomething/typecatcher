@@ -101,6 +101,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r7.connect("toggled", self.on_menu_choices_changed, "7")
         self.r8.connect("toggled", self.on_menu_choices_changed, "8")
         self.text = "random"
+        self.changed_text_on_startpage = False
 
     def on_menu_choices_changed(self, button, name):
         if name == "1":
@@ -130,22 +131,23 @@ class GoogleWebfontDownloaderWindow(Window):
                 self.js_exec()
                 self.changed = False
         except AttributeError:
-            htmlfile = start_page()
-            self.view.load_html_string(htmlfile, "file:///")
+            self.changed_text_on_startpage = True
 
     def js_exec(self):
         css_link = "http://fonts.googleapis.com/css?family=%s" % (self.font)
         js_code = """document.getElementById('stylesheet').href = '%s';
                      document.getElementById('custom').style.fontFamily = '%s';
                      """ % (css_link, self.font)
-        js_hide_inst = "document.getElementById('installed').style.display = 'none';"
-        js_show_inst = "document.getElementById('installed').style.display = 'block';"
+        self.view.execute_script(js_code)
+        self.js_installed_check()
+
+    def js_installed_check(self):
+        js_show = "document.getElementById('installed').style.display = '';"
+        js_hide = "document.getElementById('installed').style.display = 'none';"
         if glob.glob(fontDir + self.font + '.*'):
-            self.view.execute_script(js_code)
-            self.view.execute_script(js_show_inst)
+            self.view.execute_script(js_show)
         else:
-            self.view.execute_script(js_code)
-            self.view.execute_script(js_hide_inst)
+            self.view.execute_script(js_hide)
 
     def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))
@@ -164,7 +166,12 @@ class GoogleWebfontDownloaderWindow(Window):
         if self.text != "custom":
             self.load_html_font_view(self.text)
         else:
-            self.js_exec()
+            if self.changed_text_on_startpage == True:
+                self.load_html_font_view(self.text)
+                self.js_exec()
+                self.changed_text_on_startpage = False
+            else:
+                self.js_exec()
         self.changed = True
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
@@ -176,7 +183,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_download_btn_clicked(self, button):
         try:
             DownloadFont(self.font, uri='None')
-            self.load_html_font_view()
+            self.js_installed_check()
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
                 Gtk.ButtonsType.OK, _("This the install button."))
@@ -189,7 +196,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_uninstall_btn_clicked(self, button):
         try:
             UninstallFont(self.font)
-            self.load_html_font_view()
+            self.js_installed_check()
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
                 Gtk.ButtonsType.OK, _("This the uninstall button."))
@@ -234,4 +241,4 @@ class GoogleWebfontDownloaderWindow(Window):
     def load_html_font_view(self, text=None):
         htmlfile = html_font_view(self.font, self.text)
         self.view.load_html_string(htmlfile, "file:///")
-
+        self.js_installed_check()
