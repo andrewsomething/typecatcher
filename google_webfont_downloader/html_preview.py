@@ -50,8 +50,8 @@ def html_font_view(font, text=None):
     <link id="stylesheet" rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
     <style>
       body { font-family: '%s', serif; font-size: 36px; }
-      #installed { float: right; font-size: 12px;}
-      textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 100%%; height: 100%%;}
+      #installed { float: right; font-size: 12px; width:50px;}
+      textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
     </style>
   </head>
   <body>
