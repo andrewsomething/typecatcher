@@ -24,7 +24,6 @@ logger = logging.getLogger('google_webfont_downloader')
 
 from google_webfont_downloader_lib import Window
 from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
-#from google_webfont_downloader.PreferencesGoogleWebfontDownloaderDialog import PreferencesGoogleWebfontDownloaderDialog
 from google_webfont_downloader.FindFonts import FindFonts
 from google_webfont_downloader_lib.xdg import fontDir
 from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
