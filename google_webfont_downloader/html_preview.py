@@ -19,7 +19,6 @@ from locale import gettext as _
 from gi.repository import Gtk
 import urllib2
 from random import choice
-from google_webfont_downloader_lib.xdg import fontDir
 
 def internet_on():
     try:
@@ -29,71 +28,73 @@ def internet_on():
         pass
     return False
 
-def check_installed(font):
-        installed_icon_name = "gtk-apply"
-        installed_theme = Gtk.IconTheme.get_default()
-        installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
-        installed_icon_uri = installed_info.get_filename()
-        if glob.glob(fontDir + font + '.*'):
-            installed = ""
-        else:
-            installed = "none"
-        return installed, installed_icon_uri
+def html_font_view(font=None, text=None):
 
-def html_font_view(font, text=None):
-    if internet_on() == True:
-        text_preview = select_text_preview(text)
-        connection = "none"
-        con_icon_uri = ""
-        installed, installed_icon_uri = check_installed(font)
-    else:
-        con_icon_name = "network-error"
-        con_theme = Gtk.IconTheme.get_default()
-        con_info = con_theme.lookup_icon(con_icon_name, 64, 0)
-        con_icon_uri = con_info.get_filename()
-        connection = ""
-        installed, installed_icon_uri = check_installed(font)
-        text_preview = ""
+    start_page_icon_name = "font-x-generic"
+    start_page_theme = Gtk.IconTheme()
+    start_page_theme.set_custom_theme("gnome")
+    start_page_info = start_page_theme.lookup_icon(start_page_icon_name, 256, 0)
+    start_page_icon_uri = start_page_info.get_filename()
+
+    con_icon_name = "network-error"
+    con_theme = Gtk.IconTheme.get_default()
+    con_info = con_theme.lookup_icon(con_icon_name, 64, 0)
+    con_icon_uri = con_info.get_filename()
+
+    installed_icon_name = "gtk-apply"
+    installed_theme = Gtk.IconTheme.get_default()
+    installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
+    installed_icon_uri = installed_info.get_filename()
+
+    text_preview = select_text_preview(text)
+
     html = """
 <html>
   <head>
-    <link id="stylesheet" rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=%s">
-    <style>
-      body { font-family: '%s', Ubuntu, sans-serif;, serif; font-size: 36px; }
-      #installed { float: right; font-size: 12px; width:50px; }
-      textarea { font-family: %s; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
-    </style>
-  </head>
-  <body>
-     <div id="installed" style="display:%s;"><img src="file://%s" width=64 height=64>
-     <p>%s</p></div>
-<div id='no_connect' style='text-align:center;display:%s;'><img src="file://%s" width=64 height=64 > %s</div>
-    <div><p>%s</p></div>
-  </body>
-</html>
-""" % (font, font, font, installed, installed_icon_uri, _("Installed"),
-       connection, con_icon_uri, _("No network connection."), text_preview)
-    return html
 
-def start_page():
-    icon_name = "font-x-generic"
-    theme = Gtk.IconTheme()
-    theme.set_custom_theme("gnome")
-    info = theme.lookup_icon(icon_name, 256, 0)
-    icon_uri = info.get_filename()
-    html = """
-<html>
-  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+
+
+
     <style>
-      body { font-family: Ubuntu, sans-serif; font-size: 28px; }
+      body { font-size: 36px; }
+      #installed { float: right; font-size: 12px; width:50px; text-align:center; display: None; }
+      textarea { font: inherit; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
+      #text_preview { display: None; }
+      #no_connect { text-align: center; display: None; }
+     .wf-loading #text_preview { visibility: hidden; }
+     .wf-active #text_preview .wf-#text_preview body { visibility: visible; }
     </style>
+
   </head>
+
   <body>
-    <center><div><img src="file://%s" ></div></center>
-    <center><p>Google Webfont Downloader</p><center>
+
+     <div id="installed">
+       <img src="file://%s" width=64 height=64>
+       <p>%s</p>
+     </div>
+
+     <div id='no_connect'>
+       <img src="file://%s" width=64 height=64 > %s
+     </div>
+
+    <div id='text_preview'>
+      %s
+    </div>
+
+    <div id='start_page'>
+      <center><div><img src="file://%s" ></div></center>
+      <center><p>Google Webfont Downloader</p><center>
+    </div>
+
   </body>
+
 </html>
-""" % icon_uri
+""" % (installed_icon_uri, _("Installed"),
+       con_icon_uri, _("No network connection."),
+       text_preview, start_page_icon_uri)
+
     return html
 
 def select_text_preview(text):
@@ -103,22 +104,23 @@ def select_text_preview(text):
     ggm = _("Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.")
     ralph = _("I am an invisible man. No, I am not a spook like those who haunted Edgar Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of substance, of flesh and bone, fiber and liquids — and I might even be said to possess a mind. I am invisible, understand, simply because people refuse to see me.")
     jj = _("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed. A yellow dressinggown, ungirdled, was sustained gently behind him on the mild morning air.")
-    custom = "<textarea id='custom'> %s </textarea>" % (_("Enter text..."))
+
     text_pool = [ipsum, kafka, ggm, hgg, ralph, jj]
+
     if text == None or text == "random":
         selected_text = choice(text_pool)
-        return selected_text
+        return "<p> %s </p>" % selected_text
     elif text == "ipsum":
-        return ipsum
+        return "<p> %s </p>" % ipsum
     elif text == "kafka":
-        return kafka
+        return "<p> %s </p>" % kafka
     elif text == "hgg":
-        return hgg
+        return "<p> %s </p>" % hgg
     elif text == "ggm":
-        return ggm
+        return "<p> %s </p>" % ggm
     elif text == "ralph":
-        return ralph
+        return "<p> %s </p>" % ralph
     elif text == "jj":
-        return jj
+        return "<p> %s </p>" % jj
     elif text == "custom":
-        return custom
+        return "<textarea> %s </textarea>" % (_('Enter text...'))

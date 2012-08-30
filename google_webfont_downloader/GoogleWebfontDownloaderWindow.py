@@ -28,7 +28,7 @@ from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGo
 from google_webfont_downloader.FindFonts import FindFonts
 from google_webfont_downloader_lib.xdg import fontDir
 from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
-from  google_webfont_downloader.html_preview import html_font_view, start_page, internet_on
+from  google_webfont_downloader.html_preview import html_font_view, internet_on, select_text_preview
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
@@ -49,7 +49,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.view = WebKit.WebView()
         webview = builder.get_object("webview")
         webview.add(self.view)
-        htmlfile = start_page()
+        htmlfile = html_font_view()
         self.view.load_html_string(htmlfile, "file:///")
         webview.show_all()
 
@@ -100,57 +100,72 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r6.connect("toggled", self.on_menu_choices_changed, "6")
         self.r7.connect("toggled", self.on_menu_choices_changed, "7")
         self.r8.connect("toggled", self.on_menu_choices_changed, "8")
-        self.text = "random"
-        self.changed_text_on_startpage = False
-        self.was_off = False
+        self.text_content = "random"
 
     def on_menu_choices_changed(self, button, name):
         if name == "1":
-            self.text = "random"
+            self.text_content = "random"
         elif name == "2":
-            self.text = "ipsum"
+            self.text_content = "ipsum"
         elif name == "3":
-            self.text = "kafka"
+            self.text_content = "kafka"
         elif name == "4":
-            self.text = "hgg"
+            self.text_content = "hgg"
         elif name == "5":
-            self.text = "ggm"
+            self.text_content = "ggm"
         elif name == "6":
-            self.text = "ralph"
+            self.text_content = "ralph"
         elif name == "7":
-            self.text = "jj"
+            self.text_content = "jj"
         elif name == "8":
-            self.text = "custom"
-        try:
-            if self.changed == True and self.text != "custom":
-                self.load_html_font_view(self.text)
-                self.changed = False
-            elif self.changed == True and self.text == "custom":
-                self.js_exec()
-            else:
-                self.load_html_font_view(self.text)
-                self.js_exec()
-                self.changed = False
-        except AttributeError:
-            self.changed_text_on_startpage = True
+            self.text_content = "custom"
+        self.set_text()
+
+    def set_text(self):
+        t = select_text_preview(self.text_content)
+        js_text = "document.getElementById('text_preview').innerHTML = '%s';" % t
+        self.view.execute_script(js_text)
 
     def js_exec(self):
-        css_link = "http://fonts.googleapis.com/css?family=%s" % (self.font)
-        js_code = """document.getElementById('stylesheet').href = '%s';
-                     document.getElementById('custom').style.fontFamily = '%s';
-                     """ % (css_link, self.font)
+        font_loader = """WebFontConfig = {
+        google: { families: [ '%s' ] }
+      }; 
+      (function() {
+        document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
+        document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();""" % (self.font)
+        js_code = [font_loader,
+                   "document.getElementById('start_page').style.display = 'None';",
+                   "document.getElementById('text_preview').style.fontFamily = '%s';" % (self.font)]
         if internet_on() == True:
-            self.view.execute_script(js_code)
+            show_text = ["document.getElementById('no_connect').style.display = 'None';",
+                         "document.getElementById('text_preview').style.display = 'block';"]
+            js_code.extend(show_text)
+            if self.text_content == "random":
+                self.set_text()
+            for js in js_code:
+                self.view.execute_script(js)
             self.js_installed_check()
         else:
-            self.load_html_font_view(self.text)
+            show_no_connect = ["document.getElementById('text_preview').style.display = 'None';",
+                               "document.getElementById('no_connect').style.display = 'block';"]
+            js_code.extend(show_no_connect)
+            for js in js_code:
+                self.view.execute_script(js)
 
     def js_installed_check(self):
-        js_show = "document.getElementById('installed').style.display = '';"
-        js_hide = "document.getElementById('installed').style.display = 'none';"
         if glob.glob(fontDir + self.font + '.*'):
+            js_show = "document.getElementById('installed').style.display = 'block';"
             self.view.execute_script(js_show)
         else:
+            js_hide = "document.getElementById('installed').style.display = 'None';"
             self.view.execute_script(js_hide)
 
     def on_search_field_activate(self, widget):
@@ -167,27 +182,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_select_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
-        if self.text != "custom":
-            self.load_html_font_view(self.text)
-        else:
-            if self.changed_text_on_startpage == True:
-                self.load_html_font_view(self.text)
-                self.js_exec()
-                self.changed_text_on_startpage = False
-            elif self.was_off == True:
-                self.load_html_font_view(self.text)
-                self.js_exec()
-                self.was_off = False
-                print "Reloaded page"
-            elif internet_on() == True:
-                self.js_exec()
-                self.was_off = False
-                print "just pushed js"
-            else:
-                self.was_off = True
-                print "was off"
-                self.load_html_font_view(self.text)
-        self.changed = True
+        self.js_exec()
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
         if icon_pos == Gtk.EntryIconPosition.PRIMARY:
@@ -253,7 +248,3 @@ class GoogleWebfontDownloaderWindow(Window):
         except AttributeError:
             pass
 
-    def load_html_font_view(self, text=None):
-        htmlfile = html_font_view(self.font, self.text)
-        self.view.load_html_string(htmlfile, "file:///")
-        self.js_installed_check()
