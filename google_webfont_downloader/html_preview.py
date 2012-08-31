@@ -17,6 +17,7 @@
 import glob
 from locale import gettext as _
 from gi.repository import Gtk
+from google_webfont_downloader_lib.helpers import get_media_file
 import urllib2
 from random import choice
 
@@ -46,7 +47,12 @@ def html_font_view(font=None, text=None):
     installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
     installed_icon_uri = installed_info.get_filename()
 
+    loader = get_media_file("ajax-loader.gif")
+
     text_preview = select_text_preview(text)
+
+#     .wf-loading #text_preview { visibility: hidden; }
+#     .wf-active #text_preview .wf-#text_preview body { visibility: visible; }
 
     html = """
 <html>
@@ -54,16 +60,14 @@ def html_font_view(font=None, text=None):
 
     <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 
-
-
     <style>
       body { font-size: 36px; }
       #installed { float: right; font-size: 12px; width:50px; text-align:center; display: None; }
       textarea { font: inherit; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
       #text_preview { display: None; }
       #no_connect { text-align: center; display: None; }
-     .wf-loading #text_preview { visibility: hidden; }
-     .wf-active #text_preview .wf-#text_preview body { visibility: visible; }
+     .wf-loading { height: 100%%; overflow: hidden; background: url(%s) center center no-repeat fixed;}
+     .wf-loading * { opacity: 0; }
     </style>
 
   </head>
@@ -91,7 +95,7 @@ def html_font_view(font=None, text=None):
   </body>
 
 </html>
-""" % (installed_icon_uri, _("Installed"),
+""" % (loader, installed_icon_uri, _("Installed"),
        con_icon_uri, _("No network connection."),
        text_preview, start_page_icon_uri)
 
