@@ -65,6 +65,7 @@ def html_font_view(font=None, text=None):
       textarea { font: inherit; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
       #text_preview { display: None; }
       #no_connect { text-align: center; display: None; }
+      #start_page { text-align: center; }
      .wf-loading { height: 100%%; overflow: hidden; background: url(%s) center center no-repeat fixed;}
      .wf-loading * { opacity: 0; }
 
@@ -106,8 +107,7 @@ def html_font_view(font=None, text=None):
     </div>
 
     <div id='start_page'>
-      <center><div><img src="file://%s" ></div></center>
-      <center><p>Google Webfont Downloader</p><center>
+      <img src="file://%s">
     </div>
 
   </body>
