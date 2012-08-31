@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-28 17:17-0400\n"
+"POT-Creation-Date: 2012-08-30 20:35-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,42 +108,48 @@ msgid "Select text to display"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:16
-msgid "Random"
+msgid "Custom text"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:17
-msgid "ipsum"
+msgid "Random"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:18
-msgid "Kafka"
+msgid "ipsum"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:19
-msgid "Adams"
+msgid "Kafka"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:20
-msgid "Marquez"
+msgid "Adams"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:21
-msgid "Ellison"
+msgid "Marquez"
 msgstr ""
 
 #: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:22
+msgid "Ellison"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:23
 msgid "Joyce"
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:42
+#. .wf-loading #text_preview { visibility: hidden; }
+#. .wf-active #text_preview .wf-#text_preview body { visibility: visible; }
+#: ../google_webfont_downloader/html_preview.py:117
 msgid "Installed"
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:76
+#: ../google_webfont_downloader/html_preview.py:118
 msgid "No network connection."
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:102
+#: ../google_webfont_downloader/html_preview.py:125
 msgid ""
 "One morning, when Gregor Samsa woke from troubled dreams, he found himself "
 "transformed in his bed into a horrible vermin. He lay on his armour-like "
@@ -151,14 +157,22 @@ msgid ""
 "slightly domed and divided by arches into stiff sections."
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:104
+#: ../google_webfont_downloader/html_preview.py:126
+msgid ""
+"Far out in the uncharted backwaters of the unfashionable end of the Western "
+"Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this "
+"at a distance of roughly ninety-eight million miles is an utterly "
+"insignificant little blue-green planet..."
+msgstr ""
+
+#: ../google_webfont_downloader/html_preview.py:127
 msgid ""
 "Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
 "was to remember that distant afternoon when his father took him to discover "
 "ice."
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:105
+#: ../google_webfont_downloader/html_preview.py:128
 msgid ""
 "I am an invisible man. No, I am not a spook like those who haunted Edgar "
 "Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of "
@@ -167,42 +181,46 @@ msgid ""
 "to see me."
 msgstr ""
 
-#: ../google_webfont_downloader/html_preview.py:106
+#: ../google_webfont_downloader/html_preview.py:129
 msgid ""
 "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
 "lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
 "ungirdled, was sustained gently behind him on the mild morning air."
 msgstr ""
 
+#: ../google_webfont_downloader/html_preview.py:149
+msgid "Enter text..."
+msgstr ""
+
 #: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:67
 msgid "Fonts"
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:153
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:198
 msgid "This the install button."
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:155
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:200
 msgid ""
 "Select a font on the left and press this button. \n"
 "The font will be installed for off-line use."
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:166
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:211
 msgid "This the uninstall button."
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:168
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:213
 msgid ""
 "Select a font on the left and press this button. \n"
 "It will be removed from your system."
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:180
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:225
 msgid "This the info button."
 msgstr ""
 
-#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:182
+#: ../google_webfont_downloader/GoogleWebfontDownloaderWindow.py:227
 msgid ""
 "Select a font on the left and press this button. \n"
 "A browser will open with further information \n"
