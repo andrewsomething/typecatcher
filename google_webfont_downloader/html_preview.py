@@ -50,9 +50,6 @@ def html_font_view(font=None, text=None):
 
     text_preview = select_text_preview(text)
 
-#     .wf-loading #text_preview { visibility: hidden; }
-#     .wf-active #text_preview .wf-#text_preview body { visibility: visible; }
-
     html = """
 <html>
   <head>
