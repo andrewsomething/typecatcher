@@ -126,25 +126,25 @@ class GoogleWebfontDownloaderWindow(Window):
         self.view.execute_script(js_text)
 
     def js_exec(self):
-        font_loader = """WebFontConfig = {
-        google: { families: [ '%s' ] }
-      }; 
-      (function() {
-        document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
-        document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();""" % (self.font)
-        js_code = [font_loader,
-                   "document.getElementById('start_page').style.display = 'None';",
+        js_code = ["document.getElementById('start_page').style.display = 'None';",
                    "document.getElementById('text_preview').style.fontFamily = '%s';" % (self.font)]
         if internet_on() == True:
-            show_text = ["document.getElementById('no_connect').style.display = 'None';",
+            font_loader = """WebFontConfig = {
+            google: { families: [ '%s' ] }
+          }; 
+          (function() {
+            document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
+            document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+          })();""" % (self.font)
+            show_text = [font_loader,
+                         "document.getElementById('no_connect').style.display = 'None';",
                          "document.getElementById('text_preview').style.display = 'block';"]
             js_code.extend(show_text)
             if self.text_content == "random":
