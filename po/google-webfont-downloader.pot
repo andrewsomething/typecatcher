@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-30 20:35-0400\n"
+"POT-Creation-Date: 2012-08-30 21:15-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,99 +44,6 @@ msgid ""
 "# \n"
 "# You should have received a copy of the GNU General Public License along \n"
 "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:1
-#: ../google-webfont-downloader.desktop.in.h:1
-msgid "Google Webfont Downloader"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:2
-msgid "_File"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:3
-msgid "_Help"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:4
-msgid "Contents"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:5
-msgid "Download font..."
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:6
-msgid "Download font"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:7
-msgid "Uninstall font..."
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:8
-msgid "Uninstall font"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:9
-msgid "Font info..."
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:10
-msgid "Font info"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:11
-msgid "Search fonts..."
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:12
-msgid "Clear search..."
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:13
-msgid "Select text..."
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:14
-msgid "Select text"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:15
-msgid "Select text to display"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:16
-msgid "Custom text"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:17
-msgid "Random"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:18
-msgid "ipsum"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:19
-msgid "Kafka"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:20
-msgid "Adams"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:21
-msgid "Marquez"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:22
-msgid "Ellison"
-msgstr ""
-
-#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:23
-msgid "Joyce"
 msgstr ""
 
 #. .wf-loading #text_preview { visibility: hidden; }
@@ -227,15 +134,99 @@ msgid ""
 "about the chosen font."
 msgstr ""
 
-#. Code for other initialization actions should be added here.
-#: ../data/ui/PreferencesGoogleWebfontDownloaderDialog.ui.h:1
-msgid "Google Webfont Downloader Preferences"
-msgstr ""
-
-#: ../data/ui/PreferencesGoogleWebfontDownloaderDialog.ui.h:2
-msgid "_Example entry:"
+#: ../google-webfont-downloader.desktop.in.h:1
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:1
+msgid "Google Webfont Downloader"
 msgstr ""
 
 #: ../google-webfont-downloader.desktop.in.h:2
 msgid "GoogleWebfontDownloader application"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:2
+msgid "_File"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:3
+msgid "_Help"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:4
+msgid "Contents"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:5
+msgid "Download font..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:6
+msgid "Download font"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:7
+msgid "Uninstall font..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:8
+msgid "Uninstall font"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:9
+msgid "Font info..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:10
+msgid "Font info"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:11
+msgid "Search fonts..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:12
+msgid "Clear search..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:13
+msgid "Select text..."
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:14
+msgid "Select text"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:15
+msgid "Select text to display"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:16
+msgid "Custom text"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:17
+msgid "Random"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:18
+msgid "ipsum"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:19
+msgid "Kafka"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:20
+msgid "Adams"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:21
+msgid "Marquez"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:22
+msgid "Ellison"
+msgstr ""
+
+#: ../data/ui/GoogleWebfontDownloaderWindow.ui.h:23
+msgid "Joyce"
 msgstr ""

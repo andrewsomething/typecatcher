@@ -25,15 +25,23 @@ WEBFONTS_API_URL="http://fonts.googleapis.com/css?family="
 
 def DownloadFont(font_name, uri):
     font_url = extract_url(font_name)
-    if font_url != 'None':
-        req = urllib2.Request(font_url)
-        r = urllib2.urlopen(req)
-        ext = os.path.splitext(font_url)[1]
-        f = fontDir + font_name + ext
-        with open(f, 'wb') as f:
-            f.write(r.read())
+    if font_url != None:
+        if uri == None:
+            font_dir = fontDir
+            write_font_file(font_url, font_dir, font_name)
+        else:
+            font_dir = os.path.dirname(uri)
+            write_font_file(font_url, font_dir, font_name)
     else:
         pass
+
+def write_font_file(font_url, font_dir, font_name):
+    req = urllib2.Request(font_url)
+    r = urllib2.urlopen(req)
+    ext = os.path.splitext(font_url)[1]
+    f = os.path.join(font_dir, font_name + ext)
+    with open(f, 'wb') as f:
+        f.write(r.read())
 
 def extract_url(font_name):
     css_url =  WEBFONTS_API_URL + font_name.replace(' ', '%20', -1) + "&subset=all"
@@ -43,7 +51,7 @@ def extract_url(font_name):
         css = str(opener.open(req).read())
         font_url = re.compile(r'url\((.*?)\)').search(css).group(1)
     except urllib2.URLError:
-        font_url = 'None'
+        font_url = None
     return font_url
 
 def UninstallFont(font_name):

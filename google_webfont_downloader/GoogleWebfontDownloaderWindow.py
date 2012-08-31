@@ -191,7 +191,7 @@ class GoogleWebfontDownloaderWindow(Window):
 
     def on_download_btn_clicked(self, button):
         try:
-            DownloadFont(self.font, uri='None')
+            DownloadFont(self.font, uri=None)
             self.js_installed_check()
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
