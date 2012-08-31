@@ -23,7 +23,8 @@ import tempfile
 
 from google_webfont_downloader import AboutGoogleWebfontDownloaderDialog
 from google_webfont_downloader.DownloadFont import extract_url, write_font_file
-from google_webfont_downloader.FindFonts import process_json
+from google_webfont_downloader.FindFonts import process_json, cache_json
+from google_webfont_downloader_lib.xdg import cacheDir
 
 class TestCases(unittest.TestCase):
     def setUp(self):
@@ -53,6 +54,12 @@ class TestCases(unittest.TestCase):
     def test_process_json(self):
         returned_list = process_json(fake_json_data)
         self.assertEqual(self.font_list, returned_list)
+
+    def test_cache_json(self):
+        cache_json(fake_json_data)
+        with open(os.path.join(cacheDir + "webfonts.json")) as f:
+            self.assertEqual(f.read(), fake_json_data)
+
 
 fake_json_data = """{
  "kind": "webfonts#webfontList",
