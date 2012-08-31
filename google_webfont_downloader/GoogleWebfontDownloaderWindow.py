@@ -75,6 +75,7 @@ class GoogleWebfontDownloaderWindow(Window):
         completion.set_model(listmodel)
         completion.set_text_column(0)
         self.search_field.set_completion(completion)
+        completion.connect('match-selected', self.on_match_selected)
 
         self.mnu_save = self.builder.get_object('mnu_save')
         self.mnu_save.connect("activate", self.on_download_btn_clicked)
@@ -178,14 +179,16 @@ class GoogleWebfontDownloaderWindow(Window):
         else:
             pass
 
+    def on_match_selected(self, completion, treemodel, treeiter):
+        self.font = treemodel[treeiter][completion.get_text_column()]
+        self.js_exec()
+
     def on_select_changed(self, selection):
         (model, iter) =  selection.get_selected()
         self.font = model[iter][0]
         self.js_exec()
 
     def on_search_field_icon_press(self, widget, icon_pos, event):
-        if icon_pos == Gtk.EntryIconPosition.PRIMARY:
-            pass
         if icon_pos == Gtk.EntryIconPosition.SECONDARY:
             self.search_field.set_text("")
 
