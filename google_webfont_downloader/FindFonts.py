@@ -20,18 +20,20 @@ import os
 from google_webfont_downloader_lib.xdg import cacheDir
 
 def FindFonts():
+        data = get_fonts_json()
+        fonts = process_json(data)
+        cache_json(data)
+        return fonts
+
+def get_fonts_json():
     try:
         req = urllib2.Request("https://www.googleapis.com/webfonts/v1/webfonts")
         opener = urllib2.build_opener()
         data = opener.open(req).read()
-        fonts = process_json(data)
-        cache_json(data)
-        return fonts
     except urllib2.URLError:
         local_json = os.path.join(cacheDir + "webfonts.json")
         data = open(local_json).read()
-        fonts = process_json(data)
-        return fonts
+    return data
 
 def process_json(data):
     json_data = json.loads(str(data),"utf-8")

@@ -20,10 +20,10 @@ import os.path
 import unittest
 sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), "..")))
 import tempfile
-
+import json
 from google_webfont_downloader import AboutGoogleWebfontDownloaderDialog
 from google_webfont_downloader.DownloadFont import extract_url, write_font_file
-from google_webfont_downloader.FindFonts import process_json, cache_json
+from google_webfont_downloader.FindFonts import process_json, cache_json, get_fonts_json
 from google_webfont_downloader_lib.xdg import cacheDir
 
 class TestCases(unittest.TestCase):
@@ -60,6 +60,9 @@ class TestCases(unittest.TestCase):
         with open(os.path.join(cacheDir + "webfonts.json")) as f:
             self.assertEqual(f.read(), fake_json_data)
 
+    def test_get_fonts_json(self):
+        returned_data = get_fonts_json()
+        self.assertTrue(json.loads(str(returned_data),"utf-8"))
 
 fake_json_data = """{
  "kind": "webfonts#webfontList",
