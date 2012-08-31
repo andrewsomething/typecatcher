@@ -68,6 +68,25 @@ def html_font_view(font=None, text=None):
       #no_connect { text-align: center; display: None; }
      .wf-loading { height: 100%%; overflow: hidden; background: url(%s) center center no-repeat fixed;}
      .wf-loading * { opacity: 0; }
+
+.wf-active body, .wf-inactive body {
+    -webkit-animation: fade .25s ease;
+            animation: fade .25s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+}
+
+@-webkit-keyframes fade {
+    0%% { display: none; opacity: 0; }
+    1%% { display: block; }
+    100%%{ opacity: 1; }
+}
+
+@keyframes fade {
+    0%% { display: none; opacity: 0; }
+    1%% { display: block; }
+    100%%{ opacity: 1; }
+}
     </style>
 
   </head>
