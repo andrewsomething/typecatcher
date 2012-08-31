@@ -2,7 +2,7 @@
 _Name=Google Webfont Downloader
 _Comment=GoogleWebfontDownloader application
 Categories=GNOME;Utility;Graphics;
-Exec=preferences-desktop-font
+Exec=google-webfont-downloader
 Icon=google-webfont-downloader
 Terminal=false
 Type=Application
