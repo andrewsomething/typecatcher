@@ -59,7 +59,7 @@ def html_font_view(font=None, text=None):
     <style>
       body { font-size: 36px; }
       #installed { float: right; font-size: 12px; width:50px; text-align:center; display: None; }
-      textarea { font: inherit; font-size: 36px; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
+      textarea { font: inherit; font-size: inherit; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
       #text_preview { display: None; }
       #no_connect { text-align: center; display: None; }
       #start_page { text-align: center; }

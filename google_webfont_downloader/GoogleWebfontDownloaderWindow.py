@@ -102,6 +102,14 @@ class GoogleWebfontDownloaderWindow(Window):
         self.r8.connect("toggled", self.on_menu_choices_changed, "8")
         self.text_content = "random"
 
+        self.scale = self.builder.get_object('scalebutton')
+        self.scale.connect("value-changed", self.scale_moved)
+
+    def scale_moved(self, widget, event):
+        size = int(self.scale.get_value())
+        text_size = "document.getElementById('text_preview').style.fontSize = '%s';" % size
+        self.view.execute_script(text_size)
+
     def on_menu_choices_changed(self, button, name):
         if name == "1":
             self.text_content = "random"
