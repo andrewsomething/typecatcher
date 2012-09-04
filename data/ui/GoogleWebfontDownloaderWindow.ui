@@ -10,6 +10,11 @@
     <property name="step_increment">2</property>
     <property name="page_increment">2</property>
   </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">zoom-in-symbolic</property>
+  </object>
   <object class="GtkListStore" id="liststore">
     <columns>
       <!-- column-name gchararray1 -->
@@ -18,11 +23,6 @@
   </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
-  </object>
-  <object class="GtkImage" id="image1">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">zoom-in-symbolic</property>
   </object>
   <object class="GoogleWebfontDownloaderWindow" id="google_webfont_downloader_window">
     <property name="can_focus">False</property>
@@ -198,7 +198,7 @@
                   <object class="GtkScaleButton" id="scalebutton">
                     <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can_focus">False</property>
                     <property name="receives_default">True</property>
                     <property name="use_action_appearance">False</property>
                     <property name="image">image1</property>
