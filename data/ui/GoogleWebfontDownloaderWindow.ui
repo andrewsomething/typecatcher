@@ -10,6 +10,12 @@
     <property name="step_increment">2</property>
     <property name="page_increment">2</property>
   </object>
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
   </object>
@@ -17,12 +23,6 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">zoom-in-symbolic</property>
-  </object>
-  <object class="GtkListStore" id="liststore">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
   </object>
   <object class="GoogleWebfontDownloaderWindow" id="google_webfont_downloader_window">
     <property name="can_focus">False</property>
@@ -239,6 +239,7 @@
                   <object class="GtkEntry" id="search_field">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="has_focus">True</property>
                     <property name="invisible_char">•</property>
                     <property name="primary_icon_name">edit-find-symbolic</property>
                     <property name="secondary_icon_name">edit-clear-symbolic</property>
