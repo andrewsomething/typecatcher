@@ -5,7 +5,7 @@
   <!-- interface-local-resource-path ../media -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="lower">8</property>
-    <property name="upper">72</property>
+    <property name="upper">96</property>
     <property name="value">36</property>
     <property name="step_increment">2</property>
     <property name="page_increment">2</property>
