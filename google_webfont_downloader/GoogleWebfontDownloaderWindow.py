@@ -39,7 +39,6 @@ class GoogleWebfontDownloaderWindow(Window):
         super(GoogleWebfontDownloaderWindow, self).finish_initializing(builder)
 
         self.AboutDialog = AboutGoogleWebfontDownloaderDialog
-#        self.PreferencesDialog = PreferencesGoogleWebfontDownloaderDialog
 
         # Code for other initialization actions should be added here.
         self.toolbar = builder.get_object("toolbar")
@@ -84,22 +83,10 @@ class GoogleWebfontDownloaderWindow(Window):
         self.text_menu = self.builder.get_object('text_menu')
         self.text_selector.set_menu(self.text_menu)
 
-        self.r1 = self.builder.get_object('r1')
-        self.r2 = self.builder.get_object('r2')
-        self.r3 = self.builder.get_object('r3')
-        self.r4 = self.builder.get_object('r4')
-        self.r5 = self.builder.get_object('r5')
-        self.r6 = self.builder.get_object('r6')
-        self.r7 = self.builder.get_object('r7')
-        self.r8 = self.builder.get_object('r8')
-        self.r1.connect("toggled", self.on_menu_choices_changed, "1")
-        self.r2.connect("toggled", self.on_menu_choices_changed, "2")
-        self.r3.connect("toggled", self.on_menu_choices_changed, "3")
-        self.r4.connect("toggled", self.on_menu_choices_changed, "4")
-        self.r5.connect("toggled", self.on_menu_choices_changed, "5")
-        self.r6.connect("toggled", self.on_menu_choices_changed, "6")
-        self.r7.connect("toggled", self.on_menu_choices_changed, "7")
-        self.r8.connect("toggled", self.on_menu_choices_changed, "8")
+        radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']
+        for position, item in enumerate(radios):
+            item = self.builder.get_object(item)
+            item.connect("toggled", self.on_menu_choices_changed, str(position + 1))
         self.text_content = "random"
 
         self.scale = self.builder.get_object('spinbutton')
