@@ -10,6 +10,12 @@
     <property name="step_increment">2</property>
     <property name="page_increment">2</property>
   </object>
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
   </object>
@@ -310,12 +316,6 @@
       </object>
     </child>
   </object>
-  <object class="GtkListStore" id="liststore">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
-  </object>
   <object class="GtkMenu" id="text_menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -323,6 +323,7 @@
       <object class="GtkMenuItem" id="text_menu_title">
         <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
+        <property name="sensitive">False</property>
         <property name="can_focus">False</property>
         <property name="label" translatable="yes">Select text to display</property>
         <property name="use_underline">True</property>
