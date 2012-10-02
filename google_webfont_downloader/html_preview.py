@@ -21,12 +21,14 @@ from google_webfont_downloader_lib.helpers import get_media_file
 import urllib2
 from random import choice
 
+
 def internet_on():
     try:
-        response = urllib2.urlopen('http://74.125.113.99',timeout=1)
+        response = urllib2.urlopen('http://74.125.113.99', timeout=1)
         return True
     except urllib2.URLError as err:
         return False
+
 
 def html_font_view(font=None, text=None):
 
@@ -116,6 +118,7 @@ def html_font_view(font=None, text=None):
 
     return html
 
+
 def select_text_preview(text):
     ipsum = """Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."""
     kafka = _("One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.")
@@ -126,7 +129,7 @@ def select_text_preview(text):
 
     text_pool = [ipsum, kafka, ggm, hgg, ralph, jj]
 
-    if text == None or text == "random":
+    if text is None or text == "random":
         selected_text = choice(text_pool)
         return "<p> %s </p>" % selected_text
     elif text == "ipsum":

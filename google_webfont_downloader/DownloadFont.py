@@ -21,12 +21,13 @@ import glob
 
 from google_webfont_downloader_lib.xdg import fontDir, cacheDir
 
-WEBFONTS_API_URL="http://fonts.googleapis.com/css?family="
+WEBFONTS_API_URL = "http://fonts.googleapis.com/css?family="
+
 
 def DownloadFont(font_name, uri):
     font_url = extract_url(font_name)
-    if font_url != None:
-        if uri == None:
+    if font_url is not None:
+        if uri is None:
             font_dir = fontDir
             write_font_file(font_url, font_dir, font_name)
         else:
@@ -34,6 +35,7 @@ def DownloadFont(font_name, uri):
             write_font_file(font_url, font_dir, font_name)
     else:
         pass
+
 
 def write_font_file(font_url, font_dir, font_name):
     req = urllib2.Request(font_url)
@@ -43,8 +45,11 @@ def write_font_file(font_url, font_dir, font_name):
     with open(f, 'wb') as f:
         f.write(r.read())
 
+
 def extract_url(font_name):
-    css_url =  WEBFONTS_API_URL + font_name.replace(' ', '%20', -1) + "&subset=all"
+    css_url = WEBFONTS_API_URL + font_name.replace(' ',
+                                                   '%20',
+                                                   -1) + "&subset=all"
     req = urllib2.Request(css_url)
     opener = urllib2.build_opener()
     try:
@@ -53,6 +58,7 @@ def extract_url(font_name):
     except urllib2.URLError:
         font_url = None
     return font_url
+
 
 def UninstallFont(font_name):
     font_file = glob.glob(fontDir + font_name + ".*")

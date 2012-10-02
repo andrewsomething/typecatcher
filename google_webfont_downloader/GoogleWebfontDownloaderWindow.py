@@ -16,9 +16,11 @@
 
 from locale import gettext as _
 
-from gi.repository import Gtk # pylint: disable=E0611
+from gi.repository import Gtk  # pylint: disable=E0611
 from gi.repository import WebKit
-import itertools, re, glob
+import itertools
+import re
+import glob
 import logging
 logger = logging.getLogger('google_webfont_downloader')
 
@@ -27,13 +29,14 @@ from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGo
 from google_webfont_downloader.FindFonts import FindFonts
 from google_webfont_downloader_lib.xdg import fontDir
 from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
-from  google_webfont_downloader.html_preview import html_font_view, internet_on, select_text_preview
+from google_webfont_downloader.html_preview import html_font_view, internet_on, select_text_preview
+
 
 # See google_webfont_downloader_lib.Window.py for more details about how this class works
 class GoogleWebfontDownloaderWindow(Window):
     __gtype_name__ = "GoogleWebfontDownloaderWindow"
-    
-    def finish_initializing(self, builder): # pylint: disable=E1002
+
+    def finish_initializing(self, builder):  # pylint: disable=E1002
         self.fonts = FindFonts()
         """Set up the main window"""
         super(GoogleWebfontDownloaderWindow, self).finish_initializing(builder)
@@ -86,7 +89,9 @@ class GoogleWebfontDownloaderWindow(Window):
         radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']
         for position, item in enumerate(radios):
             item = self.builder.get_object(item)
-            item.connect("toggled", self.on_menu_choices_changed, str(position + 1))
+            item.connect("toggled", 
+                         self.on_menu_choices_changed,
+                         str(position + 1))
         self.text_content = "random"
 
         self.scale = self.builder.get_object('spinbutton')
@@ -124,7 +129,7 @@ class GoogleWebfontDownloaderWindow(Window):
     def js_exec(self):
         js_code = ["document.getElementById('start_page').style.display = 'None';",
                    "document.getElementById('text_preview').style.fontFamily = '%s';" % (self.font)]
-        if internet_on() == True:
+        if internet_on() is True:
             font_loader = """WebFontConfig = {
             google: { families: [ '%s' ] }
           }; 
@@ -149,8 +154,9 @@ class GoogleWebfontDownloaderWindow(Window):
                 self.view.execute_script(js)
             self.js_installed_check()
         else:
-            show_no_connect = ["document.getElementById('text_preview').style.display = 'None';",
-                               "document.getElementById('no_connect').style.display = 'block';"]
+            show_no_connect = [
+                "document.getElementById('text_preview').style.display = 'None';",
+                "document.getElementById('no_connect').style.display = 'block';"]
             js_code.extend(show_no_connect)
             for js in js_code:
                 self.view.execute_script(js)
@@ -179,7 +185,7 @@ class GoogleWebfontDownloaderWindow(Window):
         self.js_exec()
 
     def on_select_changed(self, selection):
-        (model, iter) =  selection.get_selected()
+        (model, iter) = selection.get_selected()
         self.font = model[iter][0]
         self.js_exec()
 
@@ -193,9 +199,11 @@ class GoogleWebfontDownloaderWindow(Window):
             self.js_installed_check()
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                Gtk.ButtonsType.OK, _("This the install button."))
+                                       Gtk.ButtonsType.OK,
+                                       _("This the install button."))
             dialog.format_secondary_text(
-                _("Select a font on the left and press this button. \nThe font will be installed for off-line use."))
+                _("""Select a font on the left and press this button. \n
+                     The font will be installed for off-line use."""))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()
@@ -206,9 +214,11 @@ class GoogleWebfontDownloaderWindow(Window):
             self.js_installed_check()
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                Gtk.ButtonsType.OK, _("This the uninstall button."))
+                                       Gtk.ButtonsType.OK,
+                                       _("This the uninstall button."))
             dialog.format_secondary_text(
-                _("Select a font on the left and press this button. \nIt will be removed from your system."))
+                _("""Select a font on the left and press this button. \n
+                     It will be removed from your system."""))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()
@@ -216,13 +226,16 @@ class GoogleWebfontDownloaderWindow(Window):
     def on_info_btn_clicked(self, button):
         try:
             info_url = "http://www.google.com/webfonts/specimen/" + \
-                       self.font.replace(' ', '+', -1)
+                self.font.replace(' ', '+', -1)
             Gtk.show_uri(None, info_url, 0)
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                Gtk.ButtonsType.OK, _("This the info button."))
+                                       Gtk.ButtonsType.OK,
+                                       _("This the info button."))
             dialog.format_secondary_text(
-                _("Select a font on the left and press this button. \nA browser will open with further information \nabout the chosen font."))
+                _("""Select a font on the left and press this button. \n
+                     A browser will open with further information \n
+                     about the chosen font."""))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()
@@ -231,7 +244,8 @@ class GoogleWebfontDownloaderWindow(Window):
         try:
             dialog = Gtk.FileChooserDialog("Please choose a file", self,
                                            Gtk.FileChooserAction.SAVE,
-                                          (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                                           (Gtk.STOCK_CANCEL,
+                                           Gtk.ResponseType.CANCEL,
                                            Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
             filename = self.font + ".ttf"
             dialog.set_current_name(filename)
@@ -244,4 +258,3 @@ class GoogleWebfontDownloaderWindow(Window):
             dialog.destroy()
         except AttributeError:
             pass
-

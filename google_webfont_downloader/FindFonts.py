@@ -19,11 +19,13 @@ import urllib2
 import os
 from google_webfont_downloader_lib.xdg import cacheDir
 
+
 def FindFonts():
         data = get_fonts_json()
         fonts = process_json(data)
         cache_json(data)
         return fonts
+
 
 def get_fonts_json():
     try:
@@ -35,14 +37,16 @@ def get_fonts_json():
         data = open(local_json).read()
     return data
 
+
 def process_json(data):
-    json_data = json.loads(str(data),"utf-8")
+    json_data = json.loads(str(data), "utf-8")
     fonts = []
     for n in json_data['items']:
         f = []
         f.append(str(n['family']))
         fonts.append(f)
     return fonts
+
 
 def cache_json(data):
     local_json = os.path.join(cacheDir + "webfonts.json")
