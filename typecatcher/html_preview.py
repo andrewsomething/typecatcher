@@ -32,11 +32,7 @@ def internet_on():
 
 def html_font_view(font=None, text=None):
 
-    start_page_icon_name = "font-x-generic"
-    start_page_theme = Gtk.IconTheme()
-    start_page_theme.set_custom_theme("gnome")
-    start_page_info = start_page_theme.lookup_icon(start_page_icon_name, 256, 0)
-    start_page_icon_uri = start_page_info.get_filename()
+    start_page_icon = get_media_file("typecatcher.svg")
 
     con_icon_name = "network-error"
     con_theme = Gtk.IconTheme.get_default()
@@ -64,7 +60,7 @@ def html_font_view(font=None, text=None):
       textarea { font: inherit; font-size: inherit; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
       #text_preview { display: None; }
       #no_connect { text-align: center; display: None; }
-      #start_page { text-align: center; }
+      #start_page { text-align: center; bottom: 0px;}
      .wf-loading { height: 100%%; overflow: hidden; background: url(%s) center center no-repeat fixed;}
      .wf-loading * { opacity: 0; }
 
@@ -106,7 +102,8 @@ def html_font_view(font=None, text=None):
     </div>
 
     <div id='start_page'>
-      <img src="file://%s">
+      <img src="%s" width=128 height=128>
+      <p>TypeCatcher</p>
     </div>
 
   </body>
@@ -114,7 +111,7 @@ def html_font_view(font=None, text=None):
 </html>
 """ % (loader, installed_icon_uri, _("Installed"),
        con_icon_uri, _("No network connection."),
-       text_preview, start_page_icon_uri)
+       text_preview, start_page_icon)
 
     return html
 

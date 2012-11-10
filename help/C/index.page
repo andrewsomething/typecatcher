@@ -19,7 +19,7 @@
 <title>
 <!-- This shows on the page in title font -->
 <!-- the icon only shows when installed -->
-<media type="image" mime="image/png" src="/usr/share/icons/gnome/48x48/mimetypes/font-x-generic.png">[icon]</media>
+<media type="image" mime="image/svg" src="figures/typecatcher.svg">[icon]</media>
 <app>TypeCatcher</app>
 </title>
 <center><media type="image" mime="image/png" src="figures/home.png"></media></center>
