@@ -23,7 +23,8 @@
 <app>TypeCatcher</app>
 </title>
 <center><media type="image" mime="image/png" src="figures/home.png"></media></center>
-<p>As the name implies, TypeCatcher allows you to install Google webfonts for off-line use. This is an early release. In the future, hopefully there will be more help here.</p>
+<p>TypeCatcher allows you to search, browse, and download Google webfonts for off-line use. You can preview fonts with adjustable size and text.</p>
+<p>This is an early release. In the future, hopefully there will be more help here.</p>
 
 <!-- This is the visible index -->
 <!--<section id="contents" style="2column">-->

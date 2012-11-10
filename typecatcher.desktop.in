@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=TypeCatcher
-_Comment=TypeCatcher application
+_Comment=Download Google webfonts for off-line use
 Categories=GNOME;Utility;Graphics;
 Exec=typecatcher
 Icon=typecatcher

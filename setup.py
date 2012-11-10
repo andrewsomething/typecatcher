@@ -141,8 +141,8 @@ DistUtilsExtra.auto.setup(
     author='Andrew Starr-Bochicchio',
     author_email='a.starr.b@gmail.com',
     description='Download Google webfonts for off-line use',
-    #long_description='Here a longer description',
-    #url='https://launchpad.net/typecatcher',
+    long_description='TypeCatcher allows you to search, browse, and download Google webfonts for off-line use. You can preview fonts with adjustable size and text.',
+    url='https://launchpad.net/typecatcher',
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
 
