@@ -1,4 +1,4 @@
-typecatcher (0.1) quantal; urgency=low
+typecatcher (0.1~alpha1-0ubuntu1~ppa1~quantal1) quantal; urgency=low
 
   * Initial release.
 
