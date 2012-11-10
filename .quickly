@@ -3,3 +3,4 @@ version = 12.08.1
 template = ubuntu-application
 bzrbranch = lp:~andrewsomething/typecatcher/trunk
 lp_id = typecatcher
+ppa = typecatcher
