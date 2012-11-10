@@ -17,7 +17,7 @@
 import json
 import urllib2
 import os
-from google_webfont_downloader_lib.xdg import cacheDir
+from typecatcher_lib.xdg import cacheDir
 
 
 def FindFonts():

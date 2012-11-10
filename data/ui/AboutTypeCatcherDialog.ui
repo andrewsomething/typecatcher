@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires about_google_webfont_downloader_dialog 1.0 -->
+  <!-- interface-requires about_typecatcher_dialog 1.0 -->
   <!-- interface-requires gtk+ 3.0 -->
-  <object class="AboutGoogleWebfontDownloaderDialog" id="about_google_webfont_downloader_dialog">
+  <object class="AboutTypeCatcherDialog" id="about_typecatcher_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="icon_name">preferences-desktop-font</property>
     <property name="type_hint">normal</property>
-    <property name="program_name">Google Webfont Downloader</property>
+    <property name="program_name">TypeCatcher</property>
     <property name="copyright" translatable="yes">Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;</property>
     <property name="comments" translatable="yes">Download Google webfonts for use on the desktop.</property>
     <property name="license" translatable="yes"># Copyright (C) 2012 Andrew Starr-Bochicchio &lt;a.starr.b@gmail.com&gt;

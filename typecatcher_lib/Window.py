@@ -18,11 +18,11 @@
 
 from gi.repository import Gio, Gtk # pylint: disable=E0611
 import logging
-logger = logging.getLogger('google_webfont_downloader_lib')
+logger = logging.getLogger('typecatcher_lib')
 
 from . helpers import get_builder, show_uri, get_help_uri
 
-# This class is meant to be subclassed by GoogleWebfontDownloaderWindow.  It provides
+# This class is meant to be subclassed by TypeCatcherWindow.  It provides
 # common functions and some boilerplate.
 class Window(Gtk.Window):
     __gtype_name__ = "Window"
@@ -41,10 +41,10 @@ class Window(Gtk.Window):
         """Special static method that's automatically called by Python when 
         constructing a new instance of this class.
         
-        Returns a fully instantiated BaseGoogleWebfontDownloaderWindow object.
+        Returns a fully instantiated BaseTypeCatcherWindow object.
         """
-        builder = get_builder('GoogleWebfontDownloaderWindow')
-        new_object = builder.get_object("google_webfont_downloader_window")
+        builder = get_builder('TypeCatcherWindow')
+        new_object = builder.get_object("typecatcher_window")
         new_object.finish_initializing(builder)
         return new_object
 
@@ -52,8 +52,8 @@ class Window(Gtk.Window):
         """Called while initializing this instance in __new__
 
         finish_initializing should be called after parsing the UI definition
-        and creating a GoogleWebfontDownloaderWindow object with it in order to finish
-        initializing the start of the new GoogleWebfontDownloaderWindow instance.
+        and creating a TypeCatcherWindow object with it in order to finish
+        initializing the start of the new TypeCatcherWindow instance.
         """
         # Get a reference to the builder and set up the signals.
         self.builder = builder
@@ -68,7 +68,7 @@ class Window(Gtk.Window):
         #  http://owaislone.org/quickly-add-indicator/
         #  https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators
         try:
-            from google_webfont_downloader import indicator
+            from typecatcher import indicator
             # self is passed so methods of this class can be called from indicator.py
             # Comment this next line out to disable appindicator
             self.indicator = indicator.new_application_indicator(self)
@@ -79,18 +79,18 @@ class Window(Gtk.Window):
         show_uri(self, "ghelp:%s" % get_help_uri())
 
     def on_mnu_about_activate(self, widget, data=None):
-        """Display the about box for google-webfont-downloader."""
+        """Display the about box for typecatcher."""
         if self.AboutDialog is not None:
             about = self.AboutDialog() # pylint: disable=E1102
             response = about.run()
             about.destroy()
 
     def on_mnu_close_activate(self, widget, data=None):
-        """Signal handler for closing the GoogleWebfontDownloaderWindow."""
+        """Signal handler for closing the TypeCatcherWindow."""
         self.destroy()
 
     def on_destroy(self, widget, data=None):
-        """Called when the GoogleWebfontDownloaderWindow is closed."""
+        """Called when the TypeCatcherWindow is closed."""
         # Clean up code for saving application state should be added here.
         Gtk.main_quit()
 

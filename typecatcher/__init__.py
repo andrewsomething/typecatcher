@@ -20,16 +20,16 @@ from locale import gettext as _
 
 from gi.repository import Gtk # pylint: disable=E0611
 
-from google_webfont_downloader import GoogleWebfontDownloaderWindow
+from typecatcher import TypeCatcherWindow
 
-from google_webfont_downloader_lib import set_up_logging, get_version
+from typecatcher_lib import set_up_logging, get_version
 
 def parse_options():
     """Support for command line options"""
     parser = optparse.OptionParser(version="%%prog %s" % get_version())
     parser.add_option(
         "-v", "--verbose", action="count", dest="verbose",
-        help=_("Show debug messages (-vv debugs google_webfont_downloader_lib also)"))
+        help=_("Show debug messages (-vv debugs typecatcher_lib also)"))
     (options, args) = parser.parse_args()
 
     set_up_logging(options)
@@ -39,6 +39,6 @@ def main():
     parse_options()
 
     # Run the application.    
-    window = GoogleWebfontDownloaderWindow.GoogleWebfontDownloaderWindow()
+    window = TypeCatcherWindow.TypeCatcherWindow()
     window.show()
     Gtk.main()

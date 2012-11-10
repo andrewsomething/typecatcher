@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=TypeCatcher
+_Comment=TypeCatcher application
+Categories=GNOME;Utility;Graphics;
+Exec=typecatcher
+Icon=typecatcher
+Terminal=false
+Type=Application

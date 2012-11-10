@@ -21,7 +21,7 @@ import sys
 import os
 
 import locale
-locale.textdomain('google-webfont-downloader')
+locale.textdomain('typecatcher')
 
 # Add project root directory (enable symlink and trunk execution)
 PROJECT_ROOT_DIRECTORY = os.path.abspath(
@@ -29,19 +29,19 @@ PROJECT_ROOT_DIRECTORY = os.path.abspath(
 
 python_path = []
 if os.path.abspath(__file__).startswith('/opt'):
-    locale.bindtextdomain('google-webfont-downloader', '/opt/extras.ubuntu.com/google-webfont-downloader/share/locale')
+    locale.bindtextdomain('typecatcher', '/opt/extras.ubuntu.com/typecatcher/share/locale')
     syspath = sys.path[:] # copy to avoid infinite loop in pending objects
     for path in syspath:
-        opt_path = path.replace('/usr', '/opt/extras.ubuntu.com/google-webfont-downloader')
+        opt_path = path.replace('/usr', '/opt/extras.ubuntu.com/typecatcher')
         python_path.insert(0, opt_path)
         sys.path.insert(0, opt_path)
-    os.putenv("XDG_DATA_DIRS", "%s:%s" % ("/opt/extras.ubuntu.com/google-webfont-downloader/share/", os.getenv("XDG_DATA_DIRS", "/usr/local/share/:/usr/share/")))
-if (os.path.exists(os.path.join(PROJECT_ROOT_DIRECTORY, 'google_webfont_downloader'))
+    os.putenv("XDG_DATA_DIRS", "%s:%s" % ("/opt/extras.ubuntu.com/typecatcher/share/", os.getenv("XDG_DATA_DIRS", "/usr/local/share/:/usr/share/")))
+if (os.path.exists(os.path.join(PROJECT_ROOT_DIRECTORY, 'typecatcher'))
     and PROJECT_ROOT_DIRECTORY not in sys.path):
     python_path.insert(0, PROJECT_ROOT_DIRECTORY)
     sys.path.insert(0, PROJECT_ROOT_DIRECTORY)
 if python_path:
     os.putenv('PYTHONPATH', "%s:%s" % (os.getenv('PYTHONPATH', ''), ':'.join(python_path))) # for subprocesses
 
-import google_webfont_downloader
-google_webfont_downloader.main()
+import typecatcher
+typecatcher.main()

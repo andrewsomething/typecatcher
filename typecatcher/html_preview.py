@@ -17,7 +17,7 @@
 import glob
 from locale import gettext as _
 from gi.repository import Gtk
-from google_webfont_downloader_lib.helpers import get_media_file
+from typecatcher_lib.helpers import get_media_file
 import urllib2
 from random import choice
 

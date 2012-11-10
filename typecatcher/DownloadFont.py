@@ -19,7 +19,7 @@ import urllib2
 import re
 import glob
 
-from google_webfont_downloader_lib.xdg import fontDir, cacheDir
+from typecatcher_lib.xdg import fontDir, cacheDir
 
 WEBFONTS_API_URL = "http://fonts.googleapis.com/css?family="
 

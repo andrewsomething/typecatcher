@@ -14,10 +14,20 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
-import os
-from gi.repository import GLib
+from locale import gettext as _
 
-homeDir = os.environ.get('HOME')
-confDir =  os.path.join(GLib.get_user_config_dir(), 'google-webfont-downloader/')
-cacheDir =  os.path.join(GLib.get_user_cache_dir(), 'google-webfont-downloader/')
-fontDir = os.path.join(homeDir, '.fonts/google-webfont-downloader/')
+import logging
+logger = logging.getLogger('typecatcher')
+
+from typecatcher_lib.AboutDialog import AboutDialog
+
+# See typecatcher_lib.AboutDialog.py for more details about how this class works.
+class AboutTypeCatcherDialog(AboutDialog):
+    __gtype_name__ = "AboutTypeCatcherDialog"
+    
+    def finish_initializing(self, builder): # pylint: disable=E1002
+        """Set up the about dialog"""
+        super(AboutTypeCatcherDialog, self).finish_initializing(builder)
+
+        # Code for other initialization actions should be added here.
+

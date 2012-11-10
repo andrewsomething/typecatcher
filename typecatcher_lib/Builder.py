@@ -23,7 +23,7 @@ from gi.repository import GObject, Gtk # pylint: disable=E0611
 import inspect
 import functools
 import logging
-logger = logging.getLogger('google_webfont_downloader_lib')
+logger = logging.getLogger('typecatcher_lib')
 
 from xml.etree.cElementTree import ElementTree
 

@@ -22,26 +22,26 @@ import itertools
 import re
 import glob
 import logging
-logger = logging.getLogger('google_webfont_downloader')
+logger = logging.getLogger('typecatcher')
 
-from google_webfont_downloader_lib import Window
-from google_webfont_downloader.AboutGoogleWebfontDownloaderDialog import AboutGoogleWebfontDownloaderDialog
-from google_webfont_downloader.FindFonts import FindFonts
-from google_webfont_downloader_lib.xdg import fontDir
-from google_webfont_downloader.DownloadFont import DownloadFont, UninstallFont
-from google_webfont_downloader.html_preview import html_font_view, internet_on, select_text_preview
+from typecatcher_lib import Window
+from typecatcher.AboutTypeCatcherDialog import AboutTypeCatcherDialog
+from typecatcher.FindFonts import FindFonts
+from typecatcher_lib.xdg import fontDir
+from typecatcher.DownloadFont import DownloadFont, UninstallFont
+from typecatcher.html_preview import html_font_view, internet_on, select_text_preview
 
 
-# See google_webfont_downloader_lib.Window.py for more details about how this class works
-class GoogleWebfontDownloaderWindow(Window):
-    __gtype_name__ = "GoogleWebfontDownloaderWindow"
+# See typecatcher_lib.Window.py for more details about how this class works
+class TypeCatcherWindow(Window):
+    __gtype_name__ = "TypeCatcherWindow"
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
         self.fonts = FindFonts()
         """Set up the main window"""
-        super(GoogleWebfontDownloaderWindow, self).finish_initializing(builder)
+        super(TypeCatcherWindow, self).finish_initializing(builder)
 
-        self.AboutDialog = AboutGoogleWebfontDownloaderDialog
+        self.AboutDialog = AboutTypeCatcherDialog
 
         # Code for other initialization actions should be added here.
         self.toolbar = builder.get_object("toolbar")

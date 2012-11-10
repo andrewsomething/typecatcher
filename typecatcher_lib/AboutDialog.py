@@ -29,8 +29,8 @@ class AboutDialog(Gtk.AboutDialog):
         
         Returns a fully instantiated AboutDialog object.
         """
-        builder = get_builder('AboutGoogleWebfontDownloaderDialog')
-        new_object = builder.get_object("about_google_webfont_downloader_dialog")
+        builder = get_builder('AboutTypeCatcherDialog')
+        new_object = builder.get_object("about_typecatcher_dialog")
         new_object.finish_initializing(builder)
         return new_object
 
@@ -39,7 +39,7 @@ class AboutDialog(Gtk.AboutDialog):
 
         finish_initalizing should be called after parsing the ui definition
         and creating a AboutDialog object with it in order
-        to finish initializing the start of the new AboutGoogleWebfontDownloaderDialog
+        to finish initializing the start of the new AboutTypeCatcherDialog
         instance.
         
         Put your initialization code in here and leave __init__ undefined.

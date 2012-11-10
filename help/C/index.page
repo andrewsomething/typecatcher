@@ -4,8 +4,8 @@
 
 <info>
   <!-- This shows in the title bar so does not show [icon] -->
-  <title type="text">Google Webfont Downloader</title>
-  <desc>The <app>Google Webfont Downloader</app> help.</desc>
+  <title type="text">TypeCatcher</title>
+  <desc>The <app>TypeCatcher</app> help.</desc>
   <credit type="author">
     <name>Andrew Starr-Bochicchio</name>
     <email>a.starr.b@gmail.com</email>
@@ -20,10 +20,10 @@
 <!-- This shows on the page in title font -->
 <!-- the icon only shows when installed -->
 <media type="image" mime="image/png" src="/usr/share/icons/gnome/48x48/mimetypes/font-x-generic.png">[icon]</media>
-<app>Google Webfont Downloader</app>
+<app>TypeCatcher</app>
 </title>
 <center><media type="image" mime="image/png" src="figures/home.png"></media></center>
-<p>As the name implies, Google Webfont Downloader allows you to install Google webfonts for off-line use. This is an early release. In the future, hopefully there will be more help here.</p>
+<p>As the name implies, TypeCatcher allows you to install Google webfonts for off-line use. This is an early release. In the future, hopefully there will be more help here.</p>
 
 <!-- This is the visible index -->
 <!--<section id="contents" style="2column">-->

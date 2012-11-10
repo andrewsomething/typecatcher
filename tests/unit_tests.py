@@ -21,25 +21,25 @@ import unittest
 sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), "..")))
 import tempfile
 import json
-from google_webfont_downloader import AboutGoogleWebfontDownloaderDialog
-from google_webfont_downloader.DownloadFont import extract_url, write_font_file
-from google_webfont_downloader.FindFonts import process_json, cache_json, get_fonts_json
-from google_webfont_downloader_lib.xdg import cacheDir
+from typecatcher import AboutTypeCatcherDialog
+from typecatcher.DownloadFont import extract_url, write_font_file
+from typecatcher.FindFonts import process_json, cache_json, get_fonts_json
+from typecatcher_lib.xdg import cacheDir
 
 class TestCases(unittest.TestCase):
     def setUp(self):
-        self.AboutGoogleWebfontDownloaderDialog_members = [
-        'AboutDialog', 'AboutGoogleWebfontDownloaderDialog', 'logger', 'logging']
+        self.AboutTypeCatcherDialog_members = [
+        'AboutDialog', 'AboutTypeCatcherDialog', 'logger', 'logging']
         self.font_url = 'http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-Yjjx0o0jr6fNXxPgYh_a8Q.ttf'
         self.font_name = 'Alfa Slab One'
         self.font_list = [["Abel"], ["Abril Fatface"]]
 
 
-    def test_AboutGoogleWebfontDownloaderDialog_members(self):
-        all_members = dir(AboutGoogleWebfontDownloaderDialog)
+    def test_AboutTypeCatcherDialog_members(self):
+        all_members = dir(AboutTypeCatcherDialog)
         public_members = [x for x in all_members if not x.startswith('_')]
         public_members.sort()
-        self.assertEqual(self.AboutGoogleWebfontDownloaderDialog_members, public_members)
+        self.assertEqual(self.AboutTypeCatcherDialog_members, public_members)
 
     def test_extract_url(self):
         returned_url = extract_url(self.font_name)
