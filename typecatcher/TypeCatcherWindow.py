@@ -202,8 +202,7 @@ class TypeCatcherWindow(Window):
                                        Gtk.ButtonsType.OK,
                                        _("This the install button."))
             dialog.format_secondary_text(
-                _("""Select a font on the left and press this button. \n
-                     The font will be installed for off-line use."""))
+                _("Select a font on the left and press this button. The font will be installed for off-line use."))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()
@@ -217,8 +216,7 @@ class TypeCatcherWindow(Window):
                                        Gtk.ButtonsType.OK,
                                        _("This the uninstall button."))
             dialog.format_secondary_text(
-                _("""Select a font on the left and press this button. \n
-                     It will be removed from your system."""))
+                _("Select a font on the left and press this button. It will be removed from your system."))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()
@@ -233,9 +231,7 @@ class TypeCatcherWindow(Window):
                                        Gtk.ButtonsType.OK,
                                        _("This the info button."))
             dialog.format_secondary_text(
-                _("""Select a font on the left and press this button. \n
-                     A browser will open with further information \n
-                     about the chosen font."""))
+                _("Select a font on the left and press this button. A browser will open with further information about the chosen font."))
             dialog.set_modal(True)
             dialog.run()
             dialog.destroy()
