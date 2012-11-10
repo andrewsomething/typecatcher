@@ -1,0 +1,22 @@
+Source: typecatcher
+Section: python
+Priority: extra
+Build-Depends: debhelper (>= 8),
+ python (>= 2.6.6-3~),
+ python-distutils-extra (>= 2.10)
+Maintainer: Andrew Starr-Bochicchio <a.starr.b@gmail.com>
+Standards-Version: 3.9.3
+X-Python-Version: >= 2.6
+
+Package: typecatcher
+Architecture: all
+Depends: ${misc:Depends},
+ ${python:Depends},
+ python-apport,
+ gir1.2-glib-2.0,
+ gir1.2-gtk-3.0,
+ gir1.2-webkit-3.0,
+ yelp
+Description: Download Google webfonts for off-line use
+ TypeCatcher allows you to search, browse, and download Google webfonts
+ for off-line use. You can preview fonts with adjustable size and text.
