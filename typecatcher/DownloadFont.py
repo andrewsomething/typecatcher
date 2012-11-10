@@ -42,6 +42,8 @@ def write_font_file(font_url, font_dir, font_name):
     r = urllib2.urlopen(req)
     ext = os.path.splitext(font_url)[1]
     f = os.path.join(font_dir, font_name + ext)
+    if not os.path.exists(font_dir):
+        os.makedirs(font_dir)
     with open(f, 'wb') as f:
         f.write(r.read())
 

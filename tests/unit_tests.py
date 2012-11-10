@@ -45,11 +45,12 @@ class TestCases(unittest.TestCase):
         returned_url = extract_url(self.font_name)
         self.assertEqual(self.font_url, returned_url)
 
-    def text_write_font_file(self):
+    def test_write_font_file(self):
         fake_font_dir = tempfile.mkdtemp() + "-fonts"
         font_url, font_dir, font_name = self.font_url, fake_font_dir, self.font_name
         write_font_file(font_url, font_dir, font_name)
-        self.assertTrue(os.path.isfile(os.path.join(fake_font_dir, self.font_name)))
+        ext = os.path.splitext(font_url)[1]
+        self.assertTrue(os.path.isfile(os.path.join(font_dir, font_name + ext)))
 
     def test_process_json(self):
         returned_list = process_json(fake_json_data)
