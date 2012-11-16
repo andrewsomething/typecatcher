@@ -19,6 +19,8 @@ import urllib2
 import os
 from typecatcher_lib.xdg import cacheDir
 
+# Should the really be publicly viewable?
+API_KEY = 'AIzaSyDpvpba_5RvJSvmXEJS7gZDezDaMlVTo4c'
 
 def FindFonts():
         data = get_fonts_json()
@@ -29,7 +31,8 @@ def FindFonts():
 
 def get_fonts_json():
     try:
-        req = urllib2.Request("https://www.googleapis.com/webfonts/v1/webfonts")
+        req = urllib2.Request(
+          "https://www.googleapis.com/webfonts/v1/webfonts?key=%s" % API_KEY)
         opener = urllib2.build_opener()
         data = opener.open(req).read()
     except urllib2.URLError:
