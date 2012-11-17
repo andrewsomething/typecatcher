@@ -36,8 +36,13 @@ def get_fonts_json():
         opener = urllib2.build_opener()
         data = opener.open(req).read()
     except urllib2.URLError:
-        local_json = os.path.join(cacheDir + "webfonts.json")
-        data = open(local_json).read()
+        data = open_local_json()
+    return data
+
+
+def open_local_json():
+    local_json = os.path.join(cacheDir + "webfonts.json")
+    data = open(local_json).read()
     return data
 
 
@@ -60,3 +65,14 @@ def cache_json(data):
         os.makedirs(cacheDir)
         with open(local_json, 'wb') as local_json:
             local_json.write(data)
+
+
+def get_font_variants(family):
+    data = open_local_json()
+    json_data = json.loads(str(data), "utf-8")
+    variants = []
+    for n in json_data['items']:
+        if n['family'] == family:
+            for v in n['variants']:
+                variants.append(str(v))
+    return variants

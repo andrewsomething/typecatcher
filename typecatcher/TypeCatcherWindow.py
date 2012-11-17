@@ -162,7 +162,7 @@ class TypeCatcherWindow(Window):
                 self.view.execute_script(js)
 
     def js_installed_check(self):
-        if glob.glob(fontDir + self.font + '.*'):
+        if glob.glob(fontDir + self.font + '_*.*'):
             js_show = "document.getElementById('installed').style.display = 'block';"
             self.view.execute_script(js_show)
         else:
