@@ -30,8 +30,10 @@ class TestCases(unittest.TestCase):
     def setUp(self):
         self.AboutTypeCatcherDialog_members = [
         'AboutDialog', 'AboutTypeCatcherDialog', 'logger', 'logging']
-        self.font_url = 'http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-Yjjx0o0jr6fNXxPgYh_a8Q.ttf'
+
         self.font_name = 'Alfa Slab One'
+        self.font_dict = {'normal-400': 'http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-Yjjx0o0jr6fNXxPgYh_a8Q.ttf'}
+
         self.font_list = [["Abel"], ["Abril Fatface"]]
 
 
@@ -42,15 +44,21 @@ class TestCases(unittest.TestCase):
         self.assertEqual(self.AboutTypeCatcherDialog_members, public_members)
 
     def test_extract_url(self):
-        returned_url = extract_url(self.font_name)
-        self.assertEqual(self.font_url, returned_url)
+        returned_dict = extract_url(self.font_name)
+        self.assertEqual(self.font_dict, returned_dict)
 
     def test_write_font_file(self):
         fake_font_dir = tempfile.mkdtemp() + "-fonts"
-        font_url, font_dir, font_name = self.font_url, fake_font_dir, self.font_name
-        write_font_file(font_url, font_dir, font_name)
+        for n in self.font_dict.items():
+            font_url = n[-1]
+            variant = n[0]
+        write_font_file(font_url, fake_font_dir,
+                        self.font_name, variant)
         ext = os.path.splitext(font_url)[1]
-        self.assertTrue(os.path.isfile(os.path.join(font_dir, font_name + ext)))
+        full_name = self.font_name + "_" + variant + ext
+        downloaded_font = os.path.join(fake_font_dir, full_name)
+        print downloaded_font
+        self.assertTrue(os.path.isfile(downloaded_font))
 
     def test_process_json(self):
         returned_list = process_json(fake_json_data)
