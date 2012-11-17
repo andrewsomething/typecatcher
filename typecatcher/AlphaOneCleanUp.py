@@ -25,7 +25,6 @@ def fix_file_names():
     This can be removed after awhile.
     """
 
-    local_json = os.path.join(cacheDir + "webfonts.json")
     alpha_clean_up_check = os.path.join(confDir + "alpha_clean_up_check")
     if not os.path.isfile(alpha_clean_up_check):
         rename_font_files()
