@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-11-10 14:56-0500\n"
-"PO-Revision-Date: 2012-11-12 08:16+0000\n"
+"PO-Revision-Date: 2012-11-18 01:29+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-13 05:53+0000\n"
-"X-Generator: Launchpad (build 16251)\n"
+"X-Launchpad-Export-Date: 2012-11-18 05:05+0000\n"
+"X-Generator: Launchpad (build 16278)\n"
 
 #: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:1
 msgid "TypeCatcher"
@@ -35,33 +35,39 @@ msgstr "Tipografías"
 
 #: ../typecatcher/TypeCatcherWindow.py:203
 msgid "This the install button."
-msgstr ""
+msgstr "Éste es el botón de instalación."
 
 #: ../typecatcher/TypeCatcherWindow.py:205
 msgid ""
 "Select a font on the left and press this button. The font will be installed "
 "for off-line use."
 msgstr ""
+"Seleccione una tipografía en la izquierda y pulse este botón. La tipografía "
+"se instalará para su uso sin conexión."
 
 #: ../typecatcher/TypeCatcherWindow.py:217
 msgid "This the uninstall button."
-msgstr ""
+msgstr "Éste es el botón de desinstalación."
 
 #: ../typecatcher/TypeCatcherWindow.py:219
 msgid ""
 "Select a font on the left and press this button. It will be removed from "
 "your system."
 msgstr ""
+"Seleccione una tipografía en la izquierda y pulse este botón. Se eliminará "
+"de su sistema."
 
 #: ../typecatcher/TypeCatcherWindow.py:232
 msgid "This the info button."
-msgstr ""
+msgstr "Éste es el botón de información."
 
 #: ../typecatcher/TypeCatcherWindow.py:234
 msgid ""
 "Select a font on the left and press this button. A browser will open with "
 "further information about the chosen font."
 msgstr ""
+"Seleccione una tipografía en la izquierda y pulse este botón. Se abrirá un "
+"navegador con más información sobre la tipografía seleccionada."
 
 #: ../typecatcher/html_preview.py:112
 msgid "Installed"
