@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-11-10 14:56-0500\n"
-"PO-Revision-Date: 2012-11-24 07:41+0000\n"
+"PO-Revision-Date: 2012-11-24 08:27+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-24 07:44+0000\n"
+"X-Launchpad-Export-Date: 2012-11-25 07:02+0000\n"
 "X-Generator: Launchpad (build 16293)\n"
 
 #: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:1
@@ -72,11 +72,11 @@ msgstr ""
 
 #: ../typecatcher/html_preview.py:112
 msgid "Installed"
-msgstr ""
+msgstr "Instalado"
 
 #: ../typecatcher/html_preview.py:113
 msgid "No network connection."
-msgstr ""
+msgstr "Sen conexión de rede."
 
 #: ../typecatcher/html_preview.py:121
 msgid ""
@@ -85,6 +85,10 @@ msgid ""
 "back, and if he lifted his head a little he could see his brown belly, "
 "slightly domed and divided by arches into stiff sections."
 msgstr ""
+"Unha mañá, cando Gregor Samsa espertou dun sono inquedo, atopouse na cama "
+"convertido nun monstruoso insecto. Xacía sobre as súas duras costas, "
+"parecidas a unha coiraza, e vía, cando erguía un pouco a cabeza, o seu "
+"estómago alombado, de cor marrón, dividido por durezas arqueadas."
 
 #: ../typecatcher/html_preview.py:122
 msgid ""
@@ -93,6 +97,10 @@ msgid ""
 "at a distance of roughly ninety-eight million miles is an utterly "
 "insignificant little blue-green planet..."
 msgstr ""
+"Aló ao lonxe, nos remansos inexplorados da fin arcaica do extremo occidental "
+"da espiral da Galaxia, xace un pequeno e desprezábel sol marelo. Na súa "
+"órbita, a aproximadamente cento cincuenta millóns de quilómetros, xira un "
+"pequeno planeta totalmente insignificante de cor azul verdoso…"
 
 #: ../typecatcher/html_preview.py:123
 msgid ""
@@ -100,6 +108,9 @@ msgid ""
 "was to remember that distant afternoon when his father took him to discover "
 "ice."
 msgstr ""
+"Moitos anos despois, mentres se enfrontaba ao pelotón de fusilamento, o "
+"Coronel Aureliano Buendía debeu lembrar aquela tarde distante, cando seu pai "
+"levarao a descubrir o xeo."
 
 #: ../typecatcher/html_preview.py:124
 msgid ""
@@ -119,15 +130,16 @@ msgstr ""
 
 #: ../typecatcher/html_preview.py:145
 msgid "Enter text..."
-msgstr ""
+msgstr "Escriba texto…"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr ""
+msgstr "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:2
 msgid "Download Google webfonts for use on the desktop."
 msgstr ""
+"Descargue tipos de letra para web de Google para o seu uso no escritorio."
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:3
 msgid ""
@@ -148,92 +160,92 @@ msgstr ""
 
 #: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "_File"
-msgstr ""
+msgstr "_Ficheiro"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:3
 msgid "_Help"
-msgstr ""
+msgstr "_Axuda"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:4
 msgid "Contents"
-msgstr ""
+msgstr "Contidos"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:5
 msgid "Download font..."
-msgstr ""
+msgstr "Descargar tipo de letra…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:6
 msgid "Download font"
-msgstr ""
+msgstr "Descargar tipo de letra"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:7
 msgid "Uninstall font..."
-msgstr ""
+msgstr "Desinstalar tipo de letra…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:8
 msgid "Uninstall font"
-msgstr ""
+msgstr "Desinstalar tipo de letra"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Font info..."
-msgstr ""
+msgstr "Información do tipo de letra…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:10
 msgid "Font info"
-msgstr ""
+msgstr "Información do tipo de letra"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:11
 msgid "Font size..."
-msgstr ""
+msgstr "Tamaño de letra…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:12
 msgid "Search fonts..."
-msgstr ""
+msgstr "Buscar tipos de letra…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:13
 msgid "Clear search..."
-msgstr ""
+msgstr "Limpar a busca…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:14
 msgid "Select text..."
-msgstr ""
+msgstr "Seleccionar texto…"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:15
 msgid "Select text"
-msgstr ""
+msgstr "Seleccionar texto"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:16
 msgid "Select text to display"
-msgstr ""
+msgstr "Seleccione o texto que amosar"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:17
 msgid "Custom text"
-msgstr ""
+msgstr "Texto personalizado"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:18
 msgid "Random"
-msgstr ""
+msgstr "Ao chou"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:19
 msgid "ipsum"
-msgstr ""
+msgstr "ipsum"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:20
 msgid "Kafka"
-msgstr ""
+msgstr "Kafka"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:21
 msgid "Adams"
-msgstr ""
+msgstr "Adams"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:22
 msgid "Marquez"
-msgstr ""
+msgstr "Márquez"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:23
 msgid "Ellison"
-msgstr ""
+msgstr "Ellison"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:24
 msgid "Joyce"
-msgstr ""
+msgstr "Joyce"
