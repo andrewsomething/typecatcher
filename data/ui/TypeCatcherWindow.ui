@@ -10,6 +10,9 @@
     <property name="step_increment">2</property>
     <property name="page_increment">2</property>
   </object>
+  <object class="GtkAction" id="translate">
+    <property name="label" translatable="yes">Translate this app</property>
+  </object>
   <object class="GtkListStore" id="liststore">
     <columns>
       <!-- column-name gchararray1 -->
@@ -18,6 +21,108 @@
   </object>
   <object class="GtkEntryCompletion" id="entrycompletion">
     <property name="model">liststore</property>
+  </object>
+  <object class="GtkAction" id="report_bug">
+    <property name="label" translatable="yes">Report a bug</property>
+  </object>
+  <object class="GtkMenu" id="text_menu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkMenuItem" id="text_menu_title">
+        <property name="visible">True</property>
+        <property name="sensitive">False</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Select text to display</property>
+        <property name="use_underline">True</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="seperator">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r8">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Custom text</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Random</property>
+        <property name="use_underline">True</property>
+        <property name="active">True</property>
+        <property name="draw_as_radio">True</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">ipsum</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r3">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Kafka</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Adams</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r5">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Marquez</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r6">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Ellison</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkRadioMenuItem" id="r7">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Joyce</property>
+        <property name="use_underline">True</property>
+        <property name="draw_as_radio">True</property>
+        <property name="group">r1</property>
+      </object>
+    </child>
   </object>
   <object class="TypeCatcherWindow" id="typecatcher_window">
     <property name="can_focus">False</property>
@@ -35,7 +140,6 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkMenuItem" id="mnu_file">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_File</property>
@@ -47,7 +151,6 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_save">
                         <property name="label">gtk-save</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -58,7 +161,6 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_save_as">
                         <property name="label">gtk-save-as</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -75,7 +177,6 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_close">
                         <property name="label">gtk-close</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -89,7 +190,6 @@
             </child>
             <child>
               <object class="GtkMenuItem" id="mnu_help">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Help</property>
@@ -101,7 +201,6 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_contents">
                         <property name="label" translatable="yes">Contents</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_stock">False</property>
@@ -109,9 +208,28 @@
                       </object>
                     </child>
                     <child>
+                      <object class="GtkSeparatorMenuItem" id="mnu_seperator">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="mnu_report">
+                        <property name="related_action">report_bug</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="mnu_trans">
+                        <property name="related_action">translate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
                       <object class="GtkImageMenuItem" id="mnu_about">
                         <property name="label">gtk-about</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -135,12 +253,10 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkToolButton" id="download_btn">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="has_tooltip">True</property>
                 <property name="tooltip_text" translatable="yes">Download font...</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Download font</property>
                 <property name="use_underline">True</property>
                 <property name="icon_name">document-save-symbolic</property>
@@ -152,11 +268,9 @@
             </child>
             <child>
               <object class="GtkToolButton" id="uninstall_btn">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="tooltip_text" translatable="yes">Uninstall font...</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Uninstall font</property>
                 <property name="use_underline">True</property>
                 <property name="icon_name">user-trash-symbolic</property>
@@ -168,11 +282,9 @@
             </child>
             <child>
               <object class="GtkToolButton" id="info_btn">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="tooltip_text" translatable="yes">Font info...</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Font info</property>
                 <property name="use_underline">True</property>
                 <property name="icon_name">dialog-information-symbolic</property>
@@ -184,11 +296,9 @@
             </child>
             <child>
               <object class="GtkToolItem" id="toolbutton1">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="tooltip_text" translatable="yes">Font size...</property>
-                <property name="use_action_appearance">False</property>
                 <child>
                   <object class="GtkSpinButton" id="spinbutton">
                     <property name="visible">True</property>
@@ -205,10 +315,8 @@
             </child>
             <child>
               <object class="GtkSeparatorToolItem" id="spacer">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="draw">False</property>
               </object>
               <packing>
@@ -218,10 +326,8 @@
             </child>
             <child>
               <object class="GtkToolItem" id="seach_item">
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <child>
                   <object class="GtkEntry" id="search_field">
                     <property name="visible">True</property>
@@ -242,14 +348,12 @@
             </child>
             <child>
               <object class="GtkMenuToolButton" id="text_selector">
-                <property name="use_action_appearance">False</property>
                 <property name="width_request">0</property>
                 <property name="height_request">0</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="has_tooltip">True</property>
                 <property name="tooltip_text" translatable="yes">Select text...</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Select text</property>
                 <property name="use_underline">True</property>
               </object>
@@ -313,115 +417,6 @@
             <property name="position">2</property>
           </packing>
         </child>
-      </object>
-    </child>
-  </object>
-  <object class="GtkMenu" id="text_menu">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <child>
-      <object class="GtkMenuItem" id="text_menu_title">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="sensitive">False</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Select text to display</property>
-        <property name="use_underline">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkSeparatorMenuItem" id="seperator">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r8">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Custom text</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r1">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Random</property>
-        <property name="use_underline">True</property>
-        <property name="active">True</property>
-        <property name="draw_as_radio">True</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r2">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">ipsum</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r3">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Kafka</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r4">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Adams</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r5">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Marquez</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r6">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Ellison</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkRadioMenuItem" id="r7">
-        <property name="use_action_appearance">False</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Joyce</property>
-        <property name="use_underline">True</property>
-        <property name="draw_as_radio">True</property>
-        <property name="group">r1</property>
       </object>
     </child>
   </object>

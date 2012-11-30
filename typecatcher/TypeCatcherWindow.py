@@ -21,6 +21,7 @@ from gi.repository import WebKit
 import itertools
 import re
 import glob
+import subprocess
 import logging
 logger = logging.getLogger('typecatcher')
 
@@ -256,3 +257,14 @@ class TypeCatcherWindow(Window):
             dialog.destroy()
         except AttributeError:
             pass
+
+    def on_mnu_report_activate(self, button):
+        try: # Use apport if we can.
+            subprocess.Popen(['ubuntu-bug', 'typecatcher'])
+        except OSError: # If not, just open a browser.
+            bug_url = "https://bugs.launchpad.net/typecatcher/+filebug"
+            Gtk.show_uri(None, bug_url, 0)
+
+    def on_mnu_trans_activate(self, button):
+        bug_url = "https://translations.launchpad.net/typecatcher"
+        Gtk.show_uri(None, bug_url, 0)
