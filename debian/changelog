@@ -1,3 +1,9 @@
+typecatcher (0.1~beta1-0ubuntu1~ppa1~raring1) raring; urgency=low
+
+  * New upstream release.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Fri, 08 Feb 2013 14:47:57 -0500
+
 typecatcher (0.1~alpha2-0ubuntu1~ppa1~quantal1) quantal; urgency=low
 
   * New upstream release.
