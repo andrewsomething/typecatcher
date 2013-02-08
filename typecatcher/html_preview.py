@@ -33,15 +33,21 @@ def html_font_view(font=None, text=None):
 
     start_page_icon = get_media_file("typecatcher.svg")
 
-    con_icon_name = "network-error"
-    con_theme = Gtk.IconTheme.get_default()
-    con_info = con_theme.lookup_icon(con_icon_name, 64, 0)
-    con_icon_uri = con_info.get_filename()
+    try:
+        con_icon_name = "nm-no-connection"
+        con_theme = Gtk.IconTheme.get_default()
+        con_info = con_theme.lookup_icon(con_icon_name, 64, 0)
+        con_icon_uri = "file://" + con_info.get_filename()
+    except AttributeError as err:
+        con_icon_uri = get_media_file("no-connection.svg")
 
-    installed_icon_name = "gtk-apply"
-    installed_theme = Gtk.IconTheme.get_default()
-    installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
-    installed_icon_uri = installed_info.get_filename()
+    try:
+        installed_icon_name = "gtk-apply"
+        installed_theme = Gtk.IconTheme.get_default()
+        installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
+        installed_icon_uri = "file://" + installed_info.get_filename()
+    except AttributeError as err:
+        installed_icon_uri = get_media_file("installed.svg")
 
     loader = get_media_file("ajax-loader.gif")
 
@@ -88,12 +94,12 @@ def html_font_view(font=None, text=None):
   <body>
 
      <div id="installed">
-       <img src="file://%s" width=64 height=64>
+       <img src="%s" width=64 height=64>
        <p>%s</p>
      </div>
 
      <div id='no_connect'>
-       <img src="file://%s" width=64 height=64 > %s
+       <img src="%s" width=64 height=64 > %s
      </div>
 
     <div id='text_preview'>
