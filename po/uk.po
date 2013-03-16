@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-11-10 14:56-0500\n"
-"PO-Revision-Date: 2013-03-03 23:17+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2013-03-15 20:47+0000\n"
+"Last-Translator: Kondrashyn Artem <judgedredad@meta.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-14 05:24+0000\n"
+"X-Launchpad-Export-Date: 2013-03-16 06:24+0000\n"
 "X-Generator: Launchpad (build 16532)\n"
 
 #: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:1
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../typecatcher.desktop.in.h:2
 msgid "Download Google webfonts for off-line use"
-msgstr ""
+msgstr "Завантажити шрифти Google для використання в оффлайн режимі"
 
 #: ../typecatcher/__init__.py:32
 msgid "Show debug messages (-vv debugs typecatcher_lib also)"
@@ -31,45 +31,51 @@ msgstr ""
 
 #: ../typecatcher/TypeCatcherWindow.py:69
 msgid "Fonts"
-msgstr ""
+msgstr "Шрифти"
 
 #: ../typecatcher/TypeCatcherWindow.py:203
 msgid "This the install button."
-msgstr ""
+msgstr "Це кнопка встановлення."
 
 #: ../typecatcher/TypeCatcherWindow.py:205
 msgid ""
 "Select a font on the left and press this button. The font will be installed "
 "for off-line use."
 msgstr ""
+"Оберіть шрифт ліворуч та натисніть цю кнопку. Він буде встановлений для "
+"використання в оффлайн режимі."
 
 #: ../typecatcher/TypeCatcherWindow.py:217
 msgid "This the uninstall button."
-msgstr ""
+msgstr "Це кнопка видалення."
 
 #: ../typecatcher/TypeCatcherWindow.py:219
 msgid ""
 "Select a font on the left and press this button. It will be removed from "
 "your system."
 msgstr ""
+"Оберіть шрифт ліворуч та натисніть цю кнопку. Він буде видалений з Вашої "
+"системи."
 
 #: ../typecatcher/TypeCatcherWindow.py:232
 msgid "This the info button."
-msgstr ""
+msgstr "Це кнопка інформації."
 
 #: ../typecatcher/TypeCatcherWindow.py:234
 msgid ""
 "Select a font on the left and press this button. A browser will open with "
 "further information about the chosen font."
 msgstr ""
+"Оберіть шрифт ліворуч та натисніть цю кнопку. Переглядач тенет відкриє "
+"сторінку із детальною інформацією про обраний шрифт."
 
 #: ../typecatcher/html_preview.py:112
 msgid "Installed"
-msgstr ""
+msgstr "Встановлено"
 
 #: ../typecatcher/html_preview.py:113
 msgid "No network connection."
-msgstr ""
+msgstr "Нема з’єднання з мережею."
 
 #: ../typecatcher/html_preview.py:121
 msgid ""
@@ -112,11 +118,11 @@ msgstr ""
 
 #: ../typecatcher/html_preview.py:145
 msgid "Enter text..."
-msgstr ""
+msgstr "Введіть текст..."
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr ""
+msgstr "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:2
 msgid "Download Google webfonts for use on the desktop."
