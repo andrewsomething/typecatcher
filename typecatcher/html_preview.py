@@ -23,7 +23,7 @@ from random import choice
 
 def internet_on():
     try:
-        response = urllib2.urlopen('http://74.125.131.95', timeout=1)
+        response = urllib2.urlopen('http://173.194.76.95', timeout=1)
         return True
     except urllib2.URLError as err:
         return False
@@ -57,7 +57,7 @@ def html_font_view(font=None, text=None):
 <html>
   <head>
 
-    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 
     <style>
       body { font-size: 36px; }
