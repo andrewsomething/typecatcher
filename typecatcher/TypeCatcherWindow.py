@@ -131,7 +131,9 @@ class TypeCatcherWindow(Window):
 
     def js_exec(self):
         js_code = ["document.getElementById('start_page').style.display = 'None';",
-                   "document.getElementById('text_preview').style.fontFamily = '%s';" % (self.font)]
+                   """
+                   document.getElementById('text_preview').style.fontFamily = "\'%s\'";
+                   """  % (self.font)]
         if internet_on() is True:
             font_loader = """WebFontConfig = {
             google: { families: [ '%s' ] }
