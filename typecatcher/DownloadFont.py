@@ -24,6 +24,8 @@ from typecatcher.FindFonts import get_font_variants
 
 WEBFONTS_API_URL = "http://fonts.googleapis.com/css?family="
 
+class DownloadError(Exception):
+    pass
 
 def DownloadFont(font_name, uri):
     font_dict = extract_url(font_name)
@@ -39,7 +41,7 @@ def DownloadFont(font_name, uri):
                     font_dir = os.path.dirname(uri)
                     write_font_file(font_url, font_dir, font_name, variant)
     else:
-        pass
+        raise DownloadError("The font could not be downloaded.")
 
 
 def write_font_file(font_url, font_dir, font_name, variant):

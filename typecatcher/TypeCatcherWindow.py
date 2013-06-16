@@ -29,7 +29,7 @@ from typecatcher_lib import Window
 from typecatcher.AboutTypeCatcherDialog import AboutTypeCatcherDialog
 from typecatcher.FindFonts import FindFonts
 from typecatcher_lib.xdg import fontDir
-from typecatcher.DownloadFont import DownloadFont, UninstallFont
+from typecatcher.DownloadFont import DownloadFont, UninstallFont, DownloadError
 from typecatcher.html_preview import html_font_view, select_text_preview
 
 from typecatcher.AlphaOneCleanUp import fix_file_names
@@ -171,6 +171,13 @@ class TypeCatcherWindow(Window):
             js_hide = "document.getElementById('installed').style.display = 'None';"
             self.view.execute_script(js_hide)
 
+    def download_failed(self):
+        err = ["document.getElementById('start_page').style.display = 'None';",
+          "document.getElementById('text_preview').style.display = 'None';",
+          "document.getElementById('no_connect').style.display = 'block';"]
+        for js in err:
+            self.view.execute_script(js)
+
     def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))
         entered_text = self.search_field.get_text()
@@ -197,8 +204,11 @@ class TypeCatcherWindow(Window):
 
     def on_download_btn_clicked(self, button):
         try:
-            DownloadFont(self.font, uri=None)
-            self.js_installed_check()
+            try:
+                DownloadFont(self.font, uri=None)
+                self.js_installed_check()
+            except DownloadError:
+                self.download_failed()
         except AttributeError:
             dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
                                        Gtk.ButtonsType.OK,
