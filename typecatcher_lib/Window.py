@@ -105,3 +105,12 @@ class Window(Gtk.Window):
     def on_mnu_trans_activate(self, button):
         bug_url = "https://translations.launchpad.net/typecatcher"
         Gtk.show_uri(None, bug_url, 0)
+
+    def info_dialog(self, head, message):
+        dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
+                                   Gtk.ButtonsType.OK,
+                                   head)
+        dialog.format_secondary_text(message)
+        dialog.set_modal(True)
+        dialog.run()
+        dialog.destroy()

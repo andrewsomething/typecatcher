@@ -209,28 +209,18 @@ class TypeCatcherWindow(Window):
             except DownloadError:
                 self.download_failed()
         except AttributeError:
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                                       Gtk.ButtonsType.OK,
-                                       _("This the install button."))
-            dialog.format_secondary_text(
-                _("Select a font on the left and press this button. The font will be installed for off-line use."))
-            dialog.set_modal(True)
-            dialog.run()
-            dialog.destroy()
+            head = _("This the install button.")
+            message = _("Select a font on the left and press this button. The font will be installed for off-line use.")
+            Window.info_dialog(self, head, message)
 
     def on_uninstall_btn_clicked(self, button):
         try:
             UninstallFont(self.font)
             self.js_installed_check()
         except AttributeError:
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                                       Gtk.ButtonsType.OK,
-                                       _("This the uninstall button."))
-            dialog.format_secondary_text(
-                _("Select a font on the left and press this button. It will be removed from your system."))
-            dialog.set_modal(True)
-            dialog.run()
-            dialog.destroy()
+            head = _("This the uninstall button.")
+            message = _("Select a font on the left and press this button. It will be removed from your system.")
+            Window.info_dialog(self, head, message)
 
     def on_info_btn_clicked(self, button):
         try:
@@ -238,14 +228,9 @@ class TypeCatcherWindow(Window):
                 self.font.replace(' ', '+', -1)
             Gtk.show_uri(None, info_url, 0)
         except AttributeError:
-            dialog = Gtk.MessageDialog(self, 0, Gtk.MessageType.INFO,
-                                       Gtk.ButtonsType.OK,
-                                       _("This the info button."))
-            dialog.format_secondary_text(
-                _("Select a font on the left and press this button. A browser will open with further information about the chosen font."))
-            dialog.set_modal(True)
-            dialog.run()
-            dialog.destroy()
+            head = _("This the info button.")
+            message = _("Select a font on the left and press this button. A browser will open with further information about the chosen font.")
+            Window.info_dialog(self,head, message)
 
     def on_mnu_save_as_activate(self, button):
         try:
