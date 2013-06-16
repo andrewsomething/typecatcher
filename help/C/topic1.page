@@ -5,14 +5,21 @@
 <info>
   <link type="guide" xref="index#contents"/>
   <credit type="author">
-    <name>Your Name</name>
-    <email>Your E-mail</email>
-    <years>2010</years>
+    <name>Andrew Starr-Bochicchio</name>
+    <email>a.starr.b@gmail.com</email>
+    <years>2012</years>
   </credit>
-  <desc>Optional short description of Topic 1 for contents page</desc>
+  <license href="http://creativecommons.org/licenses/by-sa/3.0/">
+  <p>Creative Commons Attribution-Share Alike 3.0 Unported License</p>
+  </license>
+<!--  <desc>This would show up as a sub text in the table of contents.</desc>-->
 </info>
 
-<title>Topic 1</title>
-<p>This is an example topic page. It's main function is to describe one topic.</p>
+<title>FAQ</title>
+
+<subtitle>Where are the fonts installed?</subtitle>
+
+<p>Fonts are installed in your user home directory under the folder
+ <file>~/.fonts/typecatcher/</file></p>
 
 </page>
