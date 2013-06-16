@@ -64,7 +64,7 @@ def html_font_view(font=None, text=None):
       #installed { float: right; font-size: 12px; width:50px; text-align:center; display: None; }
       textarea { font: inherit; font-size: inherit; border: None; overflow: hidden; outline: none; width: 90%%; height: 100%%; }
       #text_preview { display: None; }
-      #no_connect { text-align: center; display: None; }
+      #no_connect { text-align: center; display: None; font-size: 18px; }
       #start_page { text-align: center; bottom: 0px;}
      .wf-loading { height: 100%%; overflow: hidden; background: url(%s) center center no-repeat fixed;}
      .wf-loading * { opacity: 0; }
@@ -99,7 +99,8 @@ def html_font_view(font=None, text=None):
      </div>
 
      <div id='no_connect'>
-       <img src="%s" width=64 height=64 > %s
+       <img src="%s" width=64 height=64 > <h1>%s</h1>
+       <p>%s</p>
      </div>
 
     <div id='text_preview'>
@@ -115,8 +116,9 @@ def html_font_view(font=None, text=None):
 
 </html>
 """ % (loader, installed_icon_uri, _("Installed"),
-       con_icon_uri, _("No network connection."),
-       text_preview, start_page_icon)
+       con_icon_uri, _("Font not available."),
+       _("Please check your network connection."), text_preview,
+       start_page_icon)
 
     return html
 
