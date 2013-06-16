@@ -18,6 +18,7 @@
 
 from gi.repository import Gio, Gtk # pylint: disable=E0611
 import logging
+import subprocess
 logger = logging.getLogger('typecatcher_lib')
 
 from . helpers import get_builder, show_uri, get_help_uri
@@ -94,3 +95,13 @@ class Window(Gtk.Window):
         # Clean up code for saving application state should be added here.
         Gtk.main_quit()
 
+    def on_mnu_report_activate(self, button):
+        try: # Use apport if we can.
+            subprocess.Popen(['ubuntu-bug', 'typecatcher'])
+        except OSError: # If not, just open a browser.
+            bug_url = "https://bugs.launchpad.net/typecatcher/+filebug"
+            Gtk.show_uri(None, bug_url, 0)
+
+    def on_mnu_trans_activate(self, button):
+        bug_url = "https://translations.launchpad.net/typecatcher"
+        Gtk.show_uri(None, bug_url, 0)
