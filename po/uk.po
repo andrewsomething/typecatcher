@@ -7,118 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-11-10 14:56-0500\n"
+"POT-Creation-Date: 2013-06-16 14:42-0400\n"
 "PO-Revision-Date: 2013-04-20 20:33+0000\n"
 "Last-Translator: Kondrashyn Artem <judgedredad@meta.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-22 04:59+0000\n"
-"X-Generator: Launchpad (build 16626)\n"
-
-#: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:1
-msgid "TypeCatcher"
-msgstr "TypeCatcher"
-
-#: ../typecatcher.desktop.in.h:2
-msgid "Download Google webfonts for off-line use"
-msgstr "Завантажити шрифти Google для використання в оффлайн режимі"
+"X-Launchpad-Export-Date: 2013-06-17 05:43+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 
 #: ../typecatcher/__init__.py:32
 msgid "Show debug messages (-vv debugs typecatcher_lib also)"
 msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:69
-msgid "Fonts"
-msgstr "Шрифти"
-
-#: ../typecatcher/TypeCatcherWindow.py:203
-msgid "This the install button."
-msgstr "Це кнопка встановлення."
-
-#: ../typecatcher/TypeCatcherWindow.py:205
-msgid ""
-"Select a font on the left and press this button. The font will be installed "
-"for off-line use."
-msgstr ""
-"Оберіть шрифт ліворуч та натисніть цю кнопку. Він буде встановлений для "
-"використання в оффлайн режимі."
-
-#: ../typecatcher/TypeCatcherWindow.py:217
-msgid "This the uninstall button."
-msgstr "Це кнопка видалення."
-
-#: ../typecatcher/TypeCatcherWindow.py:219
-msgid ""
-"Select a font on the left and press this button. It will be removed from "
-"your system."
-msgstr ""
-"Оберіть шрифт ліворуч та натисніть цю кнопку. Він буде видалений з Вашої "
-"системи."
-
-#: ../typecatcher/TypeCatcherWindow.py:232
-msgid "This the info button."
-msgstr "Це кнопка інформації."
-
-#: ../typecatcher/TypeCatcherWindow.py:234
-msgid ""
-"Select a font on the left and press this button. A browser will open with "
-"further information about the chosen font."
-msgstr ""
-"Оберіть шрифт ліворуч та натисніть цю кнопку. Переглядач тенет відкриє "
-"сторінку із детальною інформацією про обраний шрифт."
-
-#: ../typecatcher/html_preview.py:112
-msgid "Installed"
-msgstr "Встановлено"
-
-#: ../typecatcher/html_preview.py:113
-msgid "No network connection."
-msgstr "Нема з’єднання з мережею."
-
-#: ../typecatcher/html_preview.py:121
-msgid ""
-"One morning, when Gregor Samsa woke from troubled dreams, he found himself "
-"transformed in his bed into a horrible vermin. He lay on his armour-like "
-"back, and if he lifted his head a little he could see his brown belly, "
-"slightly domed and divided by arches into stiff sections."
-msgstr ""
-
-#: ../typecatcher/html_preview.py:122
-msgid ""
-"Far out in the uncharted backwaters of the unfashionable end of the Western "
-"Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this "
-"at a distance of roughly ninety-eight million miles is an utterly "
-"insignificant little blue-green planet..."
-msgstr ""
-
-#: ../typecatcher/html_preview.py:123
-msgid ""
-"Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
-"was to remember that distant afternoon when his father took him to discover "
-"ice."
-msgstr ""
-
-#: ../typecatcher/html_preview.py:124
-msgid ""
-"I am an invisible man. No, I am not a spook like those who haunted Edgar "
-"Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of "
-"substance, of flesh and bone, fiber and liquids — and I might even be said "
-"to possess a mind. I am invisible, understand, simply because people refuse "
-"to see me."
-msgstr ""
-
-#: ../typecatcher/html_preview.py:125
-msgid ""
-"Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
-"lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
-"ungirdled, was sustained gently behind him on the mild morning air."
-msgstr ""
-
-#: ../typecatcher/html_preview.py:145
-msgid "Enter text..."
-msgstr "Введіть текст..."
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
@@ -145,94 +46,205 @@ msgid ""
 "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
 msgstr ""
 
+#: ../typecatcher/TypeCatcherWindow.py:72
+msgid "Fonts"
+msgstr "Шрифти"
+
+#: ../typecatcher/TypeCatcherWindow.py:215
+msgid "This the install button."
+msgstr "Це кнопка встановлення."
+
+#: ../typecatcher/TypeCatcherWindow.py:217
+msgid ""
+"Select a font on the left and press this button. The font will be installed "
+"for off-line use."
+msgstr ""
+"Оберіть шрифт ліворуч та натисніть цю кнопку. Він буде встановлений для "
+"використання в оффлайн режимі."
+
+#: ../typecatcher/TypeCatcherWindow.py:229
+msgid "This the uninstall button."
+msgstr "Це кнопка видалення."
+
+#: ../typecatcher/TypeCatcherWindow.py:231
+msgid ""
+"Select a font on the left and press this button. It will be removed from "
+"your system."
+msgstr ""
+"Оберіть шрифт ліворуч та натисніть цю кнопку. Він буде видалений з Вашої "
+"системи."
+
+#: ../typecatcher/TypeCatcherWindow.py:244
+msgid "This the info button."
+msgstr "Це кнопка інформації."
+
+#: ../typecatcher/TypeCatcherWindow.py:246
+msgid ""
+"Select a font on the left and press this button. A browser will open with "
+"further information about the chosen font."
+msgstr ""
+"Оберіть шрифт ліворуч та натисніть цю кнопку. Переглядач тенет відкриє "
+"сторінку із детальною інформацією про обраний шрифт."
+
+#: ../typecatcher/html_preview.py:118
+msgid "Installed"
+msgstr "Встановлено"
+
+#: ../typecatcher/html_preview.py:119
+msgid "Font not available."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:120
+msgid "Please check your network connection."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:128
+msgid ""
+"One morning, when Gregor Samsa woke from troubled dreams, he found himself "
+"transformed in his bed into a horrible vermin. He lay on his armour-like "
+"back, and if he lifted his head a little he could see his brown belly, "
+"slightly domed and divided by arches into stiff sections."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:129
+msgid ""
+"Far out in the uncharted backwaters of the unfashionable end of the Western "
+"Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this "
+"at a distance of roughly ninety-eight million miles is an utterly "
+"insignificant little blue-green planet..."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:130
+msgid ""
+"Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
+"was to remember that distant afternoon when his father took him to discover "
+"ice."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:131
+msgid ""
+"I am an invisible man. No, I am not a spook like those who haunted Edgar "
+"Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of "
+"substance, of flesh and bone, fiber and liquids — and I might even be said "
+"to possess a mind. I am invisible, understand, simply because people refuse "
+"to see me."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:132
+msgid ""
+"Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
+"lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
+"ungirdled, was sustained gently behind him on the mild morning air."
+msgstr ""
+
+#: ../typecatcher/html_preview.py:152
+msgid "Enter text..."
+msgstr "Введіть текст..."
+
+#: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:12
+msgid "TypeCatcher"
+msgstr "TypeCatcher"
+
+#: ../typecatcher.desktop.in.h:2
+msgid "Download Google webfonts for off-line use"
+msgstr "Завантажити шрифти Google для використання в оффлайн режимі"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:1
+msgid "Translate this app"
+msgstr ""
+
 #: ../data/ui/TypeCatcherWindow.ui.h:2
-msgid "_File"
-msgstr "Файл"
+msgid "Report a bug"
+msgstr ""
 
 #: ../data/ui/TypeCatcherWindow.ui.h:3
-msgid "_Help"
-msgstr "Допомога"
-
-#: ../data/ui/TypeCatcherWindow.ui.h:4
-msgid "Contents"
-msgstr "Вміст"
-
-#: ../data/ui/TypeCatcherWindow.ui.h:5
-msgid "Download font..."
-msgstr "Завантажую шрифт..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:6
-msgid "Download font"
-msgstr "Завантажити шрифт"
-
-#: ../data/ui/TypeCatcherWindow.ui.h:7
-msgid "Uninstall font..."
-msgstr "Видаляю шрифт..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:8
-msgid "Uninstall font"
-msgstr "Видалити шрифт"
-
-#: ../data/ui/TypeCatcherWindow.ui.h:9
-msgid "Font info..."
-msgstr "Запитую інформацію про шрифт..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:10
-msgid "Font info"
-msgstr "Інформація про шрифт"
-
-#: ../data/ui/TypeCatcherWindow.ui.h:11
-msgid "Font size..."
-msgstr "Розмір шрифта..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:12
-msgid "Search fonts..."
-msgstr "Шукати шрифт..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:13
-msgid "Clear search..."
-msgstr "Очистити пошук..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:14
-msgid "Select text..."
-msgstr "Обрати текст..."
-
-#: ../data/ui/TypeCatcherWindow.ui.h:15
-msgid "Select text"
-msgstr "Обрати текст"
-
-#: ../data/ui/TypeCatcherWindow.ui.h:16
 msgid "Select text to display"
 msgstr "Оберіть текст для показу"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:17
+#: ../data/ui/TypeCatcherWindow.ui.h:4
 msgid "Custom text"
 msgstr "Власний текст"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:18
+#: ../data/ui/TypeCatcherWindow.ui.h:5
 msgid "Random"
 msgstr "Випадковий"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:19
+#: ../data/ui/TypeCatcherWindow.ui.h:6
 msgid "ipsum"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:20
+#: ../data/ui/TypeCatcherWindow.ui.h:7
 msgid "Kafka"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:21
+#: ../data/ui/TypeCatcherWindow.ui.h:8
 msgid "Adams"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:22
+#: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Marquez"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:23
+#: ../data/ui/TypeCatcherWindow.ui.h:10
 msgid "Ellison"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:24
+#: ../data/ui/TypeCatcherWindow.ui.h:11
 msgid "Joyce"
 msgstr ""
+
+#: ../data/ui/TypeCatcherWindow.ui.h:13
+msgid "_File"
+msgstr "Файл"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:14
+msgid "_Help"
+msgstr "Допомога"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:15
+msgid "Contents"
+msgstr "Вміст"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:16
+msgid "Download font..."
+msgstr "Завантажую шрифт..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:17
+msgid "Download font"
+msgstr "Завантажити шрифт"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:18
+msgid "Uninstall font..."
+msgstr "Видаляю шрифт..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:19
+msgid "Uninstall font"
+msgstr "Видалити шрифт"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:20
+msgid "Font info..."
+msgstr "Запитую інформацію про шрифт..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:21
+msgid "Font info"
+msgstr "Інформація про шрифт"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:22
+msgid "Font size..."
+msgstr "Розмір шрифта..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:23
+msgid "Search fonts..."
+msgstr "Шукати шрифт..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:24
+msgid "Clear search..."
+msgstr "Очистити пошук..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:25
+msgid "Select text..."
+msgstr "Обрати текст..."
+
+#: ../data/ui/TypeCatcherWindow.ui.h:26
+msgid "Select text"
+msgstr "Обрати текст"
