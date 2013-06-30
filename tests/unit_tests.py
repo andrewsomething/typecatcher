@@ -31,8 +31,8 @@ class TestCases(unittest.TestCase):
         self.AboutTypeCatcherDialog_members = [
         'AboutDialog', 'AboutTypeCatcherDialog', 'logger', 'logging']
 
-        self.font_name = 'Alfa Slab One'
-        self.font_dict = {'normal-400': 'http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-Yjjx0o0jr6fNXxPgYh_a8Q.ttf'}
+        self.font_name = 'Abril Fatface'
+        self.font_dict = {"regular": "http://themes.googleusercontent.com/static/fonts/abrilfatface/v5/X1g_KwGeBV3ajZIXQ9VnDojjx0o0jr6fNXxPgYh_a8Q.ttf"}
 
         self.font_list = [["Abel"], ["Abril Fatface"]]
 
@@ -84,7 +84,12 @@ fake_json_data = """{
    ],
    "subsets": [
     "latin"
-   ]
+   ],
+   "version": "v3",
+   "lastModified": "2012-07-25",
+   "files": {
+    "regular": "http://themes.googleusercontent.com/static/fonts/abel/v3/RpUKfqNxoyNe_ka23bzQ2A.ttf"
+   }
   },
   {
    "kind": "webfonts#webfont",
@@ -95,7 +100,12 @@ fake_json_data = """{
    "subsets": [
     "latin-ext",
     "latin"
-   ]
+   ],
+   "version": "v5",
+   "lastModified": "2012-07-25",
+   "files": {
+    "regular": "http://themes.googleusercontent.com/static/fonts/abrilfatface/v5/X1g_KwGeBV3ajZIXQ9VnDojjx0o0jr6fNXxPgYh_a8Q.ttf"
+   }
   }
  ]
 }"""
