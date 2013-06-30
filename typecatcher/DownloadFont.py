@@ -18,9 +18,10 @@ import os
 import urllib2
 import re
 import glob
+import json
 
 from typecatcher_lib.xdg import fontDir, cacheDir
-from typecatcher.FindFonts import get_font_variants
+from typecatcher.FindFonts import get_font_variants, open_local_json
 
 WEBFONTS_API_URL = "http://fonts.googleapis.com/css?family="
 
@@ -56,42 +57,13 @@ def write_font_file(font_url, font_dir, font_name, variant):
         f.write(r.read())
 
 
-def extract_url(font_name):
-    variants = get_font_variants(font_name)
-    css_url = WEBFONTS_API_URL + font_name.replace(' ',
-                                                   '%20',
-                                                   -1) + ":" + \
-                                                   ','.join(variants) + \
-                                                   "&subset=all"
-
-    font_urls = []
-    styles = []
-    weights = []
-    desc = []
-
-    req = urllib2.Request(css_url)
-    opener = urllib2.build_opener()
-    try:
-        css = opener.open(req).readlines()
-        for line in css:
-            style = re.search(r'font-style\:\ (.*?)\;', line)
-            if style:
-                styles.append(style.group(1))
-            weight = re.search(r'font-weight\:\ (.*?)\;', line)
-            if weight:
-                weights.append(weight.group(1))
-            font_url = re.search(r'url\((.*?)\)', line)
-            if font_url:
-                font_urls.append(font_url.group(1))
-
-        for n in range(len(styles)):
-            desc.append(str(styles[n] + "-" + weights[n]))
-        font_dict = dict(zip(desc, font_urls))
-
-        return font_dict
-
-    except urllib2.URLError:
-        return None
+def extract_url(family):
+    data = open_local_json()
+    json_data = json.loads(str(data), "utf-8")
+    for n in json_data['items']:
+        if n['family'] == family:
+            font_dict = dict(n['files'])
+    return font_dict
 
 
 def UninstallFont(font_name):
