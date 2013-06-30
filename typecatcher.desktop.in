@@ -2,6 +2,8 @@
 _Name=TypeCatcher
 _Comment=Download Google webfonts for off-line use
 Categories=GNOME;Utility;Graphics;
+# TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+_Keywords=fonts;viewer;
 Exec=typecatcher
 Icon=typecatcher
 Terminal=false
