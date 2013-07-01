@@ -21,8 +21,9 @@ import unittest
 sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), "..")))
 import tempfile
 import json
+import glob
 from typecatcher import AboutTypeCatcherDialog
-from typecatcher.DownloadFont import extract_url, write_font_file
+from typecatcher.DownloadFont import extract_url, write_font_file, UninstallFont
 from typecatcher.FindFonts import process_json, cache_json, get_fonts_json
 from typecatcher_lib.xdg import cacheDir
 
@@ -33,9 +34,8 @@ class TestCases(unittest.TestCase):
 
         self.font_name = 'Abril Fatface'
         self.font_dict = {"regular": "http://themes.googleusercontent.com/static/fonts/abrilfatface/v5/X1g_KwGeBV3ajZIXQ9VnDojjx0o0jr6fNXxPgYh_a8Q.ttf"}
-
         self.font_list = [["Abel"], ["Abril Fatface"]]
-
+        self.fake_font_dir = tempfile.mkdtemp() + "-fonts"
 
     def test_AboutTypeCatcherDialog_members(self):
         all_members = dir(AboutTypeCatcherDialog)
@@ -48,17 +48,22 @@ class TestCases(unittest.TestCase):
         self.assertEqual(self.font_dict, returned_dict)
 
     def test_write_font_file(self):
-        fake_font_dir = tempfile.mkdtemp() + "-fonts"
         for n in self.font_dict.items():
             font_url = n[-1]
             variant = n[0]
-        write_font_file(font_url, fake_font_dir,
+        write_font_file(font_url,  self.fake_font_dir,
                         self.font_name, variant)
         ext = os.path.splitext(font_url)[1]
         full_name = self.font_name + "_" + variant + ext
-        downloaded_font = os.path.join(fake_font_dir, full_name)
-        print downloaded_font
+        downloaded_font = os.path.join( self.fake_font_dir, full_name)
         self.assertTrue(os.path.isfile(downloaded_font))
+
+    def test_UninstallFont(self):
+        font_file = self.fake_font_dir + self.font_name + "_normal-400.ttf"
+        with open(font_file, 'wb') as f:
+            f.write('Test')
+        UninstallFont(self.font_name, self.fake_font_dir)
+        self.assertFalse(os.path.isfile(font_file))
 
     def test_process_json(self):
         returned_list = process_json(fake_json_data)

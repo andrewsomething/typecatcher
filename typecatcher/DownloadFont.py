@@ -66,7 +66,7 @@ def extract_url(family):
     return font_dict
 
 
-def UninstallFont(font_name):
-    font_file = glob.glob(fontDir + font_name + "_*.*")
+def UninstallFont(font_name, font_dir=fontDir):
+    font_file = glob.glob(font_dir + font_name + "_*.*")
     for f in font_file:
         os.remove(f)
