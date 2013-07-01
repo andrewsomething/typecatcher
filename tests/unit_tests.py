@@ -24,7 +24,7 @@ import json
 import glob
 from typecatcher import AboutTypeCatcherDialog
 from typecatcher.DownloadFont import extract_url, write_font_file, UninstallFont
-from typecatcher.FindFonts import process_json, cache_json, get_fonts_json
+from typecatcher.FindFonts import process_json, cache_json, get_fonts_json, get_font_variants
 from typecatcher_lib.xdg import cacheDir
 
 class TestCases(unittest.TestCase):
@@ -77,6 +77,10 @@ class TestCases(unittest.TestCase):
     def test_get_fonts_json(self):
         returned_data = get_fonts_json()
         self.assertTrue(json.loads(str(returned_data),"utf-8"))
+
+    def test_get_font_variants(self):
+        variants= get_font_variants(self.font_name)
+        self.assertTrue(variants, ['regular'])
 
 fake_json_data = """{
  "kind": "webfonts#webfontList",
