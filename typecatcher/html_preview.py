@@ -21,14 +21,6 @@ import urllib2
 from random import choice
 
 
-def internet_on():
-    try:
-        response = urllib2.urlopen('http://173.194.76.95', timeout=1)
-        return True
-    except urllib2.URLError as err:
-        return False
-
-
 def html_font_view(font=None, text=None):
 
     start_page_icon = get_media_file("typecatcher.svg")

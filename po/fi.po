@@ -1,21 +1,21 @@
-# German translation for typecatcher
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# Finnish translation for typecatcher
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the typecatcher package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-16 14:42-0400\n"
-"PO-Revision-Date: 2012-11-30 20:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2013-08-12 17:22+0000\n"
+"Last-Translator: Jiri Grönroos <Unknown>\n"
+"Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-07-08 05:46+0000\n"
-"X-Generator: Launchpad (build 16696)\n"
+"X-Launchpad-Export-Date: 2013-08-13 06:05+0000\n"
+"X-Generator: Launchpad (build 16723)\n"
 
 #: ../typecatcher/__init__.py:32
 msgid "Show debug messages (-vv debugs typecatcher_lib also)"
@@ -23,11 +23,11 @@ msgstr ""
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr ""
+msgstr "Tekijänoikeus (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:2
 msgid "Download Google webfonts for use on the desktop."
-msgstr ""
+msgstr "Lataa Googlen webfonts-kirjasimia työydällä käytettäväksi."
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:3
 msgid ""
@@ -48,49 +48,55 @@ msgstr ""
 
 #: ../typecatcher/TypeCatcherWindow.py:72
 msgid "Fonts"
-msgstr ""
+msgstr "Kirjasimet"
 
 #: ../typecatcher/TypeCatcherWindow.py:215
 msgid "This the install button."
-msgstr ""
+msgstr "Painoit Asenna-painiketta."
 
 #: ../typecatcher/TypeCatcherWindow.py:217
 msgid ""
 "Select a font on the left and press this button. The font will be installed "
 "for off-line use."
 msgstr ""
+"Valitse kirjasin vasemmalta ja paina tätä painiketta, niin kirjasin "
+"asennetaan koneellesi."
 
 #: ../typecatcher/TypeCatcherWindow.py:229
 msgid "This the uninstall button."
-msgstr ""
+msgstr "Painoit Poista-painiketta."
 
 #: ../typecatcher/TypeCatcherWindow.py:231
 msgid ""
 "Select a font on the left and press this button. It will be removed from "
 "your system."
 msgstr ""
+"Valitse kirjasin vasemmalta ja paina tätä painiketta, niin kyseinen kirjasin "
+"poistetaan koneeltasi."
 
 #: ../typecatcher/TypeCatcherWindow.py:244
 msgid "This the info button."
-msgstr ""
+msgstr "Painoit Tietoja-painiketta."
 
 #: ../typecatcher/TypeCatcherWindow.py:246
 msgid ""
 "Select a font on the left and press this button. A browser will open with "
 "further information about the chosen font."
 msgstr ""
+"Valitse kirjasin vasemmalta ja paina tätä painiketta. Selaimeen aukeaa "
+"lisätietoja valitusta kirjasimesta."
 
 #: ../typecatcher/html_preview.py:118
 msgid "Installed"
-msgstr ""
+msgstr "Asennettu"
 
 #: ../typecatcher/html_preview.py:119
 msgid "Font not available."
-msgstr ""
+msgstr "Kirjasin ei ole saatavilla."
 
 #: ../typecatcher/html_preview.py:120
 msgid "Please check your network connection."
-msgstr ""
+msgstr "Tarkista verkkoyhteytesi."
 
 #: ../typecatcher/html_preview.py:128
 msgid ""
@@ -99,6 +105,8 @@ msgid ""
 "back, and if he lifted his head a little he could see his brown belly, "
 "slightly domed and divided by arches into stiff sections."
 msgstr ""
+"Kun Gregor Samsa eräänä aamuna heräsi rauhattomasta unesta, hän huomasi "
+"muuttuneensa sängyssään suunnattomaksi syöpäläiseksi."
 
 #: ../typecatcher/html_preview.py:129
 msgid ""
@@ -107,6 +115,9 @@ msgid ""
 "at a distance of roughly ninety-eight million miles is an utterly "
 "insignificant little blue-green planet..."
 msgstr ""
+"Linnunradan läntisen kierteishaaran hyljityllä, kartoittamattomalla laidalla "
+"on pieni merkityksetön keltainen aurinko. Sitä kiertää noin 150 miljoonan "
+"kilometrin etäisyydellä pieni ja mitätön, sinivihreä planeetta..."
 
 #: ../typecatcher/html_preview.py:130
 msgid ""
@@ -114,6 +125,9 @@ msgid ""
 "was to remember that distant afternoon when his father took him to discover "
 "ice."
 msgstr ""
+"Vuosia myöhemmin, seistessään teloistusryhmän edessä, eversti Aureliano "
+"Buendia muisti kaukaisen illan, jolloin hänen isänsä vei hänet tutustumaan "
+"jäähän."
 
 #: ../typecatcher/html_preview.py:131
 msgid ""
@@ -130,115 +144,117 @@ msgid ""
 "lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
 "ungirdled, was sustained gently behind him on the mild morning air."
 msgstr ""
+"Ylväästi pulska Buck Mulligan tuli portaidenpäästä kädessään vaahdokekuppi, "
+"jonka päälle peili ja partaveitsi oli asetettu ristiin."
 
 #: ../typecatcher/html_preview.py:152
 msgid "Enter text..."
-msgstr ""
+msgstr "Kirjoita tekstiä..."
 
 #: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:12
 msgid "TypeCatcher"
-msgstr ""
+msgstr "TypeCatcher"
 
 #: ../typecatcher.desktop.in.h:2
 msgid "Download Google webfonts for off-line use"
-msgstr ""
+msgstr "Lataa Googlen webfonts-kirjasimia paikalliseen käyttöön"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:1
 msgid "Translate this app"
-msgstr ""
+msgstr "Käännä sovellus kielellesi"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "Report a bug"
-msgstr ""
+msgstr "Ilmoita ongelmasta"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:3
 msgid "Select text to display"
-msgstr ""
+msgstr "Valitse näytettävä teksti"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:4
 msgid "Custom text"
-msgstr ""
+msgstr "Omavalintainen teksti"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:5
 msgid "Random"
-msgstr ""
+msgstr "Satunnainen"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:6
 msgid "ipsum"
-msgstr ""
+msgstr "ipsum"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:7
 msgid "Kafka"
-msgstr ""
+msgstr "Kafka"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:8
 msgid "Adams"
-msgstr ""
+msgstr "Adams"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Marquez"
-msgstr ""
+msgstr "Marquez"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:10
 msgid "Ellison"
-msgstr ""
+msgstr "Ellison"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:11
 msgid "Joyce"
-msgstr ""
+msgstr "Joyce"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:13
 msgid "_File"
-msgstr ""
+msgstr "_Tiedosto"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:14
 msgid "_Help"
-msgstr ""
+msgstr "_Ohje"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:15
 msgid "Contents"
-msgstr ""
+msgstr "Sisältö"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:16
 msgid "Download font..."
-msgstr ""
+msgstr "Lataa kirjasin..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:17
 msgid "Download font"
-msgstr ""
+msgstr "Lataa kirjasin"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:18
 msgid "Uninstall font..."
-msgstr ""
+msgstr "Poista kirjasin..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:19
 msgid "Uninstall font"
-msgstr ""
+msgstr "Poista kirjasin"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:20
 msgid "Font info..."
-msgstr ""
+msgstr "Kirjasimen tiedot..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:21
 msgid "Font info"
-msgstr ""
+msgstr "Kirjasimen tiedot"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:22
 msgid "Font size..."
-msgstr ""
+msgstr "Kirjasimen koko..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:23
 msgid "Search fonts..."
-msgstr ""
+msgstr "Etsi kirjasimia..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:24
 msgid "Clear search..."
-msgstr ""
+msgstr "Tyhjennä haku..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:25
 msgid "Select text..."
-msgstr ""
+msgstr "Valitse teksti..."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:26
 msgid "Select text"
-msgstr ""
+msgstr "Valitse teksti"

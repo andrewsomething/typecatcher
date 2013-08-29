@@ -21,9 +21,10 @@ import unittest
 sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), "..")))
 import tempfile
 import json
+import glob
 from typecatcher import AboutTypeCatcherDialog
-from typecatcher.DownloadFont import extract_url, write_font_file
-from typecatcher.FindFonts import process_json, cache_json, get_fonts_json
+from typecatcher.DownloadFont import extract_url, write_font_file, UninstallFont
+from typecatcher.FindFonts import process_json, cache_json, get_fonts_json, get_font_variants
 from typecatcher_lib.xdg import cacheDir
 
 class TestCases(unittest.TestCase):
@@ -31,11 +32,10 @@ class TestCases(unittest.TestCase):
         self.AboutTypeCatcherDialog_members = [
         'AboutDialog', 'AboutTypeCatcherDialog', 'logger', 'logging']
 
-        self.font_name = 'Alfa Slab One'
-        self.font_dict = {'normal-400': 'http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-Yjjx0o0jr6fNXxPgYh_a8Q.ttf'}
-
+        self.font_name = 'Abril Fatface'
+        self.font_dict = {"regular": "http://themes.googleusercontent.com/static/fonts/abrilfatface/v5/X1g_KwGeBV3ajZIXQ9VnDojjx0o0jr6fNXxPgYh_a8Q.ttf"}
         self.font_list = [["Abel"], ["Abril Fatface"]]
-
+        self.fake_font_dir = tempfile.mkdtemp() + "-fonts"
 
     def test_AboutTypeCatcherDialog_members(self):
         all_members = dir(AboutTypeCatcherDialog)
@@ -48,17 +48,22 @@ class TestCases(unittest.TestCase):
         self.assertEqual(self.font_dict, returned_dict)
 
     def test_write_font_file(self):
-        fake_font_dir = tempfile.mkdtemp() + "-fonts"
         for n in self.font_dict.items():
             font_url = n[-1]
             variant = n[0]
-        write_font_file(font_url, fake_font_dir,
+        write_font_file(font_url,  self.fake_font_dir,
                         self.font_name, variant)
         ext = os.path.splitext(font_url)[1]
         full_name = self.font_name + "_" + variant + ext
-        downloaded_font = os.path.join(fake_font_dir, full_name)
-        print downloaded_font
+        downloaded_font = os.path.join( self.fake_font_dir, full_name)
         self.assertTrue(os.path.isfile(downloaded_font))
+
+    def test_UninstallFont(self):
+        font_file = self.fake_font_dir + self.font_name + "_normal-400.ttf"
+        with open(font_file, 'wb') as f:
+            f.write('Test')
+        UninstallFont(self.font_name, self.fake_font_dir)
+        self.assertFalse(os.path.isfile(font_file))
 
     def test_process_json(self):
         returned_list = process_json(fake_json_data)
@@ -73,6 +78,10 @@ class TestCases(unittest.TestCase):
         returned_data = get_fonts_json()
         self.assertTrue(json.loads(str(returned_data),"utf-8"))
 
+    def test_get_font_variants(self):
+        variants= get_font_variants(self.font_name)
+        self.assertTrue(variants, ['regular'])
+
 fake_json_data = """{
  "kind": "webfonts#webfontList",
  "items": [
@@ -84,7 +93,12 @@ fake_json_data = """{
    ],
    "subsets": [
     "latin"
-   ]
+   ],
+   "version": "v3",
+   "lastModified": "2012-07-25",
+   "files": {
+    "regular": "http://themes.googleusercontent.com/static/fonts/abel/v3/RpUKfqNxoyNe_ka23bzQ2A.ttf"
+   }
   },
   {
    "kind": "webfonts#webfont",
@@ -95,7 +109,12 @@ fake_json_data = """{
    "subsets": [
     "latin-ext",
     "latin"
-   ]
+   ],
+   "version": "v5",
+   "lastModified": "2012-07-25",
+   "files": {
+    "regular": "http://themes.googleusercontent.com/static/fonts/abrilfatface/v5/X1g_KwGeBV3ajZIXQ9VnDojjx0o0jr6fNXxPgYh_a8Q.ttf"
+   }
   }
  ]
 }"""
