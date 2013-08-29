@@ -1,6 +1,7 @@
 typecatcher (0.1.1-0ubuntu1~ppa1~saucy1) UNRELEASED; urgency=low
 
   * New upstream bugfix release.
+  * debian/control: Demote yelp to Recommends (Closes: #720908).
 
  -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Thu, 29 Aug 2013 15:16:54 -0400
 

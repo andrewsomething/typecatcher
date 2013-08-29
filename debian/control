@@ -16,9 +16,9 @@ Architecture: all
 Depends: gir1.2-glib-2.0,
          gir1.2-gtk-3.0,
          gir1.2-webkit-3.0,
-         yelp,
          ${misc:Depends},
          ${python:Depends}
+Recommends: yelp
 Description: Download Google webfonts for off-line use
  TypeCatcher allows you to search, browse, and download Google webfonts
  for off-line use. You can preview fonts with adjustable size and text.
