@@ -97,6 +97,7 @@ class TypeCatcherWindow(Window):
         self.text_content = "random"
 
         self.scale = self.builder.get_object('spinbutton')
+        self.scale.set_value(36)
         self.scale.connect("value-changed", self.spin_moved)
 
     def spin_moved(self, widget):
