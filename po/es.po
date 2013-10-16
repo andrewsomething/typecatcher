@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-16 14:42-0400\n"
-"PO-Revision-Date: 2013-10-07 03:40+0000\n"
+"PO-Revision-Date: 2013-10-16 04:03+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-10-08 06:08+0000\n"
+"X-Launchpad-Export-Date: 2013-10-16 05:09+0000\n"
 "X-Generator: Launchpad (build 16799)\n"
 
 #: ../typecatcher/__init__.py:32
@@ -61,35 +61,35 @@ msgstr ""
 
 #: ../typecatcher/TypeCatcherWindow.py:72
 msgid "Fonts"
-msgstr "Tipografías"
+msgstr "Tipos de letra"
 
 #: ../typecatcher/TypeCatcherWindow.py:215
 msgid "This the install button."
-msgstr "Éste es el botón de instalación."
+msgstr "Este es el botón de instalación."
 
 #: ../typecatcher/TypeCatcherWindow.py:217
 msgid ""
 "Select a font on the left and press this button. The font will be installed "
 "for off-line use."
 msgstr ""
-"Seleccione una tipografía en la izquierda y pulse este botón. La tipografía "
-"se instalará para su uso sin conexión."
+"Seleccione un tipo de letra en la izquierda y pulse este botón. El tipo de "
+"letra se instalará para su uso sin conexión."
 
 #: ../typecatcher/TypeCatcherWindow.py:229
 msgid "This the uninstall button."
-msgstr "Éste es el botón de desinstalación."
+msgstr "Este es el botón de desinstalación."
 
 #: ../typecatcher/TypeCatcherWindow.py:231
 msgid ""
 "Select a font on the left and press this button. It will be removed from "
 "your system."
 msgstr ""
-"Seleccione una tipografía en la izquierda y pulse este botón. Se eliminará "
+"Seleccione un tipo de letra en la izquierda y pulse este botón. Se eliminará "
 "de su sistema."
 
 #: ../typecatcher/TypeCatcherWindow.py:244
 msgid "This the info button."
-msgstr "Éste es el botón de información."
+msgstr "Este es el botón de información."
 
 #: ../typecatcher/TypeCatcherWindow.py:246
 msgid ""
