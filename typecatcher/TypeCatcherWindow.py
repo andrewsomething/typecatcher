@@ -147,7 +147,7 @@ class TypeCatcherWindow(Window):
         document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
         var wf = document.createElement('script');
         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            '://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
         wf.type = 'text/javascript';
         wf.async = 'true';
         var s = document.getElementsByTagName('script')[0];

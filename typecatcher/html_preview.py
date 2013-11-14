@@ -49,7 +49,7 @@ def html_font_view(font=None, text=None):
 <html>
   <head>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
 
     <style>
       body { font-size: 36px; }
