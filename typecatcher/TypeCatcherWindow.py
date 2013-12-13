@@ -134,25 +134,14 @@ class TypeCatcherWindow(Window):
                    """
                    document.getElementById('text_preview').style.fontFamily = "\'%s\'";
                    """  % (self.font)]
-        font_loader = """WebFontConfig = {
-        google: { families: [ '%s' ] },
-        inactive: function() {
-          document.getElementById('start_page').style.display = 'None';
-          document.getElementById('text_preview').style.display = 'None';
-          document.getElementById('no_connect').style.display = 'block';
-        },
-      }; 
-      (function() {
-        document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
-        document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();""" % (self.font)
+        font_loader = """WebFont.load({
+            google: { families: [ '%s' ] },
+            inactive: function() {
+                document.getElementById('start_page').style.display = 'None';
+                document.getElementById('text_preview').style.display = 'None';
+                document.getElementById('no_connect').style.display = 'block';
+            },
+        });""" % (self.font)
         show_text = [font_loader,
                      "document.getElementById('no_connect').style.display = 'None';",
                      "document.getElementById('text_preview').style.display = 'block';"]
