@@ -1,8 +1,21 @@
-typecatcher (0.2-0ubuntu1) UNRELEASED; urgency=low
+typecatcher (0.2-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
 
- -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Sun, 30 Jun 2013 13:21:22 -0400
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Tue, 21 Jan 2014 15:22:46 -0500
+
+typecatcher (0.1.2-0ubuntu1~ppa1~trusty1) trusty; urgency=low
+
+  * New upstream bugfix release (LP: #1250595). 
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Thu, 14 Nov 2013 13:27:56 -0500
+
+typecatcher (0.1.1-0ubuntu1~ppa1~saucy1) saucy; urgency=low
+
+  * New upstream bugfix release.
+  * debian/control: Demote yelp to Recommends (Closes: #720908).
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Tue, 01 Oct 2013 13:13:09 -0400
 
 typecatcher (0.1-0ubuntu1~ppa1~saucy1) saucy; urgency=low
 
