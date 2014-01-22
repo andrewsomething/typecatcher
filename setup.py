@@ -32,8 +32,8 @@ def update_config(libdir, values = {}):
     filename = os.path.join(libdir, 'typecatcher_lib/typecatcherconfig.py')
     oldvalues = {}
     try:
-        fin = file(filename, 'r')
-        fout = file(filename + '.new', 'w')
+        fin = open(filename, 'r', encoding='utf-8')
+        fout = open(filename + '.new', 'w', encoding='utf-8')
 
         for line in fin:
             fields = line.split(' = ') # Separate variable from value
@@ -83,8 +83,8 @@ def move_desktop_file(root, target_data, prefix):
 def update_desktop_file(filename, target_pkgdata, target_scripts):
 
     try:
-        fin = file(filename, 'r')
-        fout = file(filename + '.new', 'w')
+        fin = open(filename, 'r', encoding='utf-8')
+        fout = open(filename + '.new', 'w', encoding='utf-8')
 
         for line in fin:
             if 'Exec=' in line:
