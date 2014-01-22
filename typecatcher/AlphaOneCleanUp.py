@@ -36,7 +36,7 @@ def write_alpha_clean_up_file():
     f = os.path.join(confDir + "alpha_clean_up_check")
     if not os.path.exists(confDir):
         os.makedirs(confDir)
-    with file(f, 'a'):
+    with open(f, 'a'):
         os.utime(f, None)
 
 def rename_font_files():

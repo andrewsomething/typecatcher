@@ -15,7 +15,7 @@
 ### END LICENSE
 
 import json
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import os
 from typecatcher_lib.xdg import cacheDir
 
@@ -31,13 +31,13 @@ def FindFonts():
 
 def get_fonts_json():
     try:
-        req = urllib2.Request(
+        req = urllib.request.Request(
           "https://www.googleapis.com/webfonts/v1/webfonts?key=%s" % API_KEY)
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         data = opener.open(req).read()
-    except urllib2.URLError:
+    except urllib.error.URLError:
         data = open_local_json()
-    return data
+    return data.decode('utf8')
 
 
 def open_local_json():
@@ -47,7 +47,7 @@ def open_local_json():
 
 
 def process_json(data):
-    json_data = json.loads(str(data), "utf-8")
+    json_data = json.loads(data, "utf-8")
     fonts = []
     for n in json_data['items']:
         f = []
@@ -60,11 +60,11 @@ def cache_json(data):
     local_json = os.path.join(cacheDir + "webfonts.json")
     if os.path.exists(cacheDir):
         with open(local_json, 'wb') as local_json:
-            local_json.write(data)
+            local_json.write(bytes(data, 'UTF-8'))
     else:
         os.makedirs(cacheDir)
         with open(local_json, 'wb') as local_json:
-            local_json.write(data)
+            local_json.write(bytes(data, 'UTF-8'))
 
 
 def get_font_variants(family):

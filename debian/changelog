@@ -1,6 +1,8 @@
 typecatcher (0.2-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Adapt packaging for Python 3.
+  * Depend on python3-gi (LP: #1258885).
 
  -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Tue, 21 Jan 2014 15:22:46 -0500
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>
@@ -23,7 +23,7 @@ import sys
 try:
     import DistUtilsExtra.auto
 except ImportError:
-    print >> sys.stderr, 'To build typecatcher you need https://launchpad.net/python-distutils-extra'
+    print('To build typecatcher you need https://launchpad.net/python-distutils-extra', file=sys.stderr)
     sys.exit(1)
 assert DistUtilsExtra.auto.__version__ >= '2.18', 'needs DistUtilsExtra.auto >= 2.18'
 
@@ -32,8 +32,8 @@ def update_config(libdir, values = {}):
     filename = os.path.join(libdir, 'typecatcher_lib/typecatcherconfig.py')
     oldvalues = {}
     try:
-        fin = file(filename, 'r')
-        fout = file(filename + '.new', 'w')
+        fin = open(filename, 'r', encoding='utf-8')
+        fout = open(filename + '.new', 'w', encoding='utf-8')
 
         for line in fin:
             fields = line.split(' = ') # Separate variable from value
@@ -46,8 +46,8 @@ def update_config(libdir, values = {}):
         fout.close()
         fin.close()
         os.rename(fout.name, fin.name)
-    except (OSError, IOError), e:
-        print ("ERROR: Can't find %s" % filename)
+    except (OSError, IOError) as e:
+        print(("ERROR: Can't find %s" % filename))
         sys.exit(1)
     return oldvalues
 
@@ -65,7 +65,7 @@ def move_desktop_file(root, target_data, prefix):
     desktop_file = desktop_path + '/typecatcher.desktop'
 
     if not os.path.exists(old_desktop_file):
-        print ("ERROR: Can't find", old_desktop_file)
+        print(("ERROR: Can't find", old_desktop_file))
         sys.exit(1)
     elif target_data != prefix + '/':
         # This is an /opt install, so rename desktop file to use extras-
@@ -75,7 +75,7 @@ def move_desktop_file(root, target_data, prefix):
             os.rename(old_desktop_file, desktop_file)
             os.rmdir(old_desktop_path)
         except OSError as e:
-            print ("ERROR: Can't rename", old_desktop_file, ":", e)
+            print(("ERROR: Can't rename", old_desktop_file, ":", e))
             sys.exit(1)
 
     return desktop_file
@@ -83,8 +83,8 @@ def move_desktop_file(root, target_data, prefix):
 def update_desktop_file(filename, target_pkgdata, target_scripts):
 
     try:
-        fin = file(filename, 'r')
-        fout = file(filename + '.new', 'w')
+        fin = open(filename, 'r', encoding='utf-8')
+        fout = open(filename + '.new', 'w', encoding='utf-8')
 
         for line in fin:
             if 'Exec=' in line:
@@ -98,8 +98,8 @@ def update_desktop_file(filename, target_pkgdata, target_scripts):
         fout.close()
         fin.close()
         os.rename(fout.name, fin.name)
-    except (OSError, IOError), e:
-        print ("ERROR: Can't find %s" % filename)
+    except (OSError, IOError) as e:
+        print(("ERROR: Can't find %s" % filename))
         sys.exit(1)
 
 def compile_schemas(root, target_data):

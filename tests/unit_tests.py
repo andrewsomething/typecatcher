@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>
@@ -48,7 +48,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(self.font_dict, returned_dict)
 
     def test_write_font_file(self):
-        for n in self.font_dict.items():
+        for n in list(self.font_dict.items()):
             font_url = n[-1]
             variant = n[0]
         write_font_file(font_url,  self.fake_font_dir,
@@ -61,7 +61,7 @@ class TestCases(unittest.TestCase):
     def test_UninstallFont(self):
         font_file = self.fake_font_dir + self.font_name + "_normal-400.ttf"
         with open(font_file, 'wb') as f:
-            f.write('Test')
+            f.write(bytes('Test', 'UTF-8'))
         UninstallFont(self.font_name, self.fake_font_dir)
         self.assertFalse(os.path.isfile(font_file))
 
