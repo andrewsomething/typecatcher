@@ -171,7 +171,7 @@ class TypeCatcherWindow(Window):
         fonts = list(itertools.chain(*self.fonts))
         entered_text = self.search_field.get_text()
         matcher = re.compile(entered_text, re.IGNORECASE)
-        if any(itertools.ifilter(matcher.match, fonts)):
+        if any(filter(matcher.match, fonts)):
             for position, item in enumerate(fonts):
                 if item.lower() == entered_text.lower():
                     self.listview.set_cursor(position)

@@ -17,7 +17,7 @@
 from locale import gettext as _
 from gi.repository import Gtk
 from typecatcher_lib.helpers import get_media_file
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 from random import choice
 
 

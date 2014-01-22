@@ -48,7 +48,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(self.font_dict, returned_dict)
 
     def test_write_font_file(self):
-        for n in self.font_dict.items():
+        for n in list(self.font_dict.items()):
             font_url = n[-1]
             variant = n[0]
         write_font_file(font_url,  self.fake_font_dir,

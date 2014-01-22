@@ -15,7 +15,7 @@
 ### END LICENSE
 
 import json
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import os
 from typecatcher_lib.xdg import cacheDir
 
@@ -31,11 +31,11 @@ def FindFonts():
 
 def get_fonts_json():
     try:
-        req = urllib2.Request(
+        req = urllib.request.Request(
           "https://www.googleapis.com/webfonts/v1/webfonts?key=%s" % API_KEY)
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         data = opener.open(req).read()
-    except urllib2.URLError:
+    except urllib.error.URLError:
         data = open_local_json()
     return data
 

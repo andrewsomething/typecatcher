@@ -15,7 +15,7 @@
 ### END LICENSE
 
 import os
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import re
 import glob
 import json
@@ -31,7 +31,7 @@ class DownloadError(Exception):
 def DownloadFont(font_name, uri):
     font_dict = extract_url(font_name)
     if font_dict is not None:
-        for n in font_dict.items():
+        for n in list(font_dict.items()):
             font_url = n[-1]
             variant = n[0]
             if font_url is not None:
@@ -46,8 +46,8 @@ def DownloadFont(font_name, uri):
 
 
 def write_font_file(font_url, font_dir, font_name, variant):
-    req = urllib2.Request(font_url)
-    r = urllib2.urlopen(req)
+    req = urllib.request.Request(font_url)
+    r = urllib.request.urlopen(req)
     full_name = font_name + "_" + variant
     ext = os.path.splitext(font_url)[1]
     f = os.path.join(font_dir, full_name + ext)
