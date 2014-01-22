@@ -61,7 +61,7 @@ class TestCases(unittest.TestCase):
     def test_UninstallFont(self):
         font_file = self.fake_font_dir + self.font_name + "_normal-400.ttf"
         with open(font_file, 'wb') as f:
-            f.write('Test')
+            f.write(bytes('Test', 'UTF-8'))
         UninstallFont(self.font_name, self.fake_font_dir)
         self.assertFalse(os.path.isfile(font_file))
 
