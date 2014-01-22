@@ -2,14 +2,14 @@ Source: typecatcher
 Maintainer: Andrew Starr-Bochicchio <a.starr.b@gmail.com>
 Section: python
 Priority: extra
-Build-Depends: debhelper (>= 8),
-               python (>= 2.6.6-3~),
-               python-distutils-extra (>= 2.10)
+Build-Depends: debhelper (>= 9),
+               python3 (>= 3.2),
+               python3-distutils-extra
 Standards-Version: 3.9.3
 Vcs-Browser: http://bazaar.launchpad.net/~andrewsomething/typecatcher/trunk/files
 Vcs-Bzr: lp:typecatcher
 Homepage: https://launchpad.net/typecatcher
-X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.2
 
 Package: typecatcher
 Architecture: all
@@ -17,7 +17,7 @@ Depends: gir1.2-glib-2.0,
          gir1.2-gtk-3.0,
          gir1.2-webkit-3.0,
          ${misc:Depends},
-         ${python:Depends}
+         ${python3:Depends}
 Recommends: yelp
 Description: Download Google webfonts for off-line use
  TypeCatcher allows you to search, browse, and download Google webfonts
