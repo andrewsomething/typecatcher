@@ -30,8 +30,6 @@ __version__ = 'VERSION'
 
 import os
 
-from locale import gettext as _
-
 class project_path_not_found(Exception):
     """Raised when we can't find the project directory."""
 

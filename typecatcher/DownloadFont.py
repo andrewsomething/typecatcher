@@ -16,12 +16,11 @@
 
 import os
 import urllib.request, urllib.error, urllib.parse
-import re
 import glob
 import json
 
-from typecatcher_lib.xdg import fontDir, cacheDir
-from typecatcher.FindFonts import get_font_variants, open_local_json
+from typecatcher_lib.xdg import fontDir
+from typecatcher.FindFonts import open_local_json
 
 WEBFONTS_API_URL = "http://fonts.googleapis.com/css?family="
 

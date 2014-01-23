@@ -15,7 +15,7 @@
 ### END LICENSE
 
 import os
-from typecatcher_lib.xdg import fontDir, cacheDir, confDir
+from typecatcher_lib.xdg import fontDir, confDir
 
 
 def fix_file_names():

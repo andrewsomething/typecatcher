@@ -23,8 +23,6 @@ import os
 from . typecatcherconfig import get_data_file
 from . Builder import Builder
 
-from locale import gettext as _
-
 def get_builder(builder_file_name):
     """Return a fully-instantiated Gtk.Builder instance from specified ui 
     file
