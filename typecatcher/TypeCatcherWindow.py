@@ -179,8 +179,8 @@ class TypeCatcherWindow(Window):
             pass
 
     def on_match_selected(self, completion, treemodel, treeiter):
-        self.font = treemodel[treeiter][completion.get_text_column()]
-        self.js_exec()
+        path = treemodel.get_path(treeiter)
+        self.listview.set_cursor(path)
 
     def on_select_changed(self, selection):
         (model, iter) = selection.get_selected()
