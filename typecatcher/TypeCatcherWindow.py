@@ -86,7 +86,7 @@ class TypeCatcherWindow(Window):
 
         self.text_selector = self.builder.get_object('text_selector')
         self.text_menu = self.builder.get_object('text_menu')
-        self.text_selector.set_menu(self.text_menu)
+        #self.text_selector.set_menu(self.text_menu)
 
         radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']
         for position, item in enumerate(radios):
@@ -240,3 +240,6 @@ class TypeCatcherWindow(Window):
             dialog.destroy()
         except AttributeError:
             pass
+
+    def on_text_selector_clicked(self, widget):
+        self.text_menu.popup(None, None, None, None, 0, Gtk.get_current_event_time())
