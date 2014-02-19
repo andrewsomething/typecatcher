@@ -86,7 +86,13 @@ class TypeCatcherWindow(Window):
 
         self.text_selector = self.builder.get_object('text_selector')
         self.text_menu = self.builder.get_object('text_menu')
-        #self.text_selector.set_menu(self.text_menu)
+
+        # Fallback to known icon for backwards compat
+        icon_theme = Gtk.IconTheme.get_default()
+        if icon_theme.has_icon("view-more-symbolic"):
+            self.text_selector.set_icon_name('view-more-symbolic')
+        else:
+            self.text_selector.set_icon_name('go-down-symbolic')
 
         radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']
         for position, item in enumerate(radios):
