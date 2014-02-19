@@ -20,8 +20,7 @@ from locale import gettext as _
 
 from gi.repository import Gtk # pylint: disable=E0611
 
-from typecatcher import TypeCatcherWindow
-
+from typecatcher_lib import Application
 from typecatcher_lib import set_up_logging, get_version
 
 def parse_options():
@@ -39,6 +38,5 @@ def main():
     parse_options()
 
     # Run the application.    
-    window = TypeCatcherWindow.TypeCatcherWindow()
-    window.show()
-    Gtk.main()
+    app = Application.TypeCatcherApplication()
+    app.run(None)

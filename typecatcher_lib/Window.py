@@ -25,7 +25,7 @@ from . helpers import get_builder, show_uri, get_help_uri
 
 # This class is meant to be subclassed by TypeCatcherWindow.  It provides
 # common functions and some boilerplate.
-class Window(Gtk.Window):
+class Window(Gtk.ApplicationWindow):
     __gtype_name__ = "Window"
 
     # To construct a new instance of this method, the following notable 
