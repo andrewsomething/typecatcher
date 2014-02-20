@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-16 14:42-0400\n"
+"POT-Creation-Date: 2014-02-19 21:40-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../typecatcher/__init__.py:32
-msgid "Show debug messages (-vv debugs typecatcher_lib also)"
-msgstr ""
-
-#: ../data/ui/AboutTypeCatcherDialog.ui.h:1
-msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr ""
-
-#: ../data/ui/AboutTypeCatcherDialog.ui.h:2
-msgid "Download Google webfonts for use on the desktop."
-msgstr ""
-
-#: ../data/ui/AboutTypeCatcherDialog.ui.h:3
-msgid ""
-"# Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>\n"
-"# This program is free software: you can redistribute it and/or modify it \n"
-"# under the terms of the GNU General Public License version 3, as "
-"published \n"
-"# by the Free Software Foundation.\n"
-"# \n"
-"# This program is distributed in the hope that it will be useful, but \n"
-"# WITHOUT ANY WARRANTY; without even the implied warranties of \n"
-"# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR \n"
-"# PURPOSE.  See the GNU General Public License for more details.\n"
-"# \n"
-"# You should have received a copy of the GNU General Public License along \n"
-"# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:72
-msgid "Fonts"
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:215
-msgid "This the install button."
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:217
-msgid ""
-"Select a font on the left and press this button. The font will be installed "
-"for off-line use."
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:229
-msgid "This the uninstall button."
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:231
-msgid ""
-"Select a font on the left and press this button. It will be removed from "
-"your system."
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:244
-msgid "This the info button."
-msgstr ""
-
-#: ../typecatcher/TypeCatcherWindow.py:246
-msgid ""
-"Select a font on the left and press this button. A browser will open with "
-"further information about the chosen font."
-msgstr ""
-
-#: ../typecatcher/html_preview.py:118
+#: ../typecatcher/html_preview.py:109
 msgid "Installed"
 msgstr ""
 
-#: ../typecatcher/html_preview.py:119
+#: ../typecatcher/html_preview.py:110
 msgid "Font not available."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:120
+#: ../typecatcher/html_preview.py:111
 msgid "Please check your network connection."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:128
+#: ../typecatcher/html_preview.py:119
 msgid ""
 "One morning, when Gregor Samsa woke from troubled dreams, he found himself "
 "transformed in his bed into a horrible vermin. He lay on his armour-like "
@@ -100,7 +37,7 @@ msgid ""
 "slightly domed and divided by arches into stiff sections."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:129
+#: ../typecatcher/html_preview.py:120
 msgid ""
 "Far out in the uncharted backwaters of the unfashionable end of the Western "
 "Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this "
@@ -108,14 +45,14 @@ msgid ""
 "insignificant little blue-green planet..."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:130
+#: ../typecatcher/html_preview.py:121
 msgid ""
 "Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
 "was to remember that distant afternoon when his father took him to discover "
 "ice."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:131
+#: ../typecatcher/html_preview.py:122
 msgid ""
 "I am an invisible man. No, I am not a spook like those who haunted Edgar "
 "Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of "
@@ -124,67 +61,97 @@ msgid ""
 "to see me."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:132
+#: ../typecatcher/html_preview.py:123
 msgid ""
 "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
 "lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
 "ungirdled, was sustained gently behind him on the mild morning air."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:152
+#: ../typecatcher/html_preview.py:143
 msgid "Enter text..."
 msgstr ""
 
-#: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:12
-msgid "TypeCatcher"
+#: ../typecatcher/TypeCatcherWindow.py:72
+msgid "Fonts"
 msgstr ""
 
-#: ../typecatcher.desktop.in.h:2
-msgid "Download Google webfonts for off-line use"
+#: ../typecatcher/TypeCatcherWindow.py:214
+msgid "This the install button."
+msgstr ""
+
+#: ../typecatcher/TypeCatcherWindow.py:215
+msgid ""
+"Select a font on the left and press this button. The font will be installed "
+"for off-line use."
+msgstr ""
+
+#: ../typecatcher/TypeCatcherWindow.py:223
+msgid "This the uninstall button."
+msgstr ""
+
+#: ../typecatcher/TypeCatcherWindow.py:224
+msgid ""
+"Select a font on the left and press this button. It will be removed from "
+"your system."
+msgstr ""
+
+#: ../typecatcher/TypeCatcherWindow.py:233
+msgid "This the info button."
+msgstr ""
+
+#: ../typecatcher/TypeCatcherWindow.py:234
+msgid ""
+"Select a font on the left and press this button. A browser will open with "
+"further information about the chosen font."
 msgstr ""
 
 #: ../data/ui/TypeCatcherWindow.ui.h:1
-msgid "Translate this app"
-msgstr ""
-
-#: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "Report a bug"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:3
+#: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "Select text to display"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:4
+#: ../data/ui/TypeCatcherWindow.ui.h:3
 msgid "Custom text"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:5
+#: ../data/ui/TypeCatcherWindow.ui.h:4
 msgid "Random"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:6
+#: ../data/ui/TypeCatcherWindow.ui.h:5
 msgid "ipsum"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:7
+#: ../data/ui/TypeCatcherWindow.ui.h:6
 msgid "Kafka"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:8
+#: ../data/ui/TypeCatcherWindow.ui.h:7
 msgid "Adams"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:9
+#: ../data/ui/TypeCatcherWindow.ui.h:8
 msgid "Marquez"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:10
+#: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Ellison"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:11
+#: ../data/ui/TypeCatcherWindow.ui.h:10
 msgid "Joyce"
+msgstr ""
+
+#: ../data/ui/TypeCatcherWindow.ui.h:11
+msgid "Translate this app"
+msgstr ""
+
+#: ../data/ui/TypeCatcherWindow.ui.h:12 ../typecatcher.desktop.in.h:1
+msgid "TypeCatcher"
 msgstr ""
 
 #: ../data/ui/TypeCatcherWindow.ui.h:13
@@ -241,4 +208,25 @@ msgstr ""
 
 #: ../data/ui/TypeCatcherWindow.ui.h:26
 msgid "Select text"
+msgstr ""
+
+#: ../typecatcher/__init__.py:31
+msgid "Show debug messages (-vv debugs typecatcher_lib also)"
+msgstr ""
+
+#: ../data/ui/AboutTypeCatcherDialog.ui.h:1
+msgid "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
+msgstr ""
+
+#: ../data/ui/AboutTypeCatcherDialog.ui.h:2
+msgid "Download Google webfonts for use on the desktop."
+msgstr ""
+
+#: ../typecatcher.desktop.in.h:2
+msgid "Download Google webfonts for off-line use"
+msgstr ""
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../typecatcher.desktop.in.h:4
+msgid "fonts;viewer;"
 msgstr ""
