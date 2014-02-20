@@ -92,6 +92,7 @@ class TypeCatcherWindow(Window):
         if icon_theme.has_icon('view-more-symbolic'):
             menu_icon = 'view-more-symbolic'
         else:
+            logger.debug("Falling back to go-down-symbolic")
             menu_icon = 'go-down-symbolic'
 
         try: # Try to use a GtkMenuButton, fallback to a ToolButton
@@ -112,8 +113,9 @@ class TypeCatcherWindow(Window):
             self.selector_icon.show()
             self.toolbar.insert(self.selector_tool_item, 6)
 
-        except:
-            self.text_selector = Gtk.ToolButton.new()
+        except AttributeError:
+            logger.debug("Falling back to GtkToolButton")
+            self.text_selector = Gtk.ToolButton.new(None, None)
             self.text_selector.set_icon_name(menu_icon)
             self.text_selector.set_homogeneous(False)
             self.text_selector.set_expand(False)
