@@ -29,7 +29,7 @@ def html_font_view(font=None, text=None):
         con_theme = Gtk.IconTheme.get_default()
         con_info = con_theme.lookup_icon(con_icon_name, 64, 0)
         con_icon_uri = "file://" + con_info.get_filename()
-    except AttributeError as err:
+    except AttributeError:
         con_icon_uri = get_media_file("no-connection.svg")
 
     try:
@@ -37,7 +37,7 @@ def html_font_view(font=None, text=None):
         installed_theme = Gtk.IconTheme.get_default()
         installed_info = installed_theme.lookup_icon(installed_icon_name, 64, 0)
         installed_icon_uri = "file://" + installed_info.get_filename()
-    except AttributeError as err:
+    except AttributeError:
         installed_icon_uri = get_media_file("installed.svg")
 
     loader = get_media_file("ajax-loader.gif")

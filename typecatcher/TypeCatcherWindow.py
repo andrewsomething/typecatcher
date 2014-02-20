@@ -28,7 +28,7 @@ from typecatcher_lib import Window
 from typecatcher.AboutTypeCatcherDialog import AboutTypeCatcherDialog
 from typecatcher.FindFonts import FindFonts
 from typecatcher_lib.xdg import fontDir
-from typecatcher_lib.helpers import get_builder, running_gnome_shell
+from typecatcher_lib.helpers import running_gnome_shell
 from typecatcher.DownloadFont import DownloadFont, UninstallFont, DownloadError
 from typecatcher.html_preview import html_font_view, select_text_preview
 
@@ -90,9 +90,7 @@ class TypeCatcherWindow(Window):
 
         # Fallback to known icon for backwards compat
         icon_theme = Gtk.IconTheme.get_default()
-        if icon_theme.has_icon("view-more-symbolic"):
-            self.text_selector.set_icon_name('view-more-symbolic')
-        else:
+        if not icon_theme.has_icon("view-more-symbolic"):
             self.text_selector.set_icon_name('go-down-symbolic')
 
         radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']

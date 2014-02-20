@@ -18,8 +18,6 @@ import optparse
 
 from locale import gettext as _
 
-from gi.repository import Gtk # pylint: disable=E0611
-
 from typecatcher_lib import Application
 from typecatcher_lib import set_up_logging, get_version
 

@@ -15,7 +15,7 @@
 ### END LICENSE
 
 from gi.repository import Gtk, Gio # pylint: disable=E0611
-from typecatcher_lib import Window
+
 from typecatcher import TypeCatcherWindow
 from . helpers import get_builder, add_simple_action, running_gnome_shell
 
