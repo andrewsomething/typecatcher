@@ -1,0 +1,2 @@
+# Don't store changes on the pot file
+extend-diff-ignore = "(^|/)(po/typecatcher\.pot)$"
