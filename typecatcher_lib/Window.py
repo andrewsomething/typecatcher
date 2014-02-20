@@ -93,7 +93,7 @@ class Window(Gtk.ApplicationWindow):
     def on_destroy(self, widget, data=None):
         """Called when the TypeCatcherWindow is closed."""
         # Clean up code for saving application state should be added here.
-        Gtk.main_quit()
+        pass
 
     def on_mnu_report_activate(self, button):
         try: # Use apport if we can.
