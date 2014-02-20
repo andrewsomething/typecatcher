@@ -7,112 +7,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-16 14:42-0400\n"
+"POT-Creation-Date: 2014-02-19 21:40-0500\n"
 "PO-Revision-Date: 2012-11-25 12:32+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-18 05:40+0000\n"
+"X-Launchpad-Export-Date: 2014-02-20 05:40+0000\n"
 "X-Generator: Launchpad (build 16916)\n"
 
-#: ../typecatcher/__init__.py:32
-msgid "Show debug messages (-vv debugs typecatcher_lib also)"
-msgstr "Amosar as mensaxes de depuración (-vv depura tamén typecatcher_lib)"
-
-#: ../data/ui/AboutTypeCatcherDialog.ui.h:1
-msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-
-#: ../data/ui/AboutTypeCatcherDialog.ui.h:2
-msgid "Download Google webfonts for use on the desktop."
-msgstr ""
-"Descargue tipos de letra para web de Google para o seu uso no escritorio."
-
-#: ../data/ui/AboutTypeCatcherDialog.ui.h:3
-msgid ""
-"# Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>\n"
-"# This program is free software: you can redistribute it and/or modify it \n"
-"# under the terms of the GNU General Public License version 3, as published "
-"\n"
-"# by the Free Software Foundation.\n"
-"# \n"
-"# This program is distributed in the hope that it will be useful, but \n"
-"# WITHOUT ANY WARRANTY; without even the implied warranties of \n"
-"# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR \n"
-"# PURPOSE.  See the GNU General Public License for more details.\n"
-"# \n"
-"# You should have received a copy of the GNU General Public License along \n"
-"# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-msgstr ""
-"# Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>\n"
-"# Este programa e Software Libre: vostede pode redistribuílo e/ou "
-"modificalo\n"
-"# baixo os termos da GNU Lesser General Public License 3, tal e como foi\n"
-"# publicada pola Free Software Foundation.\n"
-"#\n"
-"# Este programa distribúese coa esperanza de que sexa útil, mais SEN\n"
-"# NINGUNHA GARANTÍA, incluso sen a garantía implícita de COMERCIALIZACIÓN,\n"
-"# CALIDADE SATISFACTORIA OU IDONEIDADE PARA UN DETERMINADO\n"
-"# PROPÓSITO. Vexa a Licenza Pública Xeral de GNU para máis detalles.\n"
-"#\n"
-"# Debería ter recibido unha copia da Licenza Pública Xeral GNU xunto con\n"
-"# este programa. De non ser así, consulte <http://www.gnu.org/licenses/>.\n"
-
-#: ../typecatcher/TypeCatcherWindow.py:72
-msgid "Fonts"
-msgstr "Tipos de letra"
-
-#: ../typecatcher/TypeCatcherWindow.py:215
-msgid "This the install button."
-msgstr "Este é o botón de instalación."
-
-#: ../typecatcher/TypeCatcherWindow.py:217
-msgid ""
-"Select a font on the left and press this button. The font will be installed "
-"for off-line use."
-msgstr ""
-"Seleccione un tipo de letra na esquerda e prema este botón. O tipo de letra "
-"instalarase para o seu uso fora da Rede."
-
-#: ../typecatcher/TypeCatcherWindow.py:229
-msgid "This the uninstall button."
-msgstr "Este é o botón de desinstalación."
-
-#: ../typecatcher/TypeCatcherWindow.py:231
-msgid ""
-"Select a font on the left and press this button. It will be removed from "
-"your system."
-msgstr ""
-"Seleccione un tipo de letra na esquerda e prema este botón. Eliminarase do "
-"seu sistema"
-
-#: ../typecatcher/TypeCatcherWindow.py:244
-msgid "This the info button."
-msgstr "Este é o botón de información."
-
-#: ../typecatcher/TypeCatcherWindow.py:246
-msgid ""
-"Select a font on the left and press this button. A browser will open with "
-"further information about the chosen font."
-msgstr ""
-"Seleccione un tipo de letra na esquerda e prema este botón.  Abrirase un "
-"navegador con máis información sobre o tipo de letra seleccionado."
-
-#: ../typecatcher/html_preview.py:118
+#: ../typecatcher/html_preview.py:109
 msgid "Installed"
 msgstr "Instalado"
 
-#: ../typecatcher/html_preview.py:119
+#: ../typecatcher/html_preview.py:110
 msgid "Font not available."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:120
+#: ../typecatcher/html_preview.py:111
 msgid "Please check your network connection."
 msgstr ""
 
-#: ../typecatcher/html_preview.py:128
+#: ../typecatcher/html_preview.py:119
 msgid ""
 "One morning, when Gregor Samsa woke from troubled dreams, he found himself "
 "transformed in his bed into a horrible vermin. He lay on his armour-like "
@@ -124,7 +41,7 @@ msgstr ""
 "parecidas a unha coiraza, e vía, cando erguía un pouco a cabeza, o seu "
 "estómago alombado, de cor marrón, dividido por durezas arqueadas."
 
-#: ../typecatcher/html_preview.py:129
+#: ../typecatcher/html_preview.py:120
 msgid ""
 "Far out in the uncharted backwaters of the unfashionable end of the Western "
 "Spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this "
@@ -136,7 +53,7 @@ msgstr ""
 "órbita, a aproximadamente cento cincuenta millóns de quilómetros, xira un "
 "pequeno planeta totalmente insignificante de cor azul verdoso…"
 
-#: ../typecatcher/html_preview.py:130
+#: ../typecatcher/html_preview.py:121
 msgid ""
 "Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
 "was to remember that distant afternoon when his father took him to discover "
@@ -146,7 +63,7 @@ msgstr ""
 "Coronel Aureliano Buendía debeu lembrar aquela tarde distante, cando seu pai "
 "levarao a descubrir o xeo."
 
-#: ../typecatcher/html_preview.py:131
+#: ../typecatcher/html_preview.py:122
 msgid ""
 "I am an invisible man. No, I am not a spook like those who haunted Edgar "
 "Allan Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of "
@@ -160,7 +77,7 @@ msgstr ""
 "líquidos… e poderíase dicir que tamén posúo unha mente. Son invisíbel, "
 "enténdeo, simplemente porque a xente refusa verme."
 
-#: ../typecatcher/html_preview.py:132
+#: ../typecatcher/html_preview.py:123
 msgid ""
 "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
 "lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
@@ -170,62 +87,97 @@ msgstr ""
 "escuma onde xacían cruzados un espello e unha navalla de afeitar. Atrás del, "
 "unha bata marela, desatada, abaneábase con lixeireza na suave ar da mañá."
 
-#: ../typecatcher/html_preview.py:152
+#: ../typecatcher/html_preview.py:143
 msgid "Enter text..."
 msgstr "Escriba texto…"
 
-#: ../typecatcher.desktop.in.h:1 ../data/ui/TypeCatcherWindow.ui.h:12
-msgid "TypeCatcher"
-msgstr "TypeCatcher"
+#: ../typecatcher/TypeCatcherWindow.py:72
+msgid "Fonts"
+msgstr "Tipos de letra"
 
-#: ../typecatcher.desktop.in.h:2
-msgid "Download Google webfonts for off-line use"
+#: ../typecatcher/TypeCatcherWindow.py:214
+msgid "This the install button."
+msgstr "Este é o botón de instalación."
+
+#: ../typecatcher/TypeCatcherWindow.py:215
+msgid ""
+"Select a font on the left and press this button. The font will be installed "
+"for off-line use."
 msgstr ""
-"Descargue tipos de letra para web de Google para o seu uso fora da Rede"
+"Seleccione un tipo de letra na esquerda e prema este botón. O tipo de letra "
+"instalarase para o seu uso fora da Rede."
+
+#: ../typecatcher/TypeCatcherWindow.py:223
+msgid "This the uninstall button."
+msgstr "Este é o botón de desinstalación."
+
+#: ../typecatcher/TypeCatcherWindow.py:224
+msgid ""
+"Select a font on the left and press this button. It will be removed from "
+"your system."
+msgstr ""
+"Seleccione un tipo de letra na esquerda e prema este botón. Eliminarase do "
+"seu sistema"
+
+#: ../typecatcher/TypeCatcherWindow.py:233
+msgid "This the info button."
+msgstr "Este é o botón de información."
+
+#: ../typecatcher/TypeCatcherWindow.py:234
+msgid ""
+"Select a font on the left and press this button. A browser will open with "
+"further information about the chosen font."
+msgstr ""
+"Seleccione un tipo de letra na esquerda e prema este botón.  Abrirase un "
+"navegador con máis información sobre o tipo de letra seleccionado."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:1
-msgid "Translate this app"
-msgstr ""
-
-#: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "Report a bug"
 msgstr ""
 
-#: ../data/ui/TypeCatcherWindow.ui.h:3
+#: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "Select text to display"
 msgstr "Seleccione o texto que amosar"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:4
+#: ../data/ui/TypeCatcherWindow.ui.h:3
 msgid "Custom text"
 msgstr "Texto personalizado"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:5
+#: ../data/ui/TypeCatcherWindow.ui.h:4
 msgid "Random"
 msgstr "Ao chou"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:6
+#: ../data/ui/TypeCatcherWindow.ui.h:5
 msgid "ipsum"
 msgstr "ipsum"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:7
+#: ../data/ui/TypeCatcherWindow.ui.h:6
 msgid "Kafka"
 msgstr "Kafka"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:8
+#: ../data/ui/TypeCatcherWindow.ui.h:7
 msgid "Adams"
 msgstr "Adams"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:9
+#: ../data/ui/TypeCatcherWindow.ui.h:8
 msgid "Marquez"
 msgstr "Márquez"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:10
+#: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Ellison"
 msgstr "Ellison"
 
-#: ../data/ui/TypeCatcherWindow.ui.h:11
+#: ../data/ui/TypeCatcherWindow.ui.h:10
 msgid "Joyce"
 msgstr "Joyce"
+
+#: ../data/ui/TypeCatcherWindow.ui.h:11
+msgid "Translate this app"
+msgstr ""
+
+#: ../data/ui/TypeCatcherWindow.ui.h:12 ../typecatcher.desktop.in.h:1
+msgid "TypeCatcher"
+msgstr "TypeCatcher"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:13
 msgid "_File"
@@ -282,3 +234,58 @@ msgstr "Seleccionar texto…"
 #: ../data/ui/TypeCatcherWindow.ui.h:26
 msgid "Select text"
 msgstr "Seleccionar texto"
+
+#: ../typecatcher/__init__.py:31
+msgid "Show debug messages (-vv debugs typecatcher_lib also)"
+msgstr "Amosar as mensaxes de depuración (-vv depura tamén typecatcher_lib)"
+
+#: ../data/ui/AboutTypeCatcherDialog.ui.h:1
+msgid "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
+msgstr ""
+
+#: ../data/ui/AboutTypeCatcherDialog.ui.h:2
+msgid "Download Google webfonts for use on the desktop."
+msgstr ""
+"Descargue tipos de letra para web de Google para o seu uso no escritorio."
+
+#: ../typecatcher.desktop.in.h:2
+msgid "Download Google webfonts for off-line use"
+msgstr ""
+"Descargue tipos de letra para web de Google para o seu uso fora da Rede"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../typecatcher.desktop.in.h:4
+msgid "fonts;viewer;"
+msgstr ""
+
+#~ msgid "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
+#~ msgstr "Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
+
+#~ msgid ""
+#~ "# Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>\n"
+#~ "# This program is free software: you can redistribute it and/or modify it \n"
+#~ "# under the terms of the GNU General Public License version 3, as published "
+#~ "\n"
+#~ "# by the Free Software Foundation.\n"
+#~ "# \n"
+#~ "# This program is distributed in the hope that it will be useful, but \n"
+#~ "# WITHOUT ANY WARRANTY; without even the implied warranties of \n"
+#~ "# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR \n"
+#~ "# PURPOSE.  See the GNU General Public License for more details.\n"
+#~ "# \n"
+#~ "# You should have received a copy of the GNU General Public License along \n"
+#~ "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+#~ msgstr ""
+#~ "# Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>\n"
+#~ "# Este programa e Software Libre: vostede pode redistribuílo e/ou "
+#~ "modificalo\n"
+#~ "# baixo os termos da GNU Lesser General Public License 3, tal e como foi\n"
+#~ "# publicada pola Free Software Foundation.\n"
+#~ "#\n"
+#~ "# Este programa distribúese coa esperanza de que sexa útil, mais SEN\n"
+#~ "# NINGUNHA GARANTÍA, incluso sen a garantía implícita de COMERCIALIZACIÓN,\n"
+#~ "# CALIDADE SATISFACTORIA OU IDONEIDADE PARA UN DETERMINADO\n"
+#~ "# PROPÓSITO. Vexa a Licenza Pública Xeral de GNU para máis detalles.\n"
+#~ "#\n"
+#~ "# Debería ter recibido unha copia da Licenza Pública Xeral GNU xunto con\n"
+#~ "# este programa. De non ser así, consulte <http://www.gnu.org/licenses/>.\n"
