@@ -51,6 +51,7 @@ class TypeCatcherWindow(Window):
         context = self.toolbar.get_style_context()
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
         self.view = WebKit.WebView()
+        self.view.connect('console-message', self.on_js_console_message)
         webview = builder.get_object("webview")
         webview.add(self.view)
         htmlfile = html_font_view()
@@ -58,7 +59,8 @@ class TypeCatcherWindow(Window):
         webview.show_all()
 
         webview_settings = self.view.get_settings()
-        webview_settings.set_property('enable-default-context-menu', False)
+        webview_settings.set_property('enable-default-context-menu',
+                                      False)
 
         # the data in the model
         listmodel = builder.get_object("liststore")
@@ -113,7 +115,7 @@ class TypeCatcherWindow(Window):
             self.selector_icon.show()
             self.toolbar.insert(self.selector_tool_item, 6)
 
-        except AttributeError:
+        except AttributeError: # Gtk version is too old.
             logger.debug("Falling back to GtkToolButton")
             self.text_selector = Gtk.ToolButton.new(None, None)
             self.text_selector.set_icon_name(menu_icon)
@@ -178,7 +180,9 @@ class TypeCatcherWindow(Window):
                    """  % (self.font)]
         font_loader = """WebFont.load({
             google: { families: [ '%s' ] },
-            inactive: function() {
+            fontinactive: function(font, fvd) {
+                // 
+                console.log("Couldn't load " + font + " FVD:" + fvd);
                 document.getElementById('start_page').style.display = 'None';
                 document.getElementById('text_preview').style.display = 'None';
                 document.getElementById('no_connect').style.display = 'block';
@@ -285,3 +289,9 @@ class TypeCatcherWindow(Window):
 
     def on_text_selector_clicked(self, widget):
         self.text_menu.popup(None, None, None, None, 0, Gtk.get_current_event_time())
+
+    def on_js_console_message(self, webview, message, line, id, data=None):
+        """
+        Log messages to JavaScript console
+        """
+        logger.debug(message)
