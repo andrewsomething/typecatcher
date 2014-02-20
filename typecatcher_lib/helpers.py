@@ -20,6 +20,8 @@
 import logging
 import os
 
+from gi.repository import Gtk, Gio
+
 from . typecatcherconfig import get_data_file
 from . Builder import Builder
 
@@ -108,3 +110,15 @@ def alias(alternative_function_name):
         function.aliases.append(alternative_function_name)
         return function
     return decorator
+
+def add_simple_action(app, name, callback):
+    action = Gio.SimpleAction.new(name, None)
+    action.connect('activate', callback)
+    app.add_action(action)
+
+def running_gnome_shell():
+    gtk_settings = Gtk.Settings.get_default()
+    shows_app_menu = gtk_settings.get_property('gtk-shell-shows-app-menu')
+    shows_menubar = gtk_settings.get_property('gtk-shell-shows-menubar')
+    if not shows_menubar and shows_app_menu:
+        return True

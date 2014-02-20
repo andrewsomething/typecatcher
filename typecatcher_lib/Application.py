@@ -17,14 +17,44 @@
 from gi.repository import Gtk, Gio # pylint: disable=E0611
 from typecatcher_lib import Window
 from typecatcher import TypeCatcherWindow
+from . helpers import get_builder, add_simple_action, running_gnome_shell
 
 class TypeCatcherApplication(Gtk.Application):
+
     def __init__(self):
         Gtk.Application.__init__(self, application_id="apps.andrewsomething.typecatcher",
                                  flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.connect("activate", self.on_activate)
 
     def on_activate(self, data=None):
-        window = TypeCatcherWindow.TypeCatcherWindow()
-        self.add_window(window)
-        window.show_all()
+        self.window = TypeCatcherWindow.TypeCatcherWindow()
+        # Use ApplicationMenu under GNOME
+        if running_gnome_shell():
+            self.create_app_menu()
+        self.add_window(self.window)
+        self.window.show()
+
+    def create_app_menu(self):
+        builder = get_builder('AppMenu')
+        appmenu = builder.get_object('appmenu')
+        self.set_app_menu(appmenu)
+        add_simple_action(self, 'save_as', 
+            self.on_save_as_activated)
+        add_simple_action(self, 'help', 
+            self.on_help_activated)
+        add_simple_action(self, 'about', 
+            self.on_about_activated)
+        add_simple_action(self, 'quit', 
+            self.on_quit_activated)
+
+    def on_save_as_activated(self, action, data=None):
+        self.window.on_mnu_save_as_activate(action)
+
+    def on_help_activated(self, action, data=None):
+        self.window.on_mnu_contents_activate(action)
+
+    def on_about_activated(self, action, data=None):
+        self.window.on_mnu_about_activate(action)
+
+    def on_quit_activated(self, action, data=None):
+        self.window.on_mnu_close_activate(action)

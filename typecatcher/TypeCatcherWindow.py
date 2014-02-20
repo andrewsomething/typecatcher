@@ -28,6 +28,7 @@ from typecatcher_lib import Window
 from typecatcher.AboutTypeCatcherDialog import AboutTypeCatcherDialog
 from typecatcher.FindFonts import FindFonts
 from typecatcher_lib.xdg import fontDir
+from typecatcher_lib.helpers import get_builder, running_gnome_shell
 from typecatcher.DownloadFont import DownloadFont, UninstallFont, DownloadError
 from typecatcher.html_preview import html_font_view, select_text_preview
 
@@ -105,6 +106,11 @@ class TypeCatcherWindow(Window):
         self.scale = self.builder.get_object('spinbutton')
         self.scale.set_value(36)
         self.scale.connect("value-changed", self.spin_moved)
+
+        self.menubar = self.builder.get_object('menubar')
+        # Hide menubar under GNOME
+        if running_gnome_shell():
+            self.menubar.hide()
 
     def spin_moved(self, widget):
         size = int(self.scale.get_value())
