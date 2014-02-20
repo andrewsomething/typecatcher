@@ -85,13 +85,43 @@ class TypeCatcherWindow(Window):
         self.mnu_save = self.builder.get_object('mnu_save')
         self.mnu_save.connect("activate", self.on_download_btn_clicked)
 
-        self.text_selector = self.builder.get_object('text_selector')
         self.text_menu = self.builder.get_object('text_menu')
 
         # Fallback to known icon for backwards compat
         icon_theme = Gtk.IconTheme.get_default()
-        if not icon_theme.has_icon("view-more-symbolic"):
-            self.text_selector.set_icon_name('go-down-symbolic')
+        if icon_theme.has_icon('view-more-symbolic'):
+            menu_icon = 'view-more-symbolic'
+        else:
+            menu_icon = 'go-down-symbolic'
+
+        try: # Try to use a GtkMenuButton, fallback to a ToolButton
+            self.selector_icon = Gtk.Image.new()
+            self.selector_icon.set_from_icon_name(menu_icon,
+                                                  Gtk.IconSize.LARGE_TOOLBAR)
+
+            self.text_selector = Gtk.MenuButton.new()
+            self.text_selector.set_popup(self.text_menu)
+            self.text_selector.add(self.selector_icon)
+
+            self.selector_tool_item = Gtk.ToolItem.new()
+            self.selector_tool_item.add(self.text_selector)
+            self.selector_tool_item.set_margin_left(4)
+
+            self.text_selector.show()
+            self.selector_tool_item.show()
+            self.selector_icon.show()
+            self.toolbar.insert(self.selector_tool_item, 6)
+
+        except:
+            self.text_selector = Gtk.ToolButton.new()
+            self.text_selector.set_icon_name(menu_icon)
+            self.text_selector.set_homogeneous(False)
+            self.text_selector.set_expand(False)
+            self.toolbar.insert(self.text_selector, 6)
+            self.text_selector.connect('clicked', self.on_text_selector_clicked)
+            self.text_selector.show()
+
+        self.text_selector.set_tooltip_text(_("Select text..."))
 
         radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']
         for position, item in enumerate(radios):
