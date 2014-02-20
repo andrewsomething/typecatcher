@@ -34,10 +34,10 @@ def get_fonts_json():
         req = urllib.request.Request(
           "https://www.googleapis.com/webfonts/v1/webfonts?key=%s" % API_KEY)
         opener = urllib.request.build_opener()
-        data = opener.open(req).read()
+        data = opener.open(req).read().decode('utf8')
     except urllib.error.URLError:
         data = open_local_json()
-    return data.decode('utf8')
+    return data
 
 
 def open_local_json():
