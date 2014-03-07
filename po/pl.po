@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-02-19 21:40-0500\n"
-"PO-Revision-Date: 2013-10-18 08:42+0000\n"
+"PO-Revision-Date: 2014-03-06 14:48+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-21 06:37+0000\n"
-"X-Generator: Launchpad (build 16916)\n"
+"X-Launchpad-Export-Date: 2014-03-07 07:21+0000\n"
+"X-Generator: Launchpad (build 16948)\n"
 
 #: ../typecatcher/html_preview.py:109
 msgid "Installed"
@@ -225,7 +225,7 @@ msgstr "Pokaż wiadomości debugowania (-vv debuguje także typecatcher_lib)"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr ""
+msgstr "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:2
 msgid "Download Google webfonts for use on the desktop."
@@ -240,4 +240,4 @@ msgstr "Pobieraj czcionki sieciowe Google, by móc je używać lokalnie"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../typecatcher.desktop.in.h:4
 msgid "fonts;viewer;"
-msgstr ""
+msgstr "czcionki;przeglądarka;"
