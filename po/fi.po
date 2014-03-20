@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: typecatcher\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-02-19 21:40-0500\n"
-"PO-Revision-Date: 2013-08-12 17:22+0000\n"
+"PO-Revision-Date: 2014-03-19 15:02+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-21 06:36+0000\n"
-"X-Generator: Launchpad (build 16916)\n"
+"X-Launchpad-Export-Date: 2014-03-20 06:17+0000\n"
+"X-Generator: Launchpad (build 16967)\n"
 
 #: ../typecatcher/html_preview.py:109
 msgid "Installed"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr ""
+msgstr "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:2
 msgid "Download Google webfonts for use on the desktop."
@@ -245,4 +245,4 @@ msgstr "Lataa Googlen webfonts-kirjasimia paikalliseen käyttöön"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../typecatcher.desktop.in.h:4
 msgid "fonts;viewer;"
-msgstr ""
+msgstr "fonts;viewer;fontit;kirjasimet;katselin;"
