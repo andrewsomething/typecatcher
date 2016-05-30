@@ -3,3 +3,4 @@ build
 tests/__pycache__
 typecatcher_lib/__pycache__
 typecatcher/__pycache__
+*.pyc
