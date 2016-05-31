@@ -1,16 +1,16 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2012 Andrew Starr-Bochicchio <a.starr.b@gmail.com>
-# This program is free software: you can redistribute it and/or modify it 
-# under the terms of the GNU General Public License version 3, as published 
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
-# 
-# This program is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranties of 
-# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranties of
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 # PURPOSE.  See the GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License along 
+#
+# You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
@@ -34,12 +34,13 @@ from typecatcher.html_preview import html_font_view, select_text_preview
 
 from typecatcher.AlphaOneCleanUp import fix_file_names
 
+
 # See typecatcher_lib.Window.py for more details about how this class works
 class TypeCatcherWindow(Window):
     __gtype_name__ = "TypeCatcherWindow"
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
-        fix_file_names() # Clean up after old release.
+        fix_file_names()  # Clean up after old release.
         self.fonts = FindFonts()
         """Set up the main window"""
         super(TypeCatcherWindow, self).finish_initializing(builder)
@@ -97,7 +98,7 @@ class TypeCatcherWindow(Window):
             logger.debug("Falling back to go-down-symbolic")
             menu_icon = 'go-down-symbolic'
 
-        try: # Try to use a GtkMenuButton, fallback to a ToolButton
+        try:  # Try to use a GtkMenuButton, fallback to a ToolButton
             self.selector_icon = Gtk.Image.new()
             self.selector_icon.set_from_icon_name(menu_icon,
                                                   Gtk.IconSize.LARGE_TOOLBAR)
@@ -115,7 +116,7 @@ class TypeCatcherWindow(Window):
             self.selector_icon.show()
             self.toolbar.insert(self.selector_tool_item, 6)
 
-        except AttributeError: # Gtk version is too old.
+        except AttributeError:  # Gtk version is too old.
             logger.debug("Falling back to GtkToolButton")
             self.text_selector = Gtk.ToolButton.new(None, None)
             self.text_selector.set_icon_name(menu_icon)
@@ -130,7 +131,7 @@ class TypeCatcherWindow(Window):
         radios = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8']
         for position, item in enumerate(radios):
             item = self.builder.get_object(item)
-            item.connect("toggled", 
+            item.connect("toggled",
                          self.on_menu_choices_changed,
                          str(position + 1))
         self.text_content = "random"
@@ -181,7 +182,7 @@ class TypeCatcherWindow(Window):
         font_loader = """WebFont.load({
             google: { families: [ '%s' ] },
             fontinactive: function(font, fvd) {
-                // 
+                //
                 console.log("Couldn't load " + font + " FVD:" + fvd);
                 document.getElementById('start_page').style.display = 'None';
                 document.getElementById('text_preview').style.display = 'None';
@@ -207,9 +208,11 @@ class TypeCatcherWindow(Window):
             self.view.execute_script(js_hide)
 
     def download_failed(self):
-        err = ["document.getElementById('start_page').style.display = 'None';",
-          "document.getElementById('text_preview').style.display = 'None';",
-          "document.getElementById('no_connect').style.display = 'block';"]
+        err = [
+                "document.getElementById('start_page').style.display = 'None';",
+                "document.getElementById('text_preview').style.display = 'None';",
+                "document.getElementById('no_connect').style.display = 'block';"
+        ]
         for js in err:
             self.view.execute_script(js)
 
@@ -260,21 +263,23 @@ class TypeCatcherWindow(Window):
 
     def on_info_btn_clicked(self, button):
         try:
-            info_url = "http://www.google.com/webfonts/specimen/" + \
+            info_url = "http://www.google.com/fonts/specimen/" + \
                 self.font.replace(' ', '+', -1)
             Gtk.show_uri(None, info_url, 0)
         except AttributeError:
             head = _("This the info button.")
             message = _("Select a font on the left and press this button. A browser will open with further information about the chosen font.")
-            Window.info_dialog(self,head, message)
+            Window.info_dialog(self, head, message)
 
     def on_mnu_save_as_activate(self, button):
         try:
             dialog = Gtk.FileChooserDialog("Please choose a file", self,
                                            Gtk.FileChooserAction.SAVE,
                                            (Gtk.STOCK_CANCEL,
-                                           Gtk.ResponseType.CANCEL,
-                                           Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+                                            Gtk.ResponseType.CANCEL,
+                                            Gtk.STOCK_SAVE,
+                                            Gtk.ResponseType.OK)
+                                           )
             filename = self.font + ".ttf"
             dialog.set_current_name(filename)
             response = dialog.run()
