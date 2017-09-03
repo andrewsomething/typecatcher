@@ -173,7 +173,6 @@ class TypeCatcherWindow(Window):
         font_loader = """WebFont.load({
             google: { families: [ '%s' ] },
             fontinactive: function(font, fvd) {
-                //
                 console.log("Couldn't load " + font + " FVD:" + fvd);
                 document.getElementById('start_page').style.display = 'None';
                 document.getElementById('text_preview').style.display = 'None';
