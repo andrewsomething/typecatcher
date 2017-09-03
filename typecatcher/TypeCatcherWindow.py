@@ -103,33 +103,22 @@ class TypeCatcherWindow(Window):
             logger.debug("Falling back to go-down-symbolic")
             menu_icon = 'go-down-symbolic'
 
-        try:  # Try to use a GtkMenuButton, fallback to a ToolButton
-            self.selector_icon = Gtk.Image.new()
-            self.selector_icon.set_from_icon_name(menu_icon,
-                                                  Gtk.IconSize.LARGE_TOOLBAR)
+        self.selector_icon = Gtk.Image.new()
+        self.selector_icon.set_from_icon_name(menu_icon,
+                                              Gtk.IconSize.LARGE_TOOLBAR)
 
-            self.text_selector = Gtk.MenuButton.new()
-            self.text_selector.set_popup(self.text_menu)
-            self.text_selector.add(self.selector_icon)
+        self.text_selector = Gtk.MenuButton.new()
+        self.text_selector.set_popup(self.text_menu)
+        self.text_selector.add(self.selector_icon)
 
-            self.selector_tool_item = Gtk.ToolItem.new()
-            self.selector_tool_item.add(self.text_selector)
-            self.selector_tool_item.set_margin_left(4)
+        self.selector_tool_item = Gtk.ToolItem.new()
+        self.selector_tool_item.add(self.text_selector)
+        self.selector_tool_item.set_margin_left(4)
 
-            self.text_selector.show()
-            self.selector_tool_item.show()
-            self.selector_icon.show()
-            self.toolbar.insert(self.selector_tool_item, 6)
-
-        except AttributeError:  # Gtk version is too old.
-            logger.debug("Falling back to GtkToolButton")
-            self.text_selector = Gtk.ToolButton.new(None, None)
-            self.text_selector.set_icon_name(menu_icon)
-            self.text_selector.set_homogeneous(False)
-            self.text_selector.set_expand(False)
-            self.toolbar.insert(self.text_selector, 6)
-            self.text_selector.connect('clicked', self.on_text_selector_clicked)
-            self.text_selector.show()
+        self.text_selector.show()
+        self.selector_tool_item.show()
+        self.selector_icon.show()
+        self.toolbar.insert(self.selector_tool_item, 6)
 
         self.text_selector.set_tooltip_text(_("Select text..."))
 
