@@ -36,15 +36,12 @@ from typecatcher_lib.helpers import running_gnome_shell
 from typecatcher.DownloadFont import DownloadFont, UninstallFont, DownloadError
 from typecatcher.html_preview import html_font_view, select_text_preview
 
-from typecatcher.AlphaOneCleanUp import fix_file_names
-
 
 # See typecatcher_lib.Window.py for more details about how this class works
 class TypeCatcherWindow(Window):
     __gtype_name__ = "TypeCatcherWindow"
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
-        fix_file_names()  # Clean up after old release.
         self.fonts = FindFonts()
         """Set up the main window"""
         super(TypeCatcherWindow, self).finish_initializing(builder)
