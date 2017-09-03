@@ -16,8 +16,12 @@
 
 from locale import gettext as _
 
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk  # pylint: disable=E0611
-from gi.repository import WebKit
+gi.require_version('WebKit2', '4.0')
+from gi.repository import WebKit2
+
 import itertools
 import re
 import glob
@@ -32,15 +36,12 @@ from typecatcher_lib.helpers import running_gnome_shell
 from typecatcher.DownloadFont import DownloadFont, UninstallFont, DownloadError
 from typecatcher.html_preview import html_font_view, select_text_preview
 
-from typecatcher.AlphaOneCleanUp import fix_file_names
-
 
 # See typecatcher_lib.Window.py for more details about how this class works
 class TypeCatcherWindow(Window):
     __gtype_name__ = "TypeCatcherWindow"
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
-        fix_file_names()  # Clean up after old release.
         self.fonts = FindFonts()
         """Set up the main window"""
         super(TypeCatcherWindow, self).finish_initializing(builder)
@@ -51,17 +52,18 @@ class TypeCatcherWindow(Window):
         self.toolbar = builder.get_object("toolbar")
         context = self.toolbar.get_style_context()
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
-        self.view = WebKit.WebView()
-        self.view.connect('console-message', self.on_js_console_message)
+        self.view = WebKit2.WebView()
         webview = builder.get_object("webview")
         webview.add(self.view)
         htmlfile = html_font_view()
-        self.view.load_html_string(htmlfile, "file:///")
+        self.view.load_html(htmlfile, "file:///")
         webview.show_all()
 
         webview_settings = self.view.get_settings()
-        webview_settings.set_property('enable-default-context-menu',
-                                      False)
+        webview_settings.set_property(
+            'enable-write-console-messages-to-stdout',
+            True)
+        self.view.connect("context-menu", self.disable_context_features)
 
         # the data in the model
         listmodel = builder.get_object("liststore")
@@ -98,33 +100,22 @@ class TypeCatcherWindow(Window):
             logger.debug("Falling back to go-down-symbolic")
             menu_icon = 'go-down-symbolic'
 
-        try:  # Try to use a GtkMenuButton, fallback to a ToolButton
-            self.selector_icon = Gtk.Image.new()
-            self.selector_icon.set_from_icon_name(menu_icon,
-                                                  Gtk.IconSize.LARGE_TOOLBAR)
+        self.selector_icon = Gtk.Image.new()
+        self.selector_icon.set_from_icon_name(menu_icon,
+                                              Gtk.IconSize.LARGE_TOOLBAR)
 
-            self.text_selector = Gtk.MenuButton.new()
-            self.text_selector.set_popup(self.text_menu)
-            self.text_selector.add(self.selector_icon)
+        self.text_selector = Gtk.MenuButton.new()
+        self.text_selector.set_popup(self.text_menu)
+        self.text_selector.add(self.selector_icon)
 
-            self.selector_tool_item = Gtk.ToolItem.new()
-            self.selector_tool_item.add(self.text_selector)
-            self.selector_tool_item.set_margin_left(4)
+        self.selector_tool_item = Gtk.ToolItem.new()
+        self.selector_tool_item.add(self.text_selector)
+        self.selector_tool_item.set_margin_left(4)
 
-            self.text_selector.show()
-            self.selector_tool_item.show()
-            self.selector_icon.show()
-            self.toolbar.insert(self.selector_tool_item, 6)
-
-        except AttributeError:  # Gtk version is too old.
-            logger.debug("Falling back to GtkToolButton")
-            self.text_selector = Gtk.ToolButton.new(None, None)
-            self.text_selector.set_icon_name(menu_icon)
-            self.text_selector.set_homogeneous(False)
-            self.text_selector.set_expand(False)
-            self.toolbar.insert(self.text_selector, 6)
-            self.text_selector.connect('clicked', self.on_text_selector_clicked)
-            self.text_selector.show()
+        self.text_selector.show()
+        self.selector_tool_item.show()
+        self.selector_icon.show()
+        self.toolbar.insert(self.selector_tool_item, 6)
 
         self.text_selector.set_tooltip_text(_("Select text..."))
 
@@ -148,7 +139,7 @@ class TypeCatcherWindow(Window):
     def spin_moved(self, widget):
         size = int(self.scale.get_value())
         text_size = "document.getElementById('text_preview').style.fontSize = '%s';" % size
-        self.view.execute_script(text_size)
+        self.view.run_javascript(text_size)
 
     def on_menu_choices_changed(self, button, name):
         if name == "1":
@@ -172,7 +163,7 @@ class TypeCatcherWindow(Window):
     def set_text(self):
         t = select_text_preview(self.text_content)
         js_text = "document.getElementById('text_preview').innerHTML = '%s';" % t
-        self.view.execute_script(js_text)
+        self.view.run_javascript(js_text)
 
     def js_exec(self):
         js_code = ["document.getElementById('start_page').style.display = 'None';",
@@ -196,16 +187,16 @@ class TypeCatcherWindow(Window):
         if self.text_content == "random":
             self.set_text()
         for js in js_code:
-            self.view.execute_script(js)
+            self.view.run_javascript(js)
         self.js_installed_check()
 
     def js_installed_check(self):
         if glob.glob(fontDir + self.font + '_*.*'):
             js_show = "document.getElementById('installed').style.display = 'block';"
-            self.view.execute_script(js_show)
+            self.view.run_javascript(js_show)
         else:
             js_hide = "document.getElementById('installed').style.display = 'None';"
-            self.view.execute_script(js_hide)
+            self.view.run_javascript(js_hide)
 
     def download_failed(self):
         err = [
@@ -214,7 +205,7 @@ class TypeCatcherWindow(Window):
                 "document.getElementById('no_connect').style.display = 'block';"
         ]
         for js in err:
-            self.view.execute_script(js)
+            self.view.run_javascript(js)
 
     def on_search_field_activate(self, widget):
         fonts = list(itertools.chain(*self.fonts))
@@ -293,10 +284,21 @@ class TypeCatcherWindow(Window):
             pass
 
     def on_text_selector_clicked(self, widget):
-        self.text_menu.popup(None, None, None, None, 0, Gtk.get_current_event_time())
+        self.text_menu.popup(None, None, None, None, 0,
+                             Gtk.get_current_event_time())
 
-    def on_js_console_message(self, webview, message, line, id, data=None):
+    def disable_context_features(self, view, menu, event, hit_test_result):
+        """Remove browser navigation from context menu.
+
+           Itterates through the context menu and removes browser navigation
+           items based on the enum values used to denote stock actions.
+           Rather than disabling the menu, this allows us to retain the
+           copy/paste items.
+
+           See: https://lazka.github.io/pgi-docs/WebKit2-4.0/enums.html#WebKit2.ContextMenuAction
         """
-        Log messages to JavaScript console
-        """
-        logger.debug(message)
+        for item in menu.get_items():
+            if item.get_stock_action() in [10, 11, 12, 13]:
+                menu.remove(item)
+
+        return False
