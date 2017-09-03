@@ -58,7 +58,7 @@ def write_font_file(font_url, font_dir, font_name, variant):
 
 def extract_url(family):
     data = open_local_json()
-    json_data = json.loads(str(data), "utf-8")
+    json_data = json.loads(str(data))
     for n in json_data['items']:
         if n['family'] == family:
             font_dict = dict(n['files'])

@@ -76,7 +76,7 @@ class TestCases(unittest.TestCase):
 
     def test_get_fonts_json(self):
         returned_data = get_fonts_json()
-        self.assertTrue(json.loads(str(returned_data),"utf-8"))
+        self.assertTrue(json.loads(str(returned_data)))
 
     def test_get_font_variants(self):
         variants= get_font_variants(self.font_name)

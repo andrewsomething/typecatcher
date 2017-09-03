@@ -47,7 +47,7 @@ def open_local_json():
 
 
 def process_json(data):
-    json_data = json.loads(data, "utf-8")
+    json_data = json.loads(data)
     fonts = []
     for n in json_data['items']:
         f = []
@@ -69,7 +69,7 @@ def cache_json(data):
 
 def get_font_variants(family):
     data = open_local_json()
-    json_data = json.loads(str(data), "utf-8")
+    json_data = json.loads(str(data))
     variants = []
     for n in json_data['items']:
         if n['family'] == family:
