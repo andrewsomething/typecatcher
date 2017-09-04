@@ -134,7 +134,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='typecatcher',
-    version='0.2',
+    version='0.3',
     license='GPL-3',
     author='Andrew Starr-Bochicchio',
     author_email='a.starr.b@gmail.com',
