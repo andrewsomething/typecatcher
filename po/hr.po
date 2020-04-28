@@ -1,4 +1,4 @@
-# German translation for TypeCatcher
+# Croatian translation for TypeCatcher
 # Translators:
 # Milo Ivir <mail@milotype.de>, 2020.
 #
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: TypeCatcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-19 21:40-0500\n"
-"PO-Revision-Date: 2020-04-28 17:19+0200\n"
+"PO-Revision-Date: 2020-04-28 17:18+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,23 +15,24 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-09-03 21:44+0000\n"
 "X-Generator: Poedit 2.3\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
 
 #: ../typecatcher/html_preview.py:109
 msgid "Installed"
-msgstr "Installiert"
+msgstr "Instaliran"
 
 #: ../typecatcher/html_preview.py:110
 msgid "Font not available."
-msgstr "Schrift ist nicht verfügbar."
+msgstr "Font nije dostupan."
 
 #: ../typecatcher/html_preview.py:111
 msgid "Please check your network connection."
-msgstr "Überprüfe die Internet-Verbindung."
+msgstr "Provjeri vezu s internetom."
 
-# Ludwig Bechstein
-# Der kleine Däumling
+# Ivana Brlić Mažuranić
+# Čudnovate zgode šegrta Hlapića, Kod majstora Mrkonje
 #: ../typecatcher/html_preview.py:119
 msgid ""
 "One morning, when Gregor Samsa woke from troubled dreams, he found himself "
@@ -39,16 +40,14 @@ msgid ""
 "back, and if he lifted his head a little he could see his brown belly, "
 "slightly domed and divided by arches into stiff sections."
 msgstr ""
-"Es war einmal ein armer Korbmacher, der hatte mit seiner Frau sieben "
-"Jungen, da war immer einer kleiner als der andere, und der jüngste war bei "
-"seiner Geburt nicht viel über Fingers Länge, daher nannte man ihn Däumling. "
-"Zwar ist er hernach noch etwas gewachsen, doch nicht gar zu sehr, und den "
-"Namen Däumling hat er behalten. Doch war es ein gar kluger und pfiffiger "
-"kleiner Knirps, der an Gewandtheit und Schlauheit seine Brüder alle in den "
-"Sack steckte."
+"Bio je neki mali postolarski šegrt, koji nije imao ni oca ni majke. Zvao se "
+"Hlapić. Hlapić je bio još malen kao lakat, a veseo kao ptica. Cijeli je dan "
+"sjedio u poderanim hlačama i crvenoj košulji na malom postolarskom stocu, "
+"koji je imao tri noge, i cijeli je dan zabijao klince u čizme i šivao "
+"cipele. Cijeli je dan fućkao i pjevao kod posla."
 
-# Theodor Fontane
-# Der verengländerte Deutsche
+# August Šenoa
+# Zlatarevo zlato/II
 #: ../typecatcher/html_preview.py:120
 msgid ""
 "Far out in the uncharted backwaters of the unfashionable end of the Western "
@@ -56,30 +55,31 @@ msgid ""
 "at a distance of roughly ninety-eight million miles is an utterly "
 "insignificant little blue-green planet..."
 msgstr ""
-"Einer meiner Freunde erzählte mir: Gebrüder Miller sind eine wohlbekannte "
-"Firma in der City von London. Vor Zeiten hießen sie Müller und waren so "
-"loyale Berliner, wie sie das Spandauer Viertel nur je in seiner Mitte sah. "
-"Vor zehn Jahren vertauschten sie die Papenstraße mit Moorgate-Street und "
-"ersetzten den heimatlichen Klappkragen durch aufrechtstehende Vatermörder."
+"Bilo je popodne četvrtoga dana po svetoj Trojici, a godišta gospodnjega "
+"1574. Nad goru i polje zagrebačko bio se nadvio crn oblak, nadvio i sasuo "
+"na zemlju gustim daždom, kao da si ga nožem prorezao. Nu zamalo jenjala "
+"ploha, uminuo oblak na ishod; plavetno nebo razgali se jasno i čisto kao "
+"staklo, a sred neba lebdijaše žarko sunce raspinjujući zlatnu mrežu gorom i "
+"dolom, krijeseći se u tisuću kapljica treptećih na bujnom zelenilu. Čist i "
+"vedar bijaše svijet, vedra i duša čovječja sred divotnoga svijeta."
 
-# Johann Wolfgang von Goethe
-# Wilhelm Meisters Lehrjahre, erstes Buch, zweites Kapitel
+# Ante Kovačić
+# Zagorski čudak/I
 #: ../typecatcher/html_preview.py:121
 msgid ""
 "Many years later, as he faced the firing squad, Colonel Aureliano Buendia "
 "was to remember that distant afternoon when his father took him to discover "
 "ice."
 msgstr ""
-"Als Wilhelm seine Mutter des andern Morgens begrüßte, eröffnete sie ihm, "
-"daß der Vater sehr verdrießlich sei und ihm den täglichen Besuch des "
-"Schauspiels nächstens untersagen werde. „Wenn ich gleich selbst“, fuhr sie "
-"fort, „manchmal gern ins Theater gehe, so möchte ich es doch oft "
-"verwünschen, da meine häusliche Ruhe durch deine unmäßige Leidenschaft zu "
-"diesem Vergnügen gestört wird. Der Vater wiederholt immer wozu es nur nütze "
-"sei? Wie man seine Zeit nur so verderben könne?“"
+"Navečer starac župnik, dobre volje, živa oka, srkne nešto burmuta, "
+"podsmjehne se, pa počne: – Vi ste rad znati život Sporčine. Bene. Šareni su "
+"vam to svatovi. Narodi u kojima pisci pisanjem kruh služe sastavili bi "
+"roman. Da ste vi ustrajni, mogli bi barem ovo napisati što ću vam ja "
+"pripovijedati, možda bi našim gospođicama ukrao barem nešto od onoga "
+"dragocjenoga vremena što ga trate na njemačke židovske romane."
 
-# Jakob und Wilhelm Grimm
-# Die drei Bergleute im Kuttenberg
+# Antun Gustav Matoš
+# Bijeda
 #: ../typecatcher/html_preview.py:122
 msgid ""
 "I am an invisible man. No, I am not a spook like those who haunted Edgar "
@@ -88,120 +88,113 @@ msgid ""
 "to possess a mind. I am invisible, understand, simply because people refuse "
 "to see me."
 msgstr ""
-"Nun geschah es, daß einer von den dreien unter der Erde so recht aus "
-"Herzensgrund wünschte: „Ach! Könnt ich noch einmal das Tageslicht sehen, so "
-"wollt ich gerne sterben!“ Der zweite sprach: „Ach! Könnt ich noch einmal "
-"daheim bei meiner Frau zu Tische sitzen und essen, so wollt ich gerne "
-"sterben!“ Da sprach auch der dritte: „Ach! Könnt ich nur noch ein Jahr "
-"friedlich und vergnügt mit meiner Frau leben, so wollt ich gerne sterben!“"
+"U pariškoj nekoj kafanici upoznah cvijet evropskih revolucionara, najviše "
+"Poljaka. Kad bi me god obuzela malaksalost, duševna umornost, odlazio bih "
+"onamo i opasao bih se u tom razvezanom, smionom društvu smjelošću i snagom "
+"kao pčela u košnici. Najviše zavoljeh nekog Grodeckog. Bijaše tako suh i "
+"mršav, da me mršavom, odužom brdicom i dugačkom kosom vazda sjećao na "
+"klasične mučenike kako ih zamišljamo iz Biblije i iz hagiografija."
 
-# Johann Wilhelm Wolf
-# Das allzeit zufriedene Knäbchen
+# Vladimir Nazor
+# Bijeli jelen, Treći dio: U šumi, I. Ćukovi savjeti
 #: ../typecatcher/html_preview.py:123
 msgid ""
 "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of "
 "lather on which a mirror and a razor lay crossed. A yellow dressinggown, "
 "ungirdled, was sustained gently behind him on the mild morning air."
 msgstr ""
-"Zwei Bauersleute hatten ein Kind und wie es denn in der Welt geht, wo nur "
-"eins ist, da wird’s verzogen. Die Ältern hatten aber kein Auge für die "
-"Fehler des Bübchens und nannten es immer nur ihr allzeit zufriedenes Kind. "
-"Eines Tages war eine Hochzeit im Ort, dazu waren die Bauersleute auch "
-"eingeladen und da sie nirgendwo allein hingingen, so nahmen sie auch ihr "
-"allzeit zufriedenes Kind mit."
+"Rano, još prije zore, probudi se Zlatokosa u planinskome ležaju. Bila je "
+"sama. Jelen Vitorog i njegova košuta idu svake noći na pašu pa se vraćaju "
+"tek u zoru u ležaj. Tri su već godine, što ih Zlatokosa čeka svako jutro. "
+"Kada vidi, da su živi i zdravi, pušta ih da legnu i zaspu, te ide u šumu."
 
 #: ../typecatcher/html_preview.py:143
 msgid "Enter text..."
-msgstr "Text eingeben …"
+msgstr "Upiši tekst …"
 
 #: ../typecatcher/TypeCatcherWindow.py:72
 msgid "Fonts"
-msgstr "Schriften"
+msgstr "Fontovi"
 
 #: ../typecatcher/TypeCatcherWindow.py:214
 msgid "This the install button."
-msgstr "Knopf für installieren."
+msgstr "Gumb za instaliranje."
 
 #: ../typecatcher/TypeCatcherWindow.py:215
 msgid ""
 "Select a font on the left and press this button. The font will be installed "
 "for off-line use."
 msgstr ""
-"Links eine Schrift auswählen und diese Taste drücken. Die Schrift wird für "
-"die Offline-Verwendung installiert."
+"Lijevo odaberi font i pritisni ovaj gumb. Font će se instalirati za "
+"izvanmrežnu upotrebu."
 
 #: ../typecatcher/TypeCatcherWindow.py:223
 msgid "This the uninstall button."
-msgstr "Knopf für deinstallieren."
+msgstr "Gumb za deinstaliranje."
 
 #: ../typecatcher/TypeCatcherWindow.py:224
 msgid ""
 "Select a font on the left and press this button. It will be removed from "
 "your system."
 msgstr ""
-"Links eine Schrift auswählen und diese Taste drücken. Die Schrift wird vom "
-"System entfernt."
+"Lijevo odaberi font i pritisni ovaj gumb. Font će se ukloniti iz "
+"operacijskog sustava."
 
 #: ../typecatcher/TypeCatcherWindow.py:233
 msgid "This the info button."
-msgstr "Knopf für Informationen."
+msgstr "Gumb za informacije."
 
 #: ../typecatcher/TypeCatcherWindow.py:234
 msgid ""
 "Select a font on the left and press this button. A browser will open with "
 "further information about the chosen font."
 msgstr ""
-"Links eine Schrift auswählen und diese Taste drücken. Es öffnet sich ein "
-"Browser mit weiteren Schriftinformationen."
+"Lijevo odaberi font i pritisni ovaj gumb. U pregledniku će se prikazati "
+"podaci o fontu."
 
 #: ../data/ui/TypeCatcherWindow.ui.h:1
 msgid "Report a bug"
-msgstr "Fehler melden"
+msgstr "Prijavi grešku"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:2
 msgid "Select text to display"
-msgstr "Vorschau-Text auswählen"
+msgstr "Odaberi tekst za prikaz"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:3
 msgid "Custom text"
-msgstr "Benutzerdefinierter Text"
+msgstr "Prilagođeni tekst"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:4
 msgid "Random"
-msgstr "Zufällig"
+msgstr "Slučajno"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:5
 msgid "ipsum"
 msgstr "ipsum"
 
-# (Kafka in der englischen Übersetzungsdatei)
 #: ../data/ui/TypeCatcherWindow.ui.h:6
 msgid "Kafka"
-msgstr "Bechstein"
+msgstr "I. B. Mažuranić"
 
-# (Adams in der englischen Übersetzungsdatei)
 #: ../data/ui/TypeCatcherWindow.ui.h:7
 msgid "Adams"
-msgstr "Fontane"
+msgstr "A. Šenoa"
 
-# (Marquez in der englischen Übersetzungsdatei)
 #: ../data/ui/TypeCatcherWindow.ui.h:8
 msgid "Marquez"
-msgstr "Goethe"
+msgstr "A. Kovačić"
 
-# (Ellison in der englischen Übersetzungsdatei)
 #: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Ellison"
-msgstr "Brüder Grimm"
+msgstr "A. G. Matoš"
 
-# (Joyce in der englischen Übersetzungsdatei)
 #: ../data/ui/TypeCatcherWindow.ui.h:10
 msgid "Joyce"
-msgstr "Wolf"
+msgstr "V. Nazor"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:11
 msgid "Translate this app"
-msgstr "Übersetze diese App"
+msgstr "Prevedi ovaj program"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:12 ../typecatcher.desktop.in.h:1
 msgid "TypeCatcher"
@@ -209,79 +202,78 @@ msgstr "TypeCatcher"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:13
 msgid "_File"
-msgstr "_Datei"
+msgstr "_Datoteka"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:14
 msgid "_Help"
-msgstr "_Hilfe"
+msgstr "_Pomoć"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:15
 msgid "Contents"
-msgstr "Inhalt"
+msgstr "Sadržaj"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:16
 msgid "Download font..."
-msgstr "Schrift herunterladen …"
+msgstr "Preuzmi font …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:17
 msgid "Download font"
-msgstr "Schrift herunterladen"
+msgstr "Preuzmi font"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:18
 msgid "Uninstall font..."
-msgstr "Schrift deinstalieren …"
+msgstr "Deinstaliraj font …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:19
 msgid "Uninstall font"
-msgstr "Schrift deinstalieren"
+msgstr "Deinstaliraj font"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:20
 msgid "Font info..."
-msgstr "Schrift-Info …"
+msgstr "Podaci fonta …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:21
 msgid "Font info"
-msgstr "Schrift-Info"
+msgstr "Podaci fonta"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:22
 msgid "Font size..."
-msgstr "Schriftgröße …"
+msgstr "Veličina fonta …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:23
 msgid "Search fonts..."
-msgstr "Schriften suchen …"
+msgstr "Traži font …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:24
 msgid "Clear search..."
-msgstr "Suchfeld leeren …"
+msgstr "Poništi pretragu …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:25
 msgid "Select text..."
-msgstr "Text auswählen …"
+msgstr "Odaberi tekst …"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:26
 msgid "Select text"
-msgstr "Text auswählen"
+msgstr "Odaberi tekst"
 
 #: ../typecatcher/__init__.py:31
 msgid "Show debug messages (-vv debugs typecatcher_lib also)"
 msgstr ""
-"Zeige Nachriten der Fehleruntersuchung (-vv untersucht auch typecatcher_lib "
-"nach Fehlern)"
+"Prikaži poruke pronalaženja grešaka (-vv traži greške i u typecatcher_lib)"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:1
 msgid "© 2012-2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
-msgstr "© 2012 – 2014 Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
+msgstr "© 2012. – 2014. Andrew Starr-Bochicchio <a.starr.b@gmail.com>"
 
 #: ../data/ui/AboutTypeCatcherDialog.ui.h:2
 msgid "Download Google webfonts for use on the desktop."
-msgstr "Lade Google-Webfonts herunter, um sie auf dem Rechner zu verwenden."
+msgstr "Preuzmi Google webfontove za upotrebu na računalu."
 
 #: ../typecatcher.desktop.in.h:2
 msgid "Download Google webfonts for off-line use"
-msgstr "Lade Google-Webfonts herunter, um sie off-line zu verwenden"
+msgstr "Preuzmi Google webfontove za izvanmrežnu upotrebu"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../typecatcher.desktop.in.h:4
 msgid "fonts;viewer;"
-msgstr "fonts;schrift;schriften;schriftart;viewer;vorschau;"
+msgstr "fonts;fontovi;font;viewer;pregled;"
