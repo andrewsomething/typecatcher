@@ -23,6 +23,7 @@ from gi.repository import GObject, Gtk # pylint: disable=E0611
 import inspect
 import functools
 import logging
+import sys
 logger = logging.getLogger('typecatcher_lib')
 
 from xml.etree.cElementTree import ElementTree
@@ -83,7 +84,7 @@ class Builder(Gtk.Builder):
         tree = ElementTree()
         tree.parse(filename)
 
-        ele_widgets = tree.getiterator("object")
+        ele_widgets = self.get_iterator(tree, "object")
         for ele_widget in ele_widgets:
             name = ele_widget.attrib['id']
             widget = self.get_object(name)
@@ -105,7 +106,7 @@ class Builder(Gtk.Builder):
             if connections:
                 self.connections.extend(connections)
 
-        ele_signals = tree.getiterator("signal")
+        ele_signals = self.get_iterator(tree, "signal")
         for ele_signal in ele_signals:
             self.glade_handler_dict.update(
             {ele_signal.attrib["handler"]: None})
@@ -140,6 +141,14 @@ class Builder(Gtk.Builder):
             widget_name, signal_name, handler_name = connection
             logger.debug("connect builder by design '%s', '%s', '%s'",
              widget_name, signal_name, handler_name)
+    
+    def get_iterator(self, ele, tag):
+        '''Shim for deprecated/removed ElementTree.getiterator(tag)
+        for Python 3.2 or later'''
+        if sys.version_info[0] >= 3 and sys.version_info[1] >= 2:
+            return ele.iter(tag)
+        else:
+            return ele.getiterator(tag)
 
     def get_ui(self, callback_obj=None, by_name=True):
         '''Creates the ui object with widgets as attributes
