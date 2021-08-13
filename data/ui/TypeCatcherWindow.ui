@@ -94,7 +94,7 @@
       <object class="GtkRadioMenuItem" id="r5">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Marquez</property>
+        <property name="label" translatable="yes">García Márquez</property>
         <property name="use_underline">True</property>
         <property name="draw_as_radio">True</property>
         <property name="group">r1</property>

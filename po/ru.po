@@ -145,7 +145,7 @@ msgid "Adams"
 msgstr "Адамс"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:8
-msgid "Marquez"
+msgid "García Márquez"
 msgstr "Маркес"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:9

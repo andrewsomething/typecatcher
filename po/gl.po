@@ -160,8 +160,8 @@ msgid "Adams"
 msgstr "Adams"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:8
-msgid "Marquez"
-msgstr "Márquez"
+msgid "García Márquez"
+msgstr "García Márquez"
 
 #: ../data/ui/TypeCatcherWindow.ui.h:9
 msgid "Ellison"

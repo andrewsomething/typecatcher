@@ -184,9 +184,9 @@ msgstr "Bechstein"
 msgid "Adams"
 msgstr "Fontane"
 
-# (Marquez in der englischen Übersetzungsdatei)
+# (García Márquez in der englischen Übersetzungsdatei)
 #: ../data/ui/TypeCatcherWindow.ui.h:8
-msgid "Marquez"
+msgid "García Márquez"
 msgstr "Goethe"
 
 # (Ellison in der englischen Übersetzungsdatei)
